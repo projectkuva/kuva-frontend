@@ -12,7 +12,6 @@
 		34231EC51E3FF2A800905367 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34231EC31E3FF2A800905367 /* Main.storyboard */; };
 		34231EC71E3FF2A800905367 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34231EC61E3FF2A800905367 /* Assets.xcassets */; };
 		34231ECA1E3FF2A800905367 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34231EC81E3FF2A800905367 /* LaunchScreen.storyboard */; };
-		34C5ECDD1E3FF3820065A70E /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C5ECDC1E3FF3820065A70E /* Alamofire.swift */; };
 		FE5194A3A7547E3A85A1FAB9 /* Pods_Kuva.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00271136C52F3F43E8C06C30 /* Pods_Kuva.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +25,6 @@
 		34231EC61E3FF2A800905367 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34231EC91E3FF2A800905367 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34231ECB1E3FF2A800905367 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		34C5ECDC1E3FF3820065A70E /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
 		3AABB1DD9D2D81C525B9488F /* Pods-Kuva.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kuva.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kuva/Pods-Kuva.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,7 +63,6 @@
 			children = (
 				34231EBF1E3FF2A800905367 /* AppDelegate.swift */,
 				34231EC11E3FF2A800905367 /* ViewController.swift */,
-				34C5ECDC1E3FF3820065A70E /* Alamofire.swift */,
 				34231EC31E3FF2A800905367 /* Main.storyboard */,
 				34231EC61E3FF2A800905367 /* Assets.xcassets */,
 				34231EC81E3FF2A800905367 /* LaunchScreen.storyboard */,
@@ -214,7 +211,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34C5ECDD1E3FF3820065A70E /* Alamofire.swift in Sources */,
 				34231EC21E3FF2A800905367 /* ViewController.swift in Sources */,
 				34231EC01E3FF2A800905367 /* AppDelegate.swift in Sources */,
 			);
