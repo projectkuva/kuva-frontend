@@ -12,9 +12,12 @@
 		34231EC51E3FF2A800905367 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34231EC31E3FF2A800905367 /* Main.storyboard */; };
 		34231EC71E3FF2A800905367 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34231EC61E3FF2A800905367 /* Assets.xcassets */; };
 		34231ECA1E3FF2A800905367 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34231EC81E3FF2A800905367 /* LaunchScreen.storyboard */; };
+		FE5194A3A7547E3A85A1FAB9 /* Pods_Kuva.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00271136C52F3F43E8C06C30 /* Pods_Kuva.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00271136C52F3F43E8C06C30 /* Pods_Kuva.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kuva.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2703CACDCE9FDF7DDDB324B9 /* Pods-Kuva.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kuva.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kuva/Pods-Kuva.debug.xcconfig"; sourceTree = "<group>"; };
 		34231EBC1E3FF2A800905367 /* Kuva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kuva.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34231EBF1E3FF2A800905367 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34231EC11E3FF2A800905367 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		34231EC61E3FF2A800905367 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34231EC91E3FF2A800905367 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34231ECB1E3FF2A800905367 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AABB1DD9D2D81C525B9488F /* Pods-Kuva.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kuva.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kuva/Pods-Kuva.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE5194A3A7547E3A85A1FAB9 /* Pods_Kuva.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				34231EBE1E3FF2A800905367 /* Kuva */,
 				34231EBD1E3FF2A800905367 /* Products */,
+				3A1AEDC98E88FE9E8E2C4AFC /* Pods */,
+				D069023043ED5352AA7D202A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = Kuva;
 			sourceTree = "<group>";
 		};
+		3A1AEDC98E88FE9E8E2C4AFC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2703CACDCE9FDF7DDDB324B9 /* Pods-Kuva.debug.xcconfig */,
+				3AABB1DD9D2D81C525B9488F /* Pods-Kuva.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D069023043ED5352AA7D202A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00271136C52F3F43E8C06C30 /* Pods_Kuva.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 34231ECE1E3FF2A800905367 /* Build configuration list for PBXNativeTarget "Kuva" */;
 			buildPhases = (
+				7CE4336E3335F5B4858A516B /* [CP] Check Pods Manifest.lock */,
 				34231EB81E3FF2A800905367 /* Sources */,
 				34231EB91E3FF2A800905367 /* Frameworks */,
 				34231EBA1E3FF2A800905367 /* Resources */,
+				A033E66338C7A5BC18BF188C /* [CP] Embed Pods Frameworks */,
+				5ABC6085362371302EBBA30C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5ABC6085362371302EBBA30C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kuva/Pods-Kuva-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CE4336E3335F5B4858A516B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A033E66338C7A5BC18BF188C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kuva/Pods-Kuva-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		34231EB81E3FF2A800905367 /* Sources */ = {
@@ -258,6 +333,7 @@
 		};
 		34231ECF1E3FF2A800905367 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2703CACDCE9FDF7DDDB324B9 /* Pods-Kuva.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Kuva/Info.plist;
@@ -270,6 +346,7 @@
 		};
 		34231ED01E3FF2A800905367 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AABB1DD9D2D81C525B9488F /* Pods-Kuva.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Kuva/Info.plist;

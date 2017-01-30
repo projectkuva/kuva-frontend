@@ -1,0 +1,6 @@
+framework module Pods_Kuva {
+  umbrella header "Pods-Kuva-umbrella.h"
+
+  export *
+  module * { export * }
+}
