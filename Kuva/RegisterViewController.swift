@@ -10,6 +10,8 @@ import UIKit
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet var usernameTextField: UITextField!
+    @IBOutlet var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +21,13 @@ class RegisterViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func registerPressed(_ sender: Any) {
+        let username = usernameTextField
+        let password = passwordTextField
+        
+        //use Alamofire
     }
     
 

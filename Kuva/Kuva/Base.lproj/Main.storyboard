@@ -51,7 +51,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Sign In"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signinPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q0h-tD-IY1"/>
@@ -74,7 +74,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Create an account"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signinPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3EB-ie-x5O"/>
@@ -145,11 +145,12 @@
                                     <constraint firstAttribute="width" constant="259" id="EnC-LX-rzb"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Register"/>
+                                <state key="normal" title="Create account"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="registerPressed:" destination="PhT-zN-TBw" eventType="touchUpInside" id="jug-VK-9A5"/>
                                     <action selector="signinPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yoZ-qo-a9f"/>
                                 </connections>
                             </button>
@@ -170,7 +171,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Already have account?"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signinPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rgd-Fh-BUk"/>
@@ -192,6 +193,10 @@
                             <constraint firstItem="8AS-ux-gGe" firstAttribute="top" secondItem="NXy-es-aaO" secondAttribute="bottom" constant="30" id="wxq-r4-1jC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="NXy-es-aaO" id="sM7-SR-0WP"/>
+                        <outlet property="usernameTextField" destination="Umg-Fw-erh" id="tKC-yf-H1c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eHy-js-qzB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
