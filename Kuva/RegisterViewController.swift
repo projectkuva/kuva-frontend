@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Alamofire
 
 class RegisterViewController: UIViewController {
 
+    
     @IBOutlet var usernameTextField: UITextField!
+    @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,14 +26,26 @@ class RegisterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func registerPressed(_ sender: Any) {
-        let username = usernameTextField
-        let password = passwordTextField
+    @IBAction func createPressed(_ sender: Any) {
+        let username = usernameTextField.text
+        let email = emailTextField.text
+        let password = passwordTextField.text
         
-        //use Alamofire
-    }
-    
+        let parameters: Parameters = [
+            "name": username,
+            "password": password,
+            "email": email
+        ]
+        
+        Alamofire.request("http://kuva.jakebrabec.me/api/user/register", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
+            
+            if let auth = response.result.value {
+                print("AUTH: \(auth)")
+            }
+            
+        }
 
+    }
     /*
     // MARK: - Navigation
 
