@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Kuva" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,71 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cuZ-km-Muu">
+                                <rect key="frame" x="58" y="286" width="259" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="259" id="BBZ-8t-ldE"/>
+                                    <constraint firstAttribute="height" constant="30" id="FDz-yC-WRJ"/>
+                                </constraints>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="363-ou-Bsi">
+                                <rect key="frame" x="58" y="334" width="259" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="259" id="58v-4a-7sw"/>
+                                    <constraint firstAttribute="height" constant="30" id="ZOq-be-7fJ"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EcK-W8-Tq1">
+                                <rect key="frame" x="58" y="392" width="259" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="d3F-CK-wUr"/>
+                                    <constraint firstAttribute="width" constant="259" id="usw-ZA-cc4"/>
+                                </constraints>
+                                <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <state key="normal" title="Sign In"/>
+                                <connections>
+                                    <action selector="signinPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q0h-tD-IY1"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kuva-logo" translatesAutoresizingMaskIntoConstraints="NO" id="pma-uh-ZJg">
+                                <rect key="frame" x="58" y="116" width="259" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="259" id="V5F-Ih-DUl"/>
+                                    <constraint firstAttribute="height" constant="128" id="V74-x4-LZs"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pma-uh-ZJg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5DJ-El-YPr"/>
+                            <constraint firstItem="cuZ-km-Muu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BUf-cL-rC7"/>
+                            <constraint firstItem="cuZ-km-Muu" firstAttribute="top" secondItem="pma-uh-ZJg" secondAttribute="bottom" constant="42" id="UEK-Xz-5iH"/>
+                            <constraint firstItem="EcK-W8-Tq1" firstAttribute="top" secondItem="363-ou-Bsi" secondAttribute="bottom" constant="28" id="azt-Vj-Xg0"/>
+                            <constraint firstItem="363-ou-Bsi" firstAttribute="top" secondItem="cuZ-km-Muu" secondAttribute="bottom" constant="18" id="bho-fh-FaB"/>
+                            <constraint firstItem="363-ou-Bsi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vNm-2N-64c"/>
+                            <constraint firstItem="EcK-W8-Tq1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wN0-JZ-qwS"/>
+                            <constraint firstItem="pma-uh-ZJg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="96" id="xbI-08-GrF"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="363-ou-Bsi" id="Zrz-vW-L1o"/>
+                        <outlet property="usernameTextField" destination="cuZ-km-Muu" id="qBH-AU-s9o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="kuva-logo" width="387" height="150"/>
+    </resources>
 </document>
