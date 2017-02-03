@@ -21,8 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cuZ-km-Muu">
-                                <rect key="frame" x="58" y="218" width="259" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cuZ-km-Muu">
+                                <rect key="frame" x="58" y="211" width="259" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Vti-p8-Lx2"/>
                                     <constraint firstAttribute="width" constant="259" id="g7o-aO-1RF"/>
@@ -31,8 +31,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="363-ou-Bsi">
-                                <rect key="frame" x="58" y="267" width="259" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="363-ou-Bsi">
+                                <rect key="frame" x="58" y="256" width="259" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="0wV-3y-4oc"/>
                                     <constraint firstAttribute="width" constant="259" id="Mqd-Wt-kx4"/>
@@ -41,8 +41,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EcK-W8-Tq1">
-                                <rect key="frame" x="58" y="323" width="259" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EcK-W8-Tq1">
+                                <rect key="frame" x="58" y="316" width="259" height="44"/>
                                 <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="259" id="Tjs-Yg-pUQ"/>
@@ -51,21 +51,21 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Sign In"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signinPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q0h-tD-IY1"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="kuva-logo" translatesAutoresizingMaskIntoConstraints="NO" id="pma-uh-ZJg">
-                                <rect key="frame" x="84" y="84" width="206" height="101"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kuva-logo" translatesAutoresizingMaskIntoConstraints="NO" id="pma-uh-ZJg">
+                                <rect key="frame" x="84" y="80" width="206" height="101"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="206" id="jvU-wq-r5g"/>
                                     <constraint firstAttribute="height" constant="101" id="wpc-Xv-SQe"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sb6-zr-cHD">
-                                <rect key="frame" x="58" y="576" width="259" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sb6-zr-cHD">
+                                <rect key="frame" x="58" y="563" width="259" height="44"/>
                                 <color key="backgroundColor" red="0.1764705882352941" green="0.1764705882352941" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="259" id="IpZ-1o-qTB"/>
@@ -74,7 +74,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Create an account"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signinPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3EB-ie-x5O"/>
@@ -117,8 +117,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Umg-Fw-erh">
-                                <rect key="frame" x="58" y="216" width="259" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Umg-Fw-erh">
+                                <rect key="frame" x="58" y="220" width="259" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="259" id="4ta-Lx-kko"/>
                                     <constraint firstAttribute="height" constant="30" id="K4N-lt-4uk"/>
@@ -137,24 +137,25 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8AS-ux-gGe">
-                                <rect key="frame" x="58" y="321" width="259" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8AS-ux-gGe">
+                                <rect key="frame" x="58" y="325" width="259" height="44"/>
                                 <color key="backgroundColor" red="0.1764705882352941" green="0.1764705882352941" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="DdE-oc-321"/>
                                     <constraint firstAttribute="width" constant="259" id="EnC-LX-rzb"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Register"/>
+                                <state key="normal" title="Create account"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="registerPressed:" destination="PhT-zN-TBw" eventType="touchUpInside" id="jug-VK-9A5"/>
                                     <action selector="signinPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yoZ-qo-a9f"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="kuva-logo" translatesAutoresizingMaskIntoConstraints="NO" id="RRT-wb-DyV">
-                                <rect key="frame" x="84" y="82" width="206" height="101"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kuva-logo" translatesAutoresizingMaskIntoConstraints="NO" id="RRT-wb-DyV">
+                                <rect key="frame" x="84" y="89" width="206" height="101"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="206" id="eW2-R0-QRi"/>
                                     <constraint firstAttribute="height" constant="101" id="so8-OP-LN5"/>
@@ -170,7 +171,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Already have account?"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signinPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rgd-Fh-BUk"/>
@@ -192,6 +193,10 @@
                             <constraint firstItem="8AS-ux-gGe" firstAttribute="top" secondItem="NXy-es-aaO" secondAttribute="bottom" constant="30" id="wxq-r4-1jC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="NXy-es-aaO" id="sM7-SR-0WP"/>
+                        <outlet property="usernameTextField" destination="Umg-Fw-erh" id="tKC-yf-H1c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eHy-js-qzB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
