@@ -7,12 +7,11 @@
 //
 
 import UIKit
-import Alamofire
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet var usernameTextField: UITextField!
+    @IBOutlet var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
