@@ -26,7 +26,7 @@ class RegisterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func createPressed(_ sender: Any) {
+    @IBAction func createButtonPressed(_ sender: Any) {
         let username = usernameTextField.text
         let email = emailTextField.text
         let password = passwordTextField.text
@@ -46,6 +46,7 @@ class RegisterViewController: UIViewController {
         }
 
     }
+
     /*
     // MARK: - Navigation
 

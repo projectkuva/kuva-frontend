@@ -116,8 +116,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Umg-Fw-erh">
-                                <rect key="frame" x="58" y="276" width="259" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Umg-Fw-erh">
+                                <rect key="frame" x="58" y="256" width="259" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="52x-ka-XQW"/>
                                     <constraint firstAttribute="width" constant="259" id="Ro5-6O-Gxx"/>
@@ -126,8 +126,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NXy-es-aaO">
-                                <rect key="frame" x="58" y="321" width="259" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NXy-es-aaO">
+                                <rect key="frame" x="58" y="301" width="259" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="259" id="TE8-Ov-67s"/>
                                     <constraint firstAttribute="height" constant="30" id="giv-51-j8r"/>
@@ -136,38 +136,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8AS-ux-gGe">
-                                <rect key="frame" x="58" y="372" width="259" height="44"/>
-                                <color key="backgroundColor" red="0.1764705882352941" green="0.1764705882352941" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="259" id="8Xd-SN-caO"/>
-                                    <constraint firstAttribute="height" constant="44" id="eGz-m3-AUX"/>
-                                </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Create account"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="createPressed:" destination="PhT-zN-TBw" eventType="touchUpInside" id="7NF-sb-Lyo"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="kuva-logo" translatesAutoresizingMaskIntoConstraints="NO" id="RRT-wb-DyV">
-                                <rect key="frame" x="84" y="89" width="206" height="101"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kuva-inverse" translatesAutoresizingMaskIntoConstraints="NO" id="RRT-wb-DyV">
+                                <rect key="frame" x="84" y="80" width="206" height="101"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="206" id="eW2-R0-QRi"/>
                                     <constraint firstAttribute="height" constant="101" id="so8-OP-LN5"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8n-gh-JnQ">
-                                <rect key="frame" x="58" y="574" width="259" height="44"/>
-                                <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8n-gh-JnQ">
+                                <rect key="frame" x="58" y="563" width="259" height="44"/>
+                                <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="259" id="iaT-Rj-38m"/>
                                     <constraint firstAttribute="height" constant="44" id="yf9-Zm-894"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Already have account?"/>
+                                <state key="normal" title="Already have account?">
+                                    <color key="titleColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
                                 </userDefinedRuntimeAttributes>
@@ -175,8 +161,8 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="Ovn-b9-kYm"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o6y-gF-bzC">
-                                <rect key="frame" x="58" y="228" width="259" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o6y-gF-bzC">
+                                <rect key="frame" x="58" y="211" width="259" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="H5x-T6-r8Y"/>
                                     <constraint firstAttribute="width" constant="259" id="vQQ-S1-ZRL"/>
@@ -185,21 +171,39 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULY-4E-2BV">
+                                <rect key="frame" x="58" y="361" width="259" height="44"/>
+                                <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="Bt7-Kk-EWX"/>
+                                    <constraint firstAttribute="width" constant="259" id="Wkt-ib-JIG"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="259" id="mNh-xO-NFX"/>
+                                    <constraint firstAttribute="height" constant="44" id="swa-gY-J7S"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Create account"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="createButtonPressed:" destination="PhT-zN-TBw" eventType="touchUpInside" id="Ev1-pg-8Y7"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ULY-4E-2BV" firstAttribute="top" secondItem="NXy-es-aaO" secondAttribute="bottom" constant="30" id="4kZ-Vm-M4F"/>
                             <constraint firstItem="SIz-Ct-WhG" firstAttribute="top" secondItem="a8n-gh-JnQ" secondAttribute="bottom" constant="60" id="6BC-3o-Cm6"/>
                             <constraint firstItem="a8n-gh-JnQ" firstAttribute="centerX" secondItem="ZrZ-mc-iFc" secondAttribute="centerX" id="Dz2-3S-KN2"/>
                             <constraint firstItem="o6y-gF-bzC" firstAttribute="top" secondItem="RRT-wb-DyV" secondAttribute="bottom" constant="30" id="G3h-rW-Kmf"/>
                             <constraint firstItem="o6y-gF-bzC" firstAttribute="centerX" secondItem="ZrZ-mc-iFc" secondAttribute="centerX" id="RHJ-8w-4qg"/>
                             <constraint firstItem="Umg-Fw-erh" firstAttribute="top" secondItem="o6y-gF-bzC" secondAttribute="bottom" constant="15" id="Z2N-i3-pc7"/>
                             <constraint firstItem="RRT-wb-DyV" firstAttribute="centerX" secondItem="ZrZ-mc-iFc" secondAttribute="centerX" id="Zfg-Ka-FCo"/>
+                            <constraint firstItem="ULY-4E-2BV" firstAttribute="centerX" secondItem="ZrZ-mc-iFc" secondAttribute="centerX" id="Zhu-fy-oJ6"/>
                             <constraint firstItem="Umg-Fw-erh" firstAttribute="centerX" secondItem="ZrZ-mc-iFc" secondAttribute="centerX" id="fcg-fj-xWu"/>
                             <constraint firstItem="NXy-es-aaO" firstAttribute="centerX" secondItem="ZrZ-mc-iFc" secondAttribute="centerX" id="gbR-Lt-UVP"/>
                             <constraint firstItem="RRT-wb-DyV" firstAttribute="top" secondItem="l5w-cQ-hc2" secondAttribute="bottom" constant="60" id="hLZ-aS-pB2"/>
-                            <constraint firstItem="8AS-ux-gGe" firstAttribute="centerX" secondItem="ZrZ-mc-iFc" secondAttribute="centerX" id="iSQ-mh-KLd"/>
                             <constraint firstItem="NXy-es-aaO" firstAttribute="top" secondItem="Umg-Fw-erh" secondAttribute="bottom" constant="15" id="xGK-u4-Dx6"/>
-                            <constraint firstItem="8AS-ux-gGe" firstAttribute="top" secondItem="NXy-es-aaO" secondAttribute="bottom" constant="30" id="xpi-fW-wuH"/>
                         </constraints>
                     </view>
                     <connections>
@@ -214,6 +218,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="kuva-inverse" width="245" height="91"/>
         <image name="kuva-logo" width="387" height="150"/>
     </resources>
 </document>
