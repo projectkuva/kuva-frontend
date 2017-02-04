@@ -13,6 +13,7 @@
 		34231EC51E3FF2A800905367 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34231EC31E3FF2A800905367 /* Main.storyboard */; };
 		34231EC71E3FF2A800905367 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34231EC61E3FF2A800905367 /* Assets.xcassets */; };
 		34231ECA1E3FF2A800905367 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34231EC81E3FF2A800905367 /* LaunchScreen.storyboard */; };
+		34DD80B31E46886300C49E59 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DD80B21E46886300C49E59 /* ForgotPasswordViewController.swift */; };
 		FE5194A3A7547E3A85A1FAB9 /* Pods_Kuva.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00271136C52F3F43E8C06C30 /* Pods_Kuva.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		34231EC61E3FF2A800905367 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34231EC91E3FF2A800905367 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34231ECB1E3FF2A800905367 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34DD80B21E46886300C49E59 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		3AABB1DD9D2D81C525B9488F /* Pods-Kuva.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kuva.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kuva/Pods-Kuva.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,6 +69,7 @@
 				34231EC11E3FF2A800905367 /* ViewController.swift */,
 				2F83780E1E4522D800C724D9 /* RegisterViewController.swift */,
 				34231EC31E3FF2A800905367 /* Main.storyboard */,
+				34DD80B21E46886300C49E59 /* ForgotPasswordViewController.swift */,
 				34231EC61E3FF2A800905367 /* Assets.xcassets */,
 				34231EC81E3FF2A800905367 /* LaunchScreen.storyboard */,
 				34231ECB1E3FF2A800905367 /* Info.plist */,
@@ -126,7 +129,7 @@
 				TargetAttributes = {
 					34231EBB1E3FF2A800905367 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = ZF9FX9664L;
+						DevelopmentTeam = F6E5E2Y5US;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34DD80B31E46886300C49E59 /* ForgotPasswordViewController.swift in Sources */,
 				2F83780F1E4522D800C724D9 /* RegisterViewController.swift in Sources */,
 				34231EC21E3FF2A800905367 /* ViewController.swift in Sources */,
 				34231EC01E3FF2A800905367 /* AppDelegate.swift in Sources */,
@@ -341,10 +345,10 @@
 			baseConfigurationReference = 2703CACDCE9FDF7DDDB324B9 /* Pods-Kuva.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ZF9FX9664L;
+				DEVELOPMENT_TEAM = F6E5E2Y5US;
 				INFOPLIST_FILE = Kuva/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.purdue.kuva.Kuva;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.purdue.mess.Kuva;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -355,10 +359,10 @@
 			baseConfigurationReference = 3AABB1DD9D2D81C525B9488F /* Pods-Kuva.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ZF9FX9664L;
+				DEVELOPMENT_TEAM = F6E5E2Y5US;
 				INFOPLIST_FILE = Kuva/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.purdue.kuva.Kuva;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.purdue.mess.Kuva;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -72,7 +72,7 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Don't have an account?">
-                                    <color key="titleColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.4549019608" green="0.47058823529999999" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
@@ -81,15 +81,34 @@
                                     <segue destination="PhT-zN-TBw" kind="show" id="hve-L7-M3p"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fy1-Hd-EgK">
+                                <rect key="frame" x="58" y="375" width="259" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ha7-AH-ycU"/>
+                                    <constraint firstAttribute="width" constant="259" id="SdH-uM-SLX"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Forgot Your Password?">
+                                    <color key="titleColor" red="0.45490196078431372" green="0.47058823529411764" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="bj9-HD-ig8" kind="show" id="0TC-gt-Av2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="pma-uh-ZJg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0NP-yy-BWQ"/>
-                            <constraint firstItem="pma-uh-ZJg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="AxW-Kz-AUX"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Sb6-zr-cHD" secondAttribute="bottom" constant="60" id="ByF-fq-PHS"/>
+                            <constraint firstItem="pma-uh-ZJg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="3ZQ-JA-2sB"/>
                             <constraint firstItem="EcK-W8-Tq1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cbc-Bb-EKg"/>
+                            <constraint firstItem="fy1-Hd-EgK" firstAttribute="top" secondItem="EcK-W8-Tq1" secondAttribute="bottom" constant="15" id="Jn4-Qa-ys9"/>
                             <constraint firstItem="cuZ-km-Muu" firstAttribute="top" secondItem="pma-uh-ZJg" secondAttribute="bottom" constant="30" id="MQd-GG-4pP"/>
                             <constraint firstItem="363-ou-Bsi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MjH-FY-eqs"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Sb6-zr-cHD" secondAttribute="bottom" constant="60" id="Sfp-D9-ZZR"/>
+                            <constraint firstItem="fy1-Hd-EgK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UAA-ab-hJW"/>
                             <constraint firstItem="363-ou-Bsi" firstAttribute="top" secondItem="cuZ-km-Muu" secondAttribute="bottom" constant="15" id="ejZ-9a-HPU"/>
                             <constraint firstItem="EcK-W8-Tq1" firstAttribute="top" secondItem="363-ou-Bsi" secondAttribute="bottom" constant="30" id="evk-Zl-vr3"/>
                             <constraint firstItem="cuZ-km-Muu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ggi-dr-qeF"/>
@@ -206,6 +225,7 @@
                             <constraint firstItem="NXy-es-aaO" firstAttribute="top" secondItem="Umg-Fw-erh" secondAttribute="bottom" constant="15" id="xGK-u4-Dx6"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="emailTextField" destination="Umg-Fw-erh" id="9uV-ff-YK1"/>
                         <outlet property="passwordTextField" destination="NXy-es-aaO" id="1uM-95-U9D"/>
@@ -216,9 +236,96 @@
             </objects>
             <point key="canvasLocation" x="879" y="139"/>
         </scene>
+        <!--Forgot Password View Controller-->
+        <scene sceneID="L31-CL-Llf">
+            <objects>
+                <viewController id="bj9-HD-ig8" customClass="ForgotPasswordViewController" customModule="Kuva" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SEP-7d-zTh"/>
+                        <viewControllerLayoutGuide type="bottom" id="kDe-3Z-GW4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dWK-ge-Qos">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kuva-logo" translatesAutoresizingMaskIntoConstraints="NO" id="AT7-Bv-wtT">
+                                <rect key="frame" x="84" y="80" width="206" height="101"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="206" id="Fvw-Cl-kHD"/>
+                                    <constraint firstAttribute="height" constant="101" id="dAV-fH-Gvw"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1GI-Hg-MVL">
+                                <rect key="frame" x="58" y="211" width="259" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="259" id="2lk-dt-P8i"/>
+                                    <constraint firstAttribute="height" constant="30" id="3Vg-xQ-QAQ"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3BN-jT-baQ">
+                                <rect key="frame" x="57.5" y="271" width="259" height="44"/>
+                                <color key="backgroundColor" red="1" green="0.3998408317565918" blue="0.54427498579025269" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="aC0-tr-x2X"/>
+                                    <constraint firstAttribute="width" constant="259" id="gYP-uo-Ics"/>
+                                </constraints>
+                                <state key="normal" title="Reset Password">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="resetPressed:" destination="bj9-HD-ig8" eventType="touchUpInside" id="3bE-5x-2cP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOU-1y-ee7">
+                                <rect key="frame" x="58" y="563" width="259" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="259" id="95x-LK-wki"/>
+                                    <constraint firstAttribute="height" constant="44" id="FhM-Sh-D8V"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Already have an account?">
+                                    <color key="titleColor" red="0.4549019608" green="0.47058823529999999" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="4o4-0g-lVb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EOU-1y-ee7" firstAttribute="centerX" secondItem="dWK-ge-Qos" secondAttribute="centerX" id="86C-zJ-1LM"/>
+                            <constraint firstItem="3BN-jT-baQ" firstAttribute="centerX" secondItem="dWK-ge-Qos" secondAttribute="centerX" id="F8O-r5-1v6"/>
+                            <constraint firstItem="3BN-jT-baQ" firstAttribute="top" secondItem="1GI-Hg-MVL" secondAttribute="bottom" constant="30" id="SgM-SH-EfZ"/>
+                            <constraint firstItem="kDe-3Z-GW4" firstAttribute="top" secondItem="EOU-1y-ee7" secondAttribute="bottom" constant="60" id="Skc-op-OqS"/>
+                            <constraint firstItem="AT7-Bv-wtT" firstAttribute="top" secondItem="SEP-7d-zTh" secondAttribute="bottom" constant="60" id="rlQ-rL-t1U"/>
+                            <constraint firstItem="1GI-Hg-MVL" firstAttribute="top" secondItem="AT7-Bv-wtT" secondAttribute="bottom" constant="30" id="v4U-0m-aWW"/>
+                            <constraint firstItem="1GI-Hg-MVL" firstAttribute="centerX" secondItem="dWK-ge-Qos" secondAttribute="centerX" id="whc-4q-IMb"/>
+                            <constraint firstItem="AT7-Bv-wtT" firstAttribute="centerX" secondItem="dWK-ge-Qos" secondAttribute="centerX" id="xBp-FI-jCK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="1GI-Hg-MVL" id="IGl-7C-hxe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lQ9-U7-EuC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="553" y="897"/>
+        </scene>
     </scenes>
     <resources>
         <image name="kuva-inverse" width="245" height="91"/>
         <image name="kuva-logo" width="387" height="150"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ovn-b9-kYm"/>
+    </inferredMetricsTieBreakers>
 </document>
