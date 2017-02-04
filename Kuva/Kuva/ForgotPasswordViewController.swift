@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class ForgotPasswordViewController: UIViewController {
 
@@ -27,8 +28,16 @@ class ForgotPasswordViewController: UIViewController {
                 print("RESPONSE: \(msg)")
             }
             
-            let alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            let msgJSON = JSON(msg)
+            var alert: UIAlertController
+            let message: String = msgJSON["message"].stringValue
+            if message == "error" {
+                alert = UIAlertController(title: "bad!!!", message: "bad bad", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "☹️", style: UIAlertActionStyle.default, handler: nil))
+            } else {
+                alert = UIAlertController(title: "wow", message: "😍", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "😏", style: UIAlertActionStyle.default, handler: nil))
+            }
             self.present(alert, animated: true, completion: nil)
         }
     }
