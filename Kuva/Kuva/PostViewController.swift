@@ -40,7 +40,7 @@ class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate
         let img = UIImageJPEGRepresentation(image, 1.0)
         let caption = captionTextView.text
         let loc:CLLocationCoordinate2D = locationManager.location!.coordinate
-        let token = "randomtoken"
+        let token = super.getToken()
         
         let parameters: Parameters = [
             "photo": img,

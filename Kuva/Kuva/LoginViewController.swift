@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import JWTDecode
 
 class LoginViewController: PrimaryViewController {
 
@@ -33,10 +34,15 @@ class LoginViewController: PrimaryViewController {
             
             let json = JSON(res.value)
             let msg:String = json["message"].stringValue
-            let token:String = json["token"].stringValue
+            
             
             if msg == "success" {
                 //successful login, save auth token
+                let tok:String = json["token"].stringValue
+                
+                if !super.setToken(token: tok) {
+                    print("couldn't set token")
+                }
                 
                 let view = self.storyboard?.instantiateViewController(withIdentifier: "PostVC")
                 self.present(view!, animated:true, completion:nil)
