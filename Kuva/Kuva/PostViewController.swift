@@ -40,7 +40,9 @@ class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate
         let img = UIImageJPEGRepresentation(image, 1.0)
         let caption = captionTextView.text
         let loc:CLLocationCoordinate2D = locationManager.location!.coordinate
-        let token = super.getToken()
+        print (loc.latitude)
+        print (loc.longitude)
+        let tok = super.getToken()
         
         let parameters: Parameters = [
             "photo": img,
@@ -49,7 +51,7 @@ class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate
             "lan": loc.longitude
         ]
         
-        Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/create", method: .post, parameters: parameters, headers: ["Authorization": "Bearer \(token)"]).responseJSON{ res in
+        Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/create", method: .post, parameters: parameters, headers: ["Authorization": "Bearer \(tok)"]).responseJSON{ res in
             let json = JSON(res.value)
             print(json)
             

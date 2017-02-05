@@ -50,5 +50,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Used for tagging location of photo</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Used for tagging location of photos</string>
 </dict>
 </plist>
