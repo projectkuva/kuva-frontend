@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -236,6 +236,71 @@
             </objects>
             <point key="canvasLocation" x="879" y="139"/>
         </scene>
+        <!--Add New Photo-->
+        <scene sceneID="Q4h-Zx-KMh">
+            <objects>
+                <viewController id="hUa-4N-MAx" customClass="PostViewController" customModule="Kuva" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qNF-GX-kcH"/>
+                        <viewControllerLayoutGuide type="bottom" id="K6x-aU-NGk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aKX-Gh-IUJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Caption ur photo" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="45d-dG-gTh">
+                                <rect key="frame" x="57.5" y="398" width="259" height="130"/>
+                                <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="K0K-hw-gCc"/>
+                                    <constraint firstAttribute="width" constant="259" id="bG4-8I-JcS"/>
+                                </constraints>
+                                <color key="textColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Upload photo" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Y5B-jd-gMG">
+                                <rect key="frame" x="57.5" y="124" width="259" height="259"/>
+                                <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="259" id="9u9-oo-5PW"/>
+                                    <constraint firstAttribute="width" constant="259" id="kT2-si-pd4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IxV-Z1-Ozu">
+                                <rect key="frame" x="57.5" y="558" width="259" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="259" id="DwM-Wo-baS"/>
+                                    <constraint firstAttribute="height" constant="49" id="EsM-Ob-dUO"/>
+                                </constraints>
+                                <state key="normal" title="Post"/>
+                                <connections>
+                                    <action selector="postButtonPressed:" destination="hUa-4N-MAx" eventType="touchUpInside" id="BwS-Nl-FDN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Y5B-jd-gMG" firstAttribute="centerX" secondItem="aKX-Gh-IUJ" secondAttribute="centerX" id="LaR-zm-aXk"/>
+                            <constraint firstItem="IxV-Z1-Ozu" firstAttribute="top" secondItem="45d-dG-gTh" secondAttribute="bottom" constant="30" id="SIP-lH-O9L"/>
+                            <constraint firstItem="IxV-Z1-Ozu" firstAttribute="centerX" secondItem="aKX-Gh-IUJ" secondAttribute="centerX" id="VLB-wm-tmp"/>
+                            <constraint firstItem="45d-dG-gTh" firstAttribute="top" secondItem="Y5B-jd-gMG" secondAttribute="bottom" constant="15" id="VjK-eh-bbz"/>
+                            <constraint firstItem="45d-dG-gTh" firstAttribute="centerX" secondItem="aKX-Gh-IUJ" secondAttribute="centerX" id="awc-L2-aSk"/>
+                            <constraint firstItem="Y5B-jd-gMG" firstAttribute="top" secondItem="qNF-GX-kcH" secondAttribute="bottom" constant="60" id="y1j-tc-U2P"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add New Photo" id="w8H-33-eHd"/>
+                    <connections>
+                        <outlet property="captionTextView" destination="45d-dG-gTh" id="kuw-cT-Re5"/>
+                        <outlet property="photoTextView" destination="Y5B-jd-gMG" id="bOo-ep-R5L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cxU-RK-8gC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2725.5999999999999" y="138.98050974512745"/>
+        </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="L31-CL-Llf">
             <objects>
@@ -319,6 +384,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lQ9-U7-EuC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="553" y="897"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mCM-xK-MpD">
+            <objects>
+                <navigationController storyboardIdentifier="PostVC" automaticallyAdjustsScrollViewInsets="NO" id="tyt-Vw-gFj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="J8h-yb-B2d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hUa-4N-MAx" kind="relationship" relationship="rootViewController" id="WUm-do-mV7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gAs-5Y-XrD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1745" y="-361"/>
         </scene>
     </scenes>
     <resources>
