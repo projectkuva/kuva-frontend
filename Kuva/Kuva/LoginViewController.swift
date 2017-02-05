@@ -32,15 +32,14 @@ class LoginViewController: PrimaryViewController {
         Alamofire.request("http://kuva.jakebrabec.me/api/user/auth", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ res in
             
             let json = JSON(res.value)
-            print(json)
             let msg:String = json["message"].stringValue
             let token:String = json["token"].stringValue
             
-            print(msg)
-            print(token)
-            
             if msg == "success" {
                 //successful login, save auth token
+                
+                let view = self.storyboard?.instantiateViewController(withIdentifier: "PostVC")
+                self.present(view!, animated:true, completion:nil)
                 
             } else {
                 let alert:UIAlertController = UIAlertController(title: "bad!!!", message: "Invalid Credentials", preferredStyle: UIAlertControllerStyle.alert)

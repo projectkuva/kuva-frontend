@@ -236,7 +236,7 @@
             </objects>
             <point key="canvasLocation" x="879" y="139"/>
         </scene>
-        <!--Add New Photo-->
+        <!--Upload Photo-->
         <scene sceneID="Q4h-Zx-KMh">
             <objects>
                 <viewController id="hUa-4N-MAx" customClass="PostViewController" customModule="Kuva" customModuleProvider="target" sceneMemberID="viewController">
@@ -249,7 +249,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Caption ur photo" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="45d-dG-gTh">
-                                <rect key="frame" x="57.5" y="398" width="259" height="130"/>
+                                <rect key="frame" x="57.5" y="413" width="259" height="130"/>
                                 <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="K0K-hw-gCc"/>
@@ -259,18 +259,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Upload photo" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Y5B-jd-gMG">
-                                <rect key="frame" x="57.5" y="124" width="259" height="259"/>
-                                <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="259" id="9u9-oo-5PW"/>
-                                    <constraint firstAttribute="width" constant="259" id="kT2-si-pd4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IxV-Z1-Ozu">
-                                <rect key="frame" x="57.5" y="558" width="259" height="49"/>
+                                <rect key="frame" x="57.5" y="573" width="259" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="259" id="DwM-Wo-baS"/>
                                     <constraint firstAttribute="height" constant="49" id="EsM-Ob-dUO"/>
@@ -280,21 +270,41 @@
                                     <action selector="postButtonPressed:" destination="hUa-4N-MAx" eventType="touchUpInside" id="BwS-Nl-FDN"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rcZ-Gz-Spz">
+                                <rect key="frame" x="57.5" y="124" width="259" height="259"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="259" id="dSg-ii-Xs0"/>
+                                    <constraint firstAttribute="height" constant="259" id="ymw-dE-8eg"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCu-gv-ZtB">
+                                <rect key="frame" x="57" y="174" width="260" height="159"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Select Image">
+                                    <color key="titleColor" red="1" green="0.40000000000000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectImagePressed:" destination="hUa-4N-MAx" eventType="touchUpInside" id="4bW-Ha-pIu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Y5B-jd-gMG" firstAttribute="centerX" secondItem="aKX-Gh-IUJ" secondAttribute="centerX" id="LaR-zm-aXk"/>
+                            <constraint firstItem="rcZ-Gz-Spz" firstAttribute="centerX" secondItem="aKX-Gh-IUJ" secondAttribute="centerX" id="C86-0B-4Ip"/>
+                            <constraint firstItem="45d-dG-gTh" firstAttribute="top" secondItem="rcZ-Gz-Spz" secondAttribute="bottom" constant="30" id="GBc-oy-i4R"/>
                             <constraint firstItem="IxV-Z1-Ozu" firstAttribute="top" secondItem="45d-dG-gTh" secondAttribute="bottom" constant="30" id="SIP-lH-O9L"/>
                             <constraint firstItem="IxV-Z1-Ozu" firstAttribute="centerX" secondItem="aKX-Gh-IUJ" secondAttribute="centerX" id="VLB-wm-tmp"/>
-                            <constraint firstItem="45d-dG-gTh" firstAttribute="top" secondItem="Y5B-jd-gMG" secondAttribute="bottom" constant="15" id="VjK-eh-bbz"/>
                             <constraint firstItem="45d-dG-gTh" firstAttribute="centerX" secondItem="aKX-Gh-IUJ" secondAttribute="centerX" id="awc-L2-aSk"/>
-                            <constraint firstItem="Y5B-jd-gMG" firstAttribute="top" secondItem="qNF-GX-kcH" secondAttribute="bottom" constant="60" id="y1j-tc-U2P"/>
+                            <constraint firstItem="rcZ-Gz-Spz" firstAttribute="top" secondItem="qNF-GX-kcH" secondAttribute="bottom" constant="60" id="kpY-Ha-TKh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add New Photo" id="w8H-33-eHd"/>
+                    <navigationItem key="navigationItem" title="Upload Photo" id="w8H-33-eHd"/>
                     <connections>
                         <outlet property="captionTextView" destination="45d-dG-gTh" id="kuw-cT-Re5"/>
-                        <outlet property="photoTextView" destination="Y5B-jd-gMG" id="bOo-ep-R5L"/>
+                        <outlet property="previewImageView" destination="rcZ-Gz-Spz" id="CyK-o4-TKt"/>
+                        <outlet property="selectImageButton" destination="jCu-gv-ZtB" id="p65-xr-W2a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cxU-RK-8gC" userLabel="First Responder" sceneMemberID="firstResponder"/>

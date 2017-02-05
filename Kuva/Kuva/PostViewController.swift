@@ -8,24 +8,87 @@
 
 import UIKit
 import Alamofire
+import CoreLocation
+import SwiftyJSON
 
-class PostViewController: PrimaryViewController {
+class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
 
-    @IBOutlet var photoTextView: UITextView!
     @IBOutlet var captionTextView: UITextView!
+    @IBOutlet weak var previewImageView: UIImageView!
+    @IBOutlet weak var selectImageButton: UIButton!
+    var locationManager = CLLocationManager()
+    
+    @IBAction func selectImagePressed(_ sender: Any) {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        self.present(picker, animated: true, completion: nil)
+        
+    }
+    
     
     @IBAction func postButtonPressed(_ sender: Any) {
         
         let caption = captionTextView.text
-        let photo = photoTextView.text
 
         //we need auth
+    }
+    
+
+    //Uploads the selected image
+    func uploadImage(image: UIImage) {
+        
+        let img = UIImageJPEGRepresentation(image, 1.0)
+        let caption = captionTextView.text
+        let loc:CLLocationCoordinate2D = locationManager.location!.coordinate
+        let token = "randomtoken"
+        
+        let parameters: Parameters = [
+            "photo": img,
+            "caption": caption,
+            "lat": loc.latitude,
+            "lan": loc.longitude
+        ]
+        
+        Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/create", method: .post, parameters: parameters, headers: ["Authorization": "Bearer \(token)"]).responseJSON{ res in
+            let json = JSON(res.value)
+            print(json)
+            
+            
+        }
+        
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let img = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            self.previewImageView.image = img
+            self.selectImageButton.isEnabled = false
+            self.selectImageButton.isHidden = true
+            uploadImage(image: img)
+            picker.dismiss(animated: true, completion: nil)
+            
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        locationManager.delegate = self
+        
+        if CLLocationManager.authorizationStatus() == .notDetermined {
+            self.locationManager.requestWhenInUseAuthorization()
+        }
+        
+        locationManager.distanceFilter = kCLDistanceFilterNone
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+        
     }
 
     override func didReceiveMemoryWarning() {

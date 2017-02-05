@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class RegisterViewController: PrimaryViewController {
 
@@ -37,11 +38,26 @@ class RegisterViewController: PrimaryViewController {
             "email": email
         ]
         
-        Alamofire.request("http://kuva.jakebrabec.me/api/user/register", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
+        Alamofire.request("http://kuva.jakebrabec.me/api/user/register", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ res in
             
-            if let auth = response.result.value {
-                print("AUTH: \(auth)")
+            let json = JSON(res.value)
+            let msg:String = json["message"].stringValue
+            let token:String = json["token"].stringValue
+            //WE NEED TO GET THE ERRORS AND SUCH
+            
+            if msg == "success" {
+                //successful login, save auth token
+                
+                let view = self.storyboard?.instantiateViewController(withIdentifier: "PostVC")
+                self.present(view!, animated:true, completion:nil)
+                
+            } else {
+                let alert:UIAlertController = UIAlertController(title: "bad!!!", message: "Invalid Credentials", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "☹️", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                self.passwordTextField.text = ""
             }
+
             
         }
 
