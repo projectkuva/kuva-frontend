@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: PrimaryViewController {
 
     
     @IBOutlet var usernameTextField: UITextField!

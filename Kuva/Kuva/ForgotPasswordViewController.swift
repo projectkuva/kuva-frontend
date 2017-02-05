@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class ForgotPasswordViewController: UIViewController {
+class ForgotPasswordViewController: PrimaryViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     
