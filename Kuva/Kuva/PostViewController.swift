@@ -16,6 +16,8 @@ class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate
     @IBOutlet var captionTextView: UITextView!
     @IBOutlet weak var previewImageView: UIImageView!
     @IBOutlet weak var selectImageButton: UIButton!
+    var path:URL!
+    
     var locationManager = CLLocationManager()
     
     @IBAction func selectImagePressed(_ sender: Any) {
@@ -28,37 +30,65 @@ class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate
     
     @IBAction func postButtonPressed(_ sender: Any) {
         
-        let caption = captionTextView.text
+        let caption:String = captionTextView.text
+        let loc:CLLocationCoordinate2D = locationManager.location!.coordinate
+        let tok = super.getToken()!
+        
+        //Latitude
+        let lat:String = String(loc.latitude)
+        print(lat)
+        //Longitude
+        let lng:String = String(loc.longitude)
+        print(lng)
+        print(self.path)
+        //Authorization token
+        let headers = ["Authorization": "Bearer \(tok)"]
+        //Request URL
+        let URL = try! URLRequest(url: "http://kuva.jakebrabec.me/api/user/photos/create", method: .post, headers: headers)
+        
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            multipartFormData.append(self.path, withName: "photo", fileName: self.path.path, mimeType: "image/jpg")
+            multipartFormData.append(caption.data(using: .utf8)!, withName: "caption")
+            multipartFormData.append(lat.data(using: .utf8)!, withName: "lat")
+            multipartFormData.append(lng.data(using: .utf8)!, withName: "lng")
+        }, with: URL, encodingCompletion: { (result) in
+            switch result {
+            case .success(let upload, _, _):
+                upload.responseJSON { res in
+                    if let JSON = res.result.value {
+                        print("JSON: \(JSON)")
+                        let alert:UIAlertController = UIAlertController(title: "Image posted", message: "yey", preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: ":)", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
 
-        //we need auth
+                    }
+                }
+                
+            case .failure(let encodingError):
+                print(encodingError)
+            }
+        })
+        
+
+       
     }
     
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
+    }
 
     //Uploads the selected image
     func uploadImage(image: UIImage) {
-        
-        let img = UIImageJPEGRepresentation(image, 1.0)
-        let caption = captionTextView.text
-        let loc:CLLocationCoordinate2D = locationManager.location!.coordinate
-        print (loc.latitude)
-        print (loc.longitude)
-        let tok = super.getToken()
-        
-        let parameters: Parameters = [
-            "photo": img,
-            "caption": caption,
-            "lat": loc.latitude,
-            "lan": loc.longitude
-        ]
-        
-        Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/create", method: .post, parameters: parameters, headers: ["Authorization": "Bearer \(tok)"]).responseJSON{ res in
-            let json = JSON(res.value)
-            print(json)
+        if let data = UIImageJPEGRepresentation(image, 1.0) {
+            let filename = getDocumentsDirectory().appendingPathComponent("copy.jpg")
+            try? data.write(to: filename)
             
+            //Filepath
+            self.path = filename
             
         }
-        
-        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
