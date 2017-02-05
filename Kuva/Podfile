@@ -5,4 +5,6 @@ use_frameworks!
 target 'Kuva' do
   pod 'Alamofire', '~> 4.3'
   pod 'SwiftyJSON', '~> 3.1.4'
+  pod 'JWTDecode', '~> 2.0.0'
+  pod 'KeychainSwift', '~> 7.0'
 end

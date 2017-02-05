@@ -8,6 +8,8 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
+import JWTDecode
 
 class LoginViewController: PrimaryViewController {
 
@@ -28,10 +30,28 @@ class LoginViewController: PrimaryViewController {
         ]
         
         //use AlamoFire to login with backend
-        Alamofire.request("http://kuva.jakebrabec.me/api/user/auth", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
+        Alamofire.request("http://kuva.jakebrabec.me/api/user/auth", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ res in
             
-            if let auth = response.result.value {
-                print("AUTH: \(auth)")
+            let json = JSON(res.value)
+            let msg:String = json["message"].stringValue
+            
+            
+            if msg == "success" {
+                //successful login, save auth token
+                let tok:String = json["token"].stringValue
+                
+                if !super.setToken(token: tok) {
+                    print("couldn't set token")
+                }
+                
+                let view = self.storyboard?.instantiateViewController(withIdentifier: "PostVC")
+                self.present(view!, animated:true, completion:nil)
+                
+            } else {
+                let alert:UIAlertController = UIAlertController(title: "bad!!!", message: "Invalid Credentials", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "☹️", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                self.passwordTextField.text = ""
             }
             
         }

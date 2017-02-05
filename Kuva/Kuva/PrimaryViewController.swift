@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import KeychainSwift
 
 class PrimaryViewController: UIViewController {
 
+    let keychain = KeychainSwift()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,6 +31,22 @@ class PrimaryViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setToken(token: String) -> Bool {
+        return keychain.set(token, forKey: "token")
+    }
+    
+    func loggedIn() -> Bool {
+        return keychain.get("token") != nil && keychain.get("token") != ""
+    }
+    
+    func logOut() {
+        keychain.delete("token")
+    }
+    
+    func getToken() -> String? {
+        return keychain.get("token")
     }
     
 
