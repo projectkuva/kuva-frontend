@@ -289,7 +289,7 @@
                                     <constraint firstAttribute="height" constant="44" id="FhM-Sh-D8V"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Already have an account?">
+                                <state key="normal" title="Go back to sign in?">
                                     <color key="titleColor" red="0.4549019608" green="0.47058823529999999" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
