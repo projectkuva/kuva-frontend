@@ -22,16 +22,13 @@ class ForgotPasswordViewController: UIViewController {
         ]
         
         //use AlamoFire to send reset password request
-        Alamofire.request("http://kuva.jakebrabec.me/api/user/reset", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
+        Alamofire.request("http://kuva.jakebrabec.me/api/user/reset", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ res in
+
+            let json = JSON(res.value)
+            let msg:String = json["message"].stringValue
             
-            if let msg = response.result.value {
-                print("RESPONSE: \(msg)")
-            }
-            
-            let msgJSON = JSON(msg)
             var alert: UIAlertController
-            let message: String = msgJSON["message"].stringValue
-            if message == "error" {
+            if msg == "error" {
                 alert = UIAlertController(title: "bad!!!", message: "bad bad", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "☹️", style: UIAlertActionStyle.default, handler: nil))
             } else {
@@ -44,8 +41,17 @@ class ForgotPasswordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ForgotPasswordViewController.dismissKeyboard))
+        
+         view.addGestureRecognizer(tap)
 
         // Do any additional setup after loading the view.
+    }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
