@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class ViewController: PrimaryViewController {
+class LoginViewController: PrimaryViewController {
 
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
