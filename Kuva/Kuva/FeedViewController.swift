@@ -47,7 +47,6 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
             for (index, object) in json {
                 let photoID = object["id"].stringValue
                 self.posts.add(photoID)
-                print(photoID)
             }
             self.postsCollectionView.reloadData()
         }
@@ -116,7 +115,6 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let post:String = self.posts[indexPath.row] as! String
         Alamofire.request("http://kuva.jakebrabec.me/storage/uploads/\(post).jpg").responseImage { res in
             if let image = res.result.value {
-                print("image downloaded: \(image)")
                 cell.postImageView.image = image
             }
         }
