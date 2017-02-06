@@ -43,6 +43,8 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
             let json = JSON(res.value)
             print(json)
             
+            //add the photos to posts array
+            
             self.postsCollectionView.reloadData()
             
         }
