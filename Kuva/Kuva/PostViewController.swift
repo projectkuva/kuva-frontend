@@ -111,6 +111,7 @@ class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
         locationManager.delegate = self
         
         if CLLocationManager.authorizationStatus() == .notDetermined {

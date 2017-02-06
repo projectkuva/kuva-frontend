@@ -58,7 +58,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kuva-logo" translatesAutoresizingMaskIntoConstraints="NO" id="pma-uh-ZJg">
-                                <rect key="frame" x="84" y="80" width="206" height="101"/>
+                                <rect key="frame" x="84.5" y="80" width="206" height="101"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="206" id="jvU-wq-r5g"/>
                                     <constraint firstAttribute="height" constant="101" id="wpc-Xv-SQe"/>
@@ -157,7 +157,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kuva-inverse" translatesAutoresizingMaskIntoConstraints="NO" id="RRT-wb-DyV">
-                                <rect key="frame" x="84" y="80" width="206" height="101"/>
+                                <rect key="frame" x="84.5" y="80" width="206" height="101"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="206" id="eW2-R0-QRi"/>
                                     <constraint firstAttribute="height" constant="101" id="so8-OP-LN5"/>
@@ -239,7 +239,7 @@
         <!--Upload Photo-->
         <scene sceneID="Q4h-Zx-KMh">
             <objects>
-                <viewController id="hUa-4N-MAx" customClass="PostViewController" customModule="Kuva" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostViewController" automaticallyAdjustsScrollViewInsets="NO" id="hUa-4N-MAx" customClass="PostViewController" customModule="Kuva" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qNF-GX-kcH"/>
                         <viewControllerLayoutGuide type="bottom" id="K6x-aU-NGk"/>
@@ -248,59 +248,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Caption ur photo" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="45d-dG-gTh">
-                                <rect key="frame" x="57.5" y="413" width="259" height="130"/>
-                                <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="130" id="K0K-hw-gCc"/>
-                                    <constraint firstAttribute="width" constant="259" id="bG4-8I-JcS"/>
-                                </constraints>
-                                <color key="textColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IxV-Z1-Ozu">
-                                <rect key="frame" x="57.5" y="573" width="259" height="49"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IxV-Z1-Ozu">
+                                <rect key="frame" x="58" y="543" width="259" height="49"/>
+                                <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="259" id="DwM-Wo-baS"/>
                                     <constraint firstAttribute="height" constant="49" id="EsM-Ob-dUO"/>
                                 </constraints>
-                                <state key="normal" title="Post"/>
+                                <state key="normal" title="Post">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="postButtonPressed:" destination="hUa-4N-MAx" eventType="touchUpInside" id="BwS-Nl-FDN"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rcZ-Gz-Spz">
-                                <rect key="frame" x="57.5" y="124" width="259" height="259"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="269"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="259" id="dSg-ii-Xs0"/>
-                                    <constraint firstAttribute="height" constant="259" id="ymw-dE-8eg"/>
+                                    <constraint firstAttribute="width" constant="375" id="224-fD-ExZ"/>
+                                    <constraint firstAttribute="height" constant="269" id="FQW-hd-3bk"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCu-gv-ZtB">
-                                <rect key="frame" x="57" y="174" width="260" height="159"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Select Image">
-                                    <color key="titleColor" red="1" green="0.40000000000000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCu-gv-ZtB">
+                                <rect key="frame" x="0.0" y="64" width="375" height="269"/>
+                                <color key="backgroundColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Select Image +">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="selectImagePressed:" destination="hUa-4N-MAx" eventType="touchUpInside" id="4bW-Ha-pIu"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add a caption..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="45d-dG-gTh">
+                                <rect key="frame" x="58" y="363" width="259" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="gcV-r0-1iJ"/>
+                                    <constraint firstAttribute="width" constant="259" id="owO-52-QP8"/>
+                                </constraints>
+                                <color key="textColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="jCu-gv-ZtB" firstAttribute="leading" secondItem="rcZ-Gz-Spz" secondAttribute="leading" id="1L7-uL-mED"/>
+                            <constraint firstItem="rcZ-Gz-Spz" firstAttribute="top" secondItem="qNF-GX-kcH" secondAttribute="bottom" id="40s-XP-55O"/>
                             <constraint firstItem="rcZ-Gz-Spz" firstAttribute="centerX" secondItem="aKX-Gh-IUJ" secondAttribute="centerX" id="C86-0B-4Ip"/>
-                            <constraint firstItem="45d-dG-gTh" firstAttribute="top" secondItem="rcZ-Gz-Spz" secondAttribute="bottom" constant="30" id="GBc-oy-i4R"/>
-                            <constraint firstItem="IxV-Z1-Ozu" firstAttribute="top" secondItem="45d-dG-gTh" secondAttribute="bottom" constant="30" id="SIP-lH-O9L"/>
+                            <constraint firstItem="45d-dG-gTh" firstAttribute="top" secondItem="jCu-gv-ZtB" secondAttribute="bottom" constant="30" id="KSL-Iv-5zg"/>
+                            <constraint firstAttribute="trailing" secondItem="rcZ-Gz-Spz" secondAttribute="trailing" id="Oc9-2G-Hhk"/>
+                            <constraint firstItem="jCu-gv-ZtB" firstAttribute="top" secondItem="rcZ-Gz-Spz" secondAttribute="top" id="RsL-ry-bUK"/>
+                            <constraint firstItem="jCu-gv-ZtB" firstAttribute="trailing" secondItem="rcZ-Gz-Spz" secondAttribute="trailing" id="TG0-aE-6f2"/>
                             <constraint firstItem="IxV-Z1-Ozu" firstAttribute="centerX" secondItem="aKX-Gh-IUJ" secondAttribute="centerX" id="VLB-wm-tmp"/>
                             <constraint firstItem="45d-dG-gTh" firstAttribute="centerX" secondItem="aKX-Gh-IUJ" secondAttribute="centerX" id="awc-L2-aSk"/>
-                            <constraint firstItem="rcZ-Gz-Spz" firstAttribute="top" secondItem="qNF-GX-kcH" secondAttribute="bottom" constant="60" id="kpY-Ha-TKh"/>
+                            <constraint firstItem="jCu-gv-ZtB" firstAttribute="bottom" secondItem="rcZ-Gz-Spz" secondAttribute="bottom" id="cG6-HL-C1H"/>
+                            <constraint firstItem="rcZ-Gz-Spz" firstAttribute="leading" secondItem="aKX-Gh-IUJ" secondAttribute="leading" id="grq-w6-9YH"/>
+                            <constraint firstItem="rcZ-Gz-Spz" firstAttribute="centerX" secondItem="aKX-Gh-IUJ" secondAttribute="centerX" id="gs2-il-KMn"/>
+                            <constraint firstItem="45d-dG-gTh" firstAttribute="centerX" secondItem="aKX-Gh-IUJ" secondAttribute="centerX" id="iIQ-5m-oV0"/>
+                            <constraint firstItem="K6x-aU-NGk" firstAttribute="top" secondItem="IxV-Z1-Ozu" secondAttribute="bottom" constant="60" id="rYL-gT-scc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Upload Photo" id="w8H-33-eHd"/>
+                    <navigationItem key="navigationItem" title="Upload Photo" id="w8H-33-eHd">
+                        <barButtonItem key="backBarButtonItem" title="back" id="IYy-6j-dav"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="oOl-Ex-xf8">
+                            <color key="tintColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="Ork-SK-aQJ" kind="show" id="0Mw-Rx-Gbp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="captionTextView" destination="45d-dG-gTh" id="kuw-cT-Re5"/>
                         <outlet property="previewImageView" destination="rcZ-Gz-Spz" id="CyK-o4-TKt"/>
@@ -309,7 +328,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cxU-RK-8gC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2725.5999999999999" y="138.98050974512745"/>
+            <point key="canvasLocation" x="1744.8" y="138.98050974512745"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="L31-CL-Llf">
@@ -324,7 +343,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kuva-logo" translatesAutoresizingMaskIntoConstraints="NO" id="AT7-Bv-wtT">
-                                <rect key="frame" x="84" y="80" width="206" height="101"/>
+                                <rect key="frame" x="84.5" y="80" width="206" height="101"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="206" id="Fvw-Cl-kHD"/>
                                     <constraint firstAttribute="height" constant="101" id="dAV-fH-Gvw"/>
@@ -341,7 +360,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3BN-jT-baQ">
-                                <rect key="frame" x="57.5" y="271" width="259" height="44"/>
+                                <rect key="frame" x="58" y="271" width="259" height="44"/>
                                 <color key="backgroundColor" red="1" green="0.3998408317565918" blue="0.54427498579025269" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="aC0-tr-x2X"/>
@@ -400,7 +419,7 @@
             <objects>
                 <navigationController storyboardIdentifier="PostVC" automaticallyAdjustsScrollViewInsets="NO" id="tyt-Vw-gFj" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="J8h-yb-B2d">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="J8h-yb-B2d">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -411,7 +430,103 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gAs-5Y-XrD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1745" y="-361"/>
+            <point key="canvasLocation" x="1745" y="-750"/>
+        </scene>
+        <!--kuva-->
+        <scene sceneID="1zx-YL-HcG">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Ork-SK-aQJ" customClass="FeedViewController" customModule="Kuva" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gbq-wf-EGu"/>
+                        <viewControllerLayoutGuide type="bottom" id="fac-XP-8eu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="340-GH-Cq9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NwH-dy-ne2">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="DcC-n6-dig">
+                                    <size key="itemSize" width="160" height="160"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="RGt-O6-TSR" customClass="PostCollectionViewCell" customModule="Kuva" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="10" width="160" height="160"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qkF-sr-PDZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="qkF-sr-PDZ" secondAttribute="bottom" id="2ZS-eh-ZPX"/>
+                                            <constraint firstItem="qkF-sr-PDZ" firstAttribute="top" secondItem="RGt-O6-TSR" secondAttribute="top" id="F4C-lo-ubg"/>
+                                            <constraint firstAttribute="trailing" secondItem="qkF-sr-PDZ" secondAttribute="trailing" id="hfM-ol-xIy"/>
+                                            <constraint firstItem="qkF-sr-PDZ" firstAttribute="leading" secondItem="RGt-O6-TSR" secondAttribute="leading" id="tAl-b4-qgr"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="postImageView" destination="qkF-sr-PDZ" id="T6Z-Mk-LYU"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NwH-dy-ne2" firstAttribute="leading" secondItem="340-GH-Cq9" secondAttribute="leading" id="6bh-Xk-rm5"/>
+                            <constraint firstItem="NwH-dy-ne2" firstAttribute="centerX" secondItem="340-GH-Cq9" secondAttribute="centerX" id="7un-OT-h4m"/>
+                            <constraint firstAttribute="trailing" secondItem="NwH-dy-ne2" secondAttribute="trailing" id="Lie-E4-aZ2"/>
+                            <constraint firstItem="fac-XP-8eu" firstAttribute="top" secondItem="NwH-dy-ne2" secondAttribute="bottom" id="MQq-wO-qex"/>
+                            <constraint firstItem="NwH-dy-ne2" firstAttribute="top" secondItem="gbq-wf-EGu" secondAttribute="bottom" id="VPJ-PY-fLR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="kuva" id="66d-QL-fxI">
+                        <barButtonItem key="leftBarButtonItem" systemItem="camera" id="lbG-YG-BUl">
+                            <color key="tintColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Euz-lO-yeS">
+                            <color key="tintColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="hUa-4N-MAx" kind="show" id="UIG-yQ-CIB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="postsCollectionView" destination="NwH-dy-ne2" id="fdu-rg-NqN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zld-Ua-31q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2493.5999999999999" y="762.36881559220399"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bAh-Hu-cAs">
+            <objects>
+                <navigationController storyboardIdentifier="FeedVC" automaticallyAdjustsScrollViewInsets="NO" id="u1j-hc-KzO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" backIndicatorImage="kuva-logo" id="cKb-R7-6pQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="64" right="8"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ork-SK-aQJ" kind="relationship" relationship="rootViewController" id="zS2-ZG-2PV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wlc-U0-P6W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2494" y="-750"/>
         </scene>
     </scenes>
     <resources>
@@ -420,5 +535,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Ovn-b9-kYm"/>
+        <segue reference="0Mw-Rx-Gbp"/>
+        <segue reference="UIG-yQ-CIB"/>
     </inferredMetricsTieBreakers>
 </document>

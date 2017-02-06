@@ -7,4 +7,5 @@ target 'Kuva' do
   pod 'SwiftyJSON', '~> 3.1.4'
   pod 'JWTDecode', '~> 2.0.0'
   pod 'KeychainSwift', '~> 7.0'
+  pod 'AlamofireImage', '~> 3.1'
 end

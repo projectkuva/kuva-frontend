@@ -17,7 +17,16 @@ class LoginViewController: PrimaryViewController {
     @IBOutlet var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view, typically from a nib.
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if super.loggedIn() {
+            let view = self.storyboard?.instantiateViewController(withIdentifier: "FeedVC")
+            self.present(view!, animated:true, completion:nil)
+        }
     }
 
     @IBAction func signinButtonPressed(_ sender: Any) {
@@ -44,7 +53,7 @@ class LoginViewController: PrimaryViewController {
                     print("couldn't set token")
                 }
                 
-                let view = self.storyboard?.instantiateViewController(withIdentifier: "PostVC")
+                let view = self.storyboard?.instantiateViewController(withIdentifier: "FeedVC")
                 self.present(view!, animated:true, completion:nil)
                 
             } else {
