@@ -12,6 +12,7 @@ import SwiftyJSON
 import JWTDecode
 import KeychainSwift
 import CoreLocation
+import AlamofireImage
 
 private let reuseIdentifier = "Cell"
 
@@ -41,15 +42,15 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/feed", parameters: parameters, headers: ["Authorization": "Bearer \(tok)"]).responseJSON{ res in
             
             let json = JSON(res.value)
-            print(json)
             
             //add the photos to posts array
-            
+            for (index, object) in json {
+                let photoID = object["id"].stringValue
+                self.posts.add(photoID)
+                print(photoID)
+            }
             self.postsCollectionView.reloadData()
-            
         }
-
-        
     }
 
     override func viewDidLoad() {
@@ -112,7 +113,14 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
         // Configure the cell
         
-        let post = self.posts[indexPath.row]
+        let post:String = self.posts[indexPath.row] as! String
+        Alamofire.request("http://kuva.jakebrabec.me/storage/uploads/\(post).jpg").responseImage { res in
+            if let image = res.result.value {
+                print("image downloaded: \(image)")
+                cell.postImageView.image = image
+            }
+        }
+        
     
         return cell
     }

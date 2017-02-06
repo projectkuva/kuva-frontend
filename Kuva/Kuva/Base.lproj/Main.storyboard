@@ -416,7 +416,7 @@
         <!--kuva-->
         <scene sceneID="1zx-YL-HcG">
             <objects>
-                <viewController storyboardIdentifier="FeedViewController" automaticallyAdjustsScrollViewInsets="NO" id="Ork-SK-aQJ" customClass="FeedViewController" customModule="Kuva" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Ork-SK-aQJ" customClass="FeedViewController" customModule="Kuva" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gbq-wf-EGu"/>
                         <viewControllerLayoutGuide type="bottom" id="fac-XP-8eu"/>
@@ -428,35 +428,30 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NwH-dy-ne2">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DcC-n6-dig">
-                                    <size key="itemSize" width="120" height="120"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="DcC-n6-dig">
+                                    <size key="itemSize" width="160" height="160"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="RGt-O6-TSR" customClass="PostCollectionViewCell" customModule="Kuva" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="10" width="120" height="120"/>
+                                        <rect key="frame" x="10" y="10" width="160" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qkF-sr-PDZ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="120" id="5iM-j2-1G7"/>
-                                                        <constraint firstAttribute="height" constant="120" id="SgU-NO-H4H"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="qkF-sr-PDZ" secondAttribute="trailing" id="4OC-4r-Dhq"/>
-                                            <constraint firstItem="qkF-sr-PDZ" firstAttribute="leading" secondItem="RGt-O6-TSR" secondAttribute="leading" id="JYM-Tc-jDy"/>
-                                            <constraint firstItem="qkF-sr-PDZ" firstAttribute="top" secondItem="RGt-O6-TSR" secondAttribute="top" id="UMS-zN-ju4"/>
-                                            <constraint firstAttribute="bottom" secondItem="qkF-sr-PDZ" secondAttribute="bottom" id="cS3-l9-dgC"/>
-                                            <constraint firstItem="qkF-sr-PDZ" firstAttribute="centerX" secondItem="RGt-O6-TSR" secondAttribute="centerX" id="mJX-19-TxU"/>
+                                            <constraint firstAttribute="bottom" secondItem="qkF-sr-PDZ" secondAttribute="bottom" id="2ZS-eh-ZPX"/>
+                                            <constraint firstItem="qkF-sr-PDZ" firstAttribute="top" secondItem="RGt-O6-TSR" secondAttribute="top" id="F4C-lo-ubg"/>
+                                            <constraint firstAttribute="trailing" secondItem="qkF-sr-PDZ" secondAttribute="trailing" id="hfM-ol-xIy"/>
+                                            <constraint firstItem="qkF-sr-PDZ" firstAttribute="leading" secondItem="RGt-O6-TSR" secondAttribute="leading" id="tAl-b4-qgr"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="postImageView" destination="qkF-sr-PDZ" id="T6Z-Mk-LYU"/>
@@ -486,7 +481,7 @@
         <!--Navigation Controller-->
         <scene sceneID="bAh-Hu-cAs">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="u1j-hc-KzO" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="FeedVC" automaticallyAdjustsScrollViewInsets="NO" id="u1j-hc-KzO" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cKb-R7-6pQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
