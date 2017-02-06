@@ -55,6 +55,11 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 25))
+        imageView.contentMode = .scaleAspectFit
+        let logo = UIImage(named: "kuva-logo")
+        imageView.image = logo
+        navigationItem.titleView = imageView
         
        self.postsCollectionView.delegate = self
        self.postsCollectionView.dataSource = self
