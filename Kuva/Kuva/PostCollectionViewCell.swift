@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class PostCollectionViewCell: UICollectionViewCell {
     
@@ -16,4 +17,6 @@ class PostCollectionViewCell: UICollectionViewCell {
     var numLikes: String? = nil
     var caption: String? = nil
     var created: Date? = nil
+    var comments: [JSON] = []
+    var ready: Bool = false
 }

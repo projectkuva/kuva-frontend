@@ -29,6 +29,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         var numLikes: String? = nil
         var caption: String? = nil
         var created: Date? = nil
+        var comments: [JSON] = []
     }
     
     @IBOutlet weak var postsCollectionView: UICollectionView!
@@ -88,6 +89,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 post.numComments = object["numComments"].stringValue
                 post.caption = object["caption"].stringValue
                 post.created = dateFormatter.date(from: object["created_at"].stringValue)
+                post.comments = object["comments"].array!
                 self.posts.add(post)
             }
             self.postsCollectionView.reloadData()
@@ -96,6 +98,9 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! PostCollectionViewCell
+        if !cell.ready {
+            return
+        }
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let detailView = storyboard.instantiateViewController(withIdentifier: "detailView") as! PostDetailViewController
         detailView.id = cell.id
@@ -104,6 +109,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         detailView.caption = cell.caption
         detailView.created = cell.created
         detailView.postImage = cell.postImageView.image
+        detailView.comments = cell.comments
         self.navigationController?.pushViewController(detailView, animated: true)
     }
 
@@ -180,6 +186,8 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 cell.numComments = post.numComments
                 cell.caption = post.caption
                 cell.created = post.created
+                cell.comments = post.comments
+                cell.ready = true
             }
         }
         
