@@ -509,7 +509,7 @@
         <!--Image Detail-->
         <scene sceneID="wvj-gT-XUD">
             <objects>
-                <viewController id="ayn-oL-fo1" customClass="PostDetailViewController" customModule="Kuva" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailView" id="ayn-oL-fo1" customClass="PostDetailViewController" customModule="Kuva" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1fX-Vw-FuQ"/>
                         <viewControllerLayoutGuide type="bottom" id="hxN-DC-29E"/>
@@ -585,7 +585,7 @@
                                         <rect key="frame" x="0.0" y="28" width="313" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GW9-fQ-pFk" id="8d2-hj-J1P">
-                                            <rect key="frame" x="0.0" y="0.0" width="313" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="313" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -619,6 +619,13 @@
                     <navigationItem key="navigationItem" title="Image Detail" id="biK-Ln-dwI">
                         <barButtonItem key="backBarButtonItem" title="Back" id="FN2-xs-YUY"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="captionLabel" destination="Mzp-cG-XpT" id="GYt-ox-w2d"/>
+                        <outlet property="commentsLabel" destination="RWz-J3-Zzk" id="8r9-18-HEf"/>
+                        <outlet property="dateLabel" destination="L7q-2t-sQk" id="nkM-Wh-6Oi"/>
+                        <outlet property="likesLabel" destination="J9n-ws-SPt" id="pdN-sN-yyl"/>
+                        <outlet property="postImageView" destination="Wy1-nW-PPb" id="aoA-1f-DJq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqS-ct-cFY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,10 +9,28 @@
 import UIKit
 
 class PostDetailViewController: PrimaryViewController {
+    
+    @IBOutlet weak var postImageView: UIImageView!
+    @IBOutlet weak var likesLabel: UILabel!
+    @IBOutlet weak var commentsLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var captionLabel: UILabel!
+    
+    var id: Int = 0
+    var numComments: String? = nil
+    var numLikes: String? = nil
+    var caption: String? = nil
+    var created: Date? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        likesLabel.text = self.numLikes
+        commentsLabel.text = self.numComments
+        captionLabel.text = self.caption
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateLabel.text = dateFormatter.string(from: self.created!)
         // Do any additional setup after loading the view.
     }
 
