@@ -77,6 +77,12 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
             self.postsCollectionView.reloadData()
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath)
+        let cell = collectionView.cellForItem(at: indexPath) as! PostCollectionViewCell
+        print(cell.postImageView)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
