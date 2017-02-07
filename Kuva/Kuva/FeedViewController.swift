@@ -103,6 +103,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         detailView.numComments = cell.numComments
         detailView.caption = cell.caption
         detailView.created = cell.created
+        detailView.postImage = cell.postImageView.image
         self.navigationController?.pushViewController(detailView, animated: true)
     }
 

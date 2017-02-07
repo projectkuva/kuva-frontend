@@ -21,6 +21,7 @@ class PostDetailViewController: PrimaryViewController {
     var numLikes: String? = nil
     var caption: String? = nil
     var created: Date? = nil
+    var postImage: UIImage? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +29,11 @@ class PostDetailViewController: PrimaryViewController {
         likesLabel.text = self.numLikes
         commentsLabel.text = self.numComments
         captionLabel.text = self.caption
+        captionLabel.numberOfLines = 0
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         dateLabel.text = dateFormatter.string(from: self.created!)
+        postImageView.image = postImage
         // Do any additional setup after loading the view.
     }
 
