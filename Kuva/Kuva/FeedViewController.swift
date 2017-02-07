@@ -16,13 +16,39 @@ import AlamofireImage
 
 private let reuseIdentifier = "Cell"
 
-class FeedViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, CLLocationManagerDelegate {
+class FeedViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
     
     let keychain = KeychainSwift()
     var posts = NSMutableArray()
     var locationManager = CLLocationManager()
+    var cameraImage: UIImage? = nil
     
     @IBOutlet weak var postsCollectionView: UICollectionView!
+    
+    @IBAction func cameraButtonPressed(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+            imagePicker.cameraCaptureMode = .photo
+            imagePicker.modalPresentationStyle = .fullScreen
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        cameraImage = info[UIImagePickerControllerOriginalImage] as! UIImage?
+        self.dismiss(animated: true, completion: nil);
+        performSegue(withIdentifier: "showPostViewSegue", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showPostViewSegue" {
+            let dvc = segue.destination as! PostViewController
+            dvc.cameraImage = cameraImage
+        }
+    }
     
     func loadFeedData() {
         

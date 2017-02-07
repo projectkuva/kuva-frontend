@@ -17,6 +17,7 @@ class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var previewImageView: UIImageView!
     @IBOutlet weak var selectImageButton: UIButton!
     var path:URL!
+    var cameraImage: UIImage? = nil
     
     var locationManager = CLLocationManager()
     
@@ -107,6 +108,17 @@ class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate
         picker.dismiss(animated: true, completion: nil)
     }
     
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
+        let scale = newWidth / image.size.width
+        let newHeight = image.size.height * scale
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -121,6 +133,14 @@ class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate
         locationManager.distanceFilter = kCLDistanceFilterNone
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
+        if (cameraImage != nil) {
+            cameraImage = resizeImage(image: cameraImage!, newWidth: 400)
+            previewImageView.contentMode = .scaleAspectFit
+            previewImageView.image = cameraImage
+            self.selectImageButton.isEnabled = false
+            self.selectImageButton.isHidden = true
+            uploadImage(image: cameraImage!)
+        }
         
     }
 

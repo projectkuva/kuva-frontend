@@ -7,7 +7,22 @@
 		<key>Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<true/>
+			<false/>
+		</dict>
+		<key>AlamofireImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>JWTDecode.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>KeychainSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-Kuva.xcscheme</key>
 		<dict>
@@ -17,12 +32,17 @@
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<true/>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>720EBC49DD3D6AA24BA9C5ED3459E63F</key>
+		<key>38ACA430605AFB4229712A18BDDF5086</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>734E126F2A1BB2F7F1ACCF523A9A8351</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -32,7 +52,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C107EAB869C71935D81DEC34CF499A77</key>
+		<key>9EFE4C70245EE2857D336B8B9FA4E825</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D56FA483A539D4D24B3E738B22D5C8DB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FC255E124C574F236CB351BB967C9428</key>
 		<dict>
 			<key>primary</key>
 			<true/>
