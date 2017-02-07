@@ -47,6 +47,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if segue.identifier == "showPostViewSegue" {
             let dvc = segue.destination as! PostViewController
             dvc.cameraImage = cameraImage
+            cameraImage = nil
         }
     }
     

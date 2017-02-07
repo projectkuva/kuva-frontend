@@ -141,16 +141,23 @@ class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate
         locationManager.distanceFilter = kCLDistanceFilterNone
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
-        if (cameraImage != nil) {
-            // unnecessary for now
-            // cameraImage = resizeImage(image: cameraImage!, newWidth: 400)
+        if (self.cameraImage != nil) {
+            cameraImage = resizeImage(image: cameraImage!, newWidth: 400)
             previewImageView.contentMode = .scaleAspectFit
-            previewImageView.image = cameraImage
+            previewImageView.image = self.cameraImage
             self.selectImageButton.isEnabled = false
             self.selectImageButton.isHidden = true
             uploadImage(image: cameraImage!)
         }
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if self.cameraImage != nil {
+            self.cameraImage = nil
+            self.previewImageView.image = nil
+        }
     }
 
     override func didReceiveMemoryWarning() {
