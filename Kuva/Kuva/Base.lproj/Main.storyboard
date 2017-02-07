@@ -431,75 +431,6 @@
             </objects>
             <point key="canvasLocation" x="1745" y="-750"/>
         </scene>
-        <!--Take Photo-->
-        <scene sceneID="BR1-aj-irt">
-            <objects>
-                <viewController id="rqf-lW-SZh" customClass="CameraViewController" customModule="Kuva" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ZRN-9d-rdT"/>
-                        <viewControllerLayoutGuide type="bottom" id="h1A-Vz-7HK"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="pW5-qG-Jzh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Pd-QP-079">
-                                <rect key="frame" x="58" y="558" width="259" height="49"/>
-                                <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="259" id="Iad-WL-dtJ"/>
-                                    <constraint firstAttribute="height" constant="49" id="bx9-cX-nms"/>
-                                </constraints>
-                                <state key="normal" title="Post">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="postButtonPressed:" destination="hUa-4N-MAx" eventType="touchUpInside" id="wgd-hj-Lxl"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jbc-EU-buK">
-                                <rect key="frame" x="0.0" y="64" width="375" height="269"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="7go-uR-EwS"/>
-                                    <constraint firstAttribute="height" constant="269" id="nqk-oY-Hgd"/>
-                                </constraints>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add a caption..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Otn-tD-dht">
-                                <rect key="frame" x="58" y="363" width="259" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="Lne-4S-nRk"/>
-                                    <constraint firstAttribute="width" constant="259" id="Q4O-rg-iOl"/>
-                                </constraints>
-                                <color key="textColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Otn-tD-dht" firstAttribute="top" secondItem="Jbc-EU-buK" secondAttribute="bottom" constant="30" id="Bad-vS-lEj"/>
-                            <constraint firstAttribute="trailing" secondItem="Jbc-EU-buK" secondAttribute="trailing" id="CzL-Gp-DOy"/>
-                            <constraint firstItem="h1A-Vz-7HK" firstAttribute="top" secondItem="6Pd-QP-079" secondAttribute="bottom" constant="60" id="Nzr-fX-6mh"/>
-                            <constraint firstItem="Jbc-EU-buK" firstAttribute="centerX" secondItem="pW5-qG-Jzh" secondAttribute="centerX" id="WF5-Bz-9fu"/>
-                            <constraint firstItem="Otn-tD-dht" firstAttribute="centerX" secondItem="pW5-qG-Jzh" secondAttribute="centerX" id="Wv7-um-h6q"/>
-                            <constraint firstItem="Jbc-EU-buK" firstAttribute="top" secondItem="ZRN-9d-rdT" secondAttribute="bottom" id="Y8h-Dl-DND"/>
-                            <constraint firstItem="Jbc-EU-buK" firstAttribute="leading" secondItem="pW5-qG-Jzh" secondAttribute="leading" id="lBc-g8-YkY"/>
-                            <constraint firstItem="6Pd-QP-079" firstAttribute="centerX" secondItem="pW5-qG-Jzh" secondAttribute="centerX" id="rO9-vj-fUq"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Take Photo" id="QRc-2Y-c3y"/>
-                    <connections>
-                        <outlet property="cameraImageView" destination="Jbc-EU-buK" id="HN9-bk-dt1"/>
-                        <outlet property="captionTextView" destination="Otn-tD-dht" id="jgN-La-FKl"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Oe1-cL-SVp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3264.8000000000002" y="138.98050974512745"/>
-        </scene>
         <!--kuva-->
         <scene sceneID="1zx-YL-HcG">
             <objects>
@@ -598,24 +529,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wlc-U0-P6W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2494" y="-750"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Oxt-LE-mrO">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OKg-qo-SVe" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2wu-vb-6Gz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="rqf-lW-SZh" kind="relationship" relationship="rootViewController" id="5wA-yf-qys"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5g5-RW-Iuo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3266" y="-751"/>
         </scene>
     </scenes>
     <resources>

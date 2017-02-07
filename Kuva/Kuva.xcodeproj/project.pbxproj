@@ -17,7 +17,6 @@
 		34231ECA1E3FF2A800905367 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34231EC81E3FF2A800905367 /* LaunchScreen.storyboard */; };
 		342B59D51E4797CB001ACFB1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342B59D41E4797CB001ACFB1 /* LoginViewController.swift */; };
 		3432D9B11E46B3C6001C121A /* PrimaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3432D9B01E46B3C6001C121A /* PrimaryViewController.swift */; };
-		34CB20901E496C6500803416 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CB208F1E496C6500803416 /* CameraViewController.swift */; };
 		34DD80B31E46886300C49E59 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DD80B21E46886300C49E59 /* ForgotPasswordViewController.swift */; };
 		FE5194A3A7547E3A85A1FAB9 /* Pods_Kuva.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00271136C52F3F43E8C06C30 /* Pods_Kuva.framework */; };
 /* End PBXBuildFile section */
@@ -37,7 +36,6 @@
 		34231ECB1E3FF2A800905367 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		342B59D41E4797CB001ACFB1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3432D9B01E46B3C6001C121A /* PrimaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryViewController.swift; sourceTree = "<group>"; };
-		34CB208F1E496C6500803416 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		34DD80B21E46886300C49E59 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		3AABB1DD9D2D81C525B9488F /* Pods-Kuva.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kuva.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kuva/Pods-Kuva.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,7 +80,6 @@
 				2F48B3461E47F77000E5276E /* FeedViewController.swift */,
 				34DD80B21E46886300C49E59 /* ForgotPasswordViewController.swift */,
 				3432D9B01E46B3C6001C121A /* PrimaryViewController.swift */,
-				34CB208F1E496C6500803416 /* CameraViewController.swift */,
 				2F48B3441E47F61800E5276E /* PostCollectionViewCell.swift */,
 				34231EC31E3FF2A800905367 /* Main.storyboard */,
 				34231EC61E3FF2A800905367 /* Assets.xcassets */,
@@ -241,7 +238,6 @@
 				2F48B3451E47F61800E5276E /* PostCollectionViewCell.swift in Sources */,
 				2F48B3471E47F77000E5276E /* FeedViewController.swift in Sources */,
 				34231EC01E3FF2A800905367 /* AppDelegate.swift in Sources */,
-				34CB20901E496C6500803416 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
