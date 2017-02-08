@@ -29,9 +29,12 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
     var comments: [JSON] = []
     var likes: [JSON] = []
     var liked: Bool = false
+    let likeIMG: UIImage = UIImage(named: "heart-cl")!
+    let unlikeIMG: UIImage = UIImage(named: "heart-gr")!
 
     @IBAction func likeButtonPressed(_ sender: Any) {
         self.liked = !self.liked
+        self.likesButton.isEnabled = false
         let liked_i = self.liked ? 1 : 0
         let tok = self.getToken()
         let parameters: Parameters = [
@@ -42,21 +45,25 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
         //Do this before request so there's not a huge delay
         if self.liked {
             self.numLikes += 1
-            self.likesButton.imageView?.image = UIImage(named: "heart-cl")
+            self.likesButton.imageView?.image = likeIMG
         } else {
             self.numLikes -= 1
-            self.likesButton.imageView?.image = UIImage(named: "heart-gr")
+            self.likesButton.imageView?.image = unlikeIMG
         }
         self.likesLabel.text = "\(self.numLikes) likes"
         
         Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/like/\(self.id)", method: .post, parameters: parameters, headers: headers).responseJSON { res in
             let json = JSON(res.value)
             let msg:String = json["message"].stringValue
+            print(msg)
             if msg != "success" {
+                
                 self.liked = !self.liked
+                
             } else {
-                //Handle the view updating before request
+                print(self.liked)
             }
+            self.likesButton.isEnabled = true
         }
         
     }
@@ -116,7 +123,7 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
         for obj in likes {
             if obj["user_id"].intValue == self.getUserID() {
                 self.liked = true
-                self.likesButton.imageView?.image = UIImage(named: "heart-cl")
+                self.likesButton.imageView?.image = likeIMG
             }
         }
         // Do any additional setup after loading the view.
@@ -137,6 +144,11 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
         cell.commentLabel.text = comments[indexPath.row]["text"].stringValue
         cell.commentLabel.numberOfLines = 0
         return cell
+    }
+    
+    func updateCurentImage(id: Int) {
+        //Updates number of likes, comments, etc.
+        
     }
 
     /*

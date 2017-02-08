@@ -61,6 +61,10 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
     }
     
+    func updateImageInformation() {
+        //updateImage
+    }
+    
     func loadFeedData() {
         
         let tok = self.getToken()!
