@@ -27,14 +27,14 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Used for taking photos to upload</string>
 	<key>NSLocationUsageDescription</key>
 	<string>Used for tagging location of photos</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Used for tagging location of photo</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Used for uploading photos</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Used for taking photos to upload</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
