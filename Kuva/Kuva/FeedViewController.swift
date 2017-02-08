@@ -23,6 +23,15 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var locationManager = CLLocationManager()
     var cameraImage: UIImage? = nil
     
+    struct PostItem {
+        var id: Int = 0
+        var numComments: String? = nil
+        var numLikes: String? = nil
+        var caption: String? = nil
+        var created: Date? = nil
+        var comments: [JSON] = []
+    }
+    
     @IBOutlet weak var postsCollectionView: UICollectionView!
     
     @IBAction func cameraButtonPressed(_ sender: Any) {
@@ -47,6 +56,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if segue.identifier == "showPostViewSegue" {
             let dvc = segue.destination as! PostViewController
             dvc.cameraImage = cameraImage
+            cameraImage = nil
         }
     }
     
@@ -69,13 +79,38 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
             
             let json = JSON(res.value)
             
+            var dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             //add the photos to posts array
             for (index, object) in json {
-                let photoID = object["id"].stringValue
-                self.posts.add(photoID)
+                var post = PostItem()
+                post.id = object["id"].intValue
+                post.numLikes = object["numLikes"].stringValue
+                post.numComments = object["numComments"].stringValue
+                post.caption = object["caption"].stringValue
+                post.created = dateFormatter.date(from: object["created_at"].stringValue)
+                post.comments = object["comments"].array!
+                self.posts.add(post)
             }
             self.postsCollectionView.reloadData()
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! PostCollectionViewCell
+        if !cell.ready {
+            return
+        }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let detailView = storyboard.instantiateViewController(withIdentifier: "detailView") as! PostDetailViewController
+        detailView.id = cell.id
+        detailView.numLikes = cell.numLikes
+        detailView.numComments = cell.numComments
+        detailView.caption = cell.caption
+        detailView.created = cell.created
+        detailView.postImage = cell.postImageView.image
+        detailView.comments = cell.comments
+        self.navigationController?.pushViewController(detailView, animated: true)
     }
 
     override func viewDidLoad() {
@@ -142,11 +177,17 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! PostCollectionViewCell
     
         // Configure the cell
-        
-        let post:String = self.posts[indexPath.row] as! String
-        Alamofire.request("http://kuva.jakebrabec.me/storage/uploads/\(post).jpg").responseImage { res in
+        let post:PostItem = self.posts[indexPath.row] as! FeedViewController.PostItem
+        Alamofire.request("http://kuva.jakebrabec.me/storage/uploads/\(post.id).jpg").responseImage { res in
             if let image = res.result.value {
                 cell.postImageView.image = image
+                cell.id = post.id
+                cell.numLikes = post.numLikes
+                cell.numComments = post.numComments
+                cell.caption = post.caption
+                cell.created = post.created
+                cell.comments = post.comments
+                cell.ready = true
             }
         }
         

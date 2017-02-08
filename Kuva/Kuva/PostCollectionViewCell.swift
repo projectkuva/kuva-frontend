@@ -7,8 +7,16 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class PostCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var postImageView: UIImageView!
+    var id: Int = 0
+    var numComments: String? = nil
+    var numLikes: String? = nil
+    var caption: String? = nil
+    var created: Date? = nil
+    var comments: [JSON] = []
+    var ready: Bool = false
 }
