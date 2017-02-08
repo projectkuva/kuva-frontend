@@ -17,6 +17,7 @@ class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var previewImageView: UIImageView!
     @IBOutlet weak var selectImageButton: UIButton!
     var path:URL!
+    var cameraImage: UIImage? = nil
     
     var locationManager = CLLocationManager()
     
@@ -55,11 +56,19 @@ class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate
             switch result {
             case .success(let upload, _, _):
                 upload.responseJSON { res in
-                    if let JSON = res.result.value {
-                        print("JSON: \(JSON)")
-                        let alert:UIAlertController = UIAlertController(title: "Image posted", message: "yey", preferredStyle: UIAlertControllerStyle.alert)
-                        alert.addAction(UIAlertAction(title: ":)", style: UIAlertActionStyle.default, handler: nil))
-                        self.present(alert, animated: true, completion: nil)
+                    if let data = res.result.value {
+                        print("JSON: \(data)")
+                        let json = JSON(data)
+                        let msg:String = json["message"].stringValue
+                        if msg == "success" {
+                            let alert:UIAlertController = UIAlertController(title: "Image posted", message: "yey", preferredStyle: UIAlertControllerStyle.alert)
+                            alert.addAction(UIAlertAction(title: ":)", style: UIAlertActionStyle.default, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
+                        } else {
+                            let alert:UIAlertController = UIAlertController(title: "Upload failed", message: "sad", preferredStyle: UIAlertControllerStyle.alert)
+                            alert.addAction(UIAlertAction(title: ":(", style: UIAlertActionStyle.default, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
+                        }
 
                     }
                 }
@@ -107,6 +116,17 @@ class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate
         picker.dismiss(animated: true, completion: nil)
     }
     
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
+        let scale = newWidth / image.size.width
+        let newHeight = image.size.height * scale
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -121,6 +141,15 @@ class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate
         locationManager.distanceFilter = kCLDistanceFilterNone
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
+        if (cameraImage != nil) {
+            // unnecessary for now
+            // cameraImage = resizeImage(image: cameraImage!, newWidth: 400)
+            previewImageView.contentMode = .scaleAspectFit
+            previewImageView.image = cameraImage
+            self.selectImageButton.isEnabled = false
+            self.selectImageButton.isHidden = true
+            uploadImage(image: cameraImage!)
+        }
         
     }
 
