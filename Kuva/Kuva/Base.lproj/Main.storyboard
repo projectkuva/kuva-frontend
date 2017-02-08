@@ -537,6 +537,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="likeButtonPressed:" destination="ayn-oL-fo1" eventType="touchUpInside" id="n37-M3-5nb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1RX-UJ-VY8">
                                 <rect key="frame" x="137" y="348" width="45" height="45"/>
@@ -550,6 +553,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="commentButtonPressed:" destination="ayn-oL-fo1" eventType="touchUpInside" id="a0C-JZ-ks3"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9n-ws-SPt">
                                 <rect key="frame" x="91" y="360" width="31" height="21"/>

@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import Alamofire
 
 class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -19,18 +20,83 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
     @IBOutlet weak var commentTable: UITableView!
     
     var id: Int = 0
-    var numComments: String? = nil
-    var numLikes: String? = nil
+    var numComments: Int = 0
+    var numLikes: Int = 0
     var caption: String? = nil
     var created: Date? = nil
     var postImage: UIImage? = nil
     var comments: [JSON] = []
+    var likes: [JSON] = []
+    var liked: Bool = false
 
+    @IBAction func likeButtonPressed(_ sender: Any) {
+        self.liked = !self.liked
+        let liked_i = self.liked ? 1 : 0
+        let tok = self.getToken()
+        let parameters: Parameters = [
+            "liked": liked_i
+        ]
+        let headers = ["Authorization": "Bearer \(tok!)"]
+        
+        Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/like/\(self.id)", method: .post, parameters: parameters, headers: headers).responseJSON { res in
+            let json = JSON(res.value)
+            let msg:String = json["message"].stringValue
+            if msg != "success" {
+                self.liked = !self.liked
+            } else {
+                if self.liked {
+                    self.numLikes += 1
+                } else {
+                    self.numLikes -= 1
+                }
+                self.likesLabel.text = "\(self.numLikes)"
+            }
+        }
+        
+    }
+    
+    @IBAction func commentButtonPressed(_ sender: Any) {
+        let alert = UIAlertController(title: "Post Comment", message: "Enter comment text", preferredStyle: .alert)
+        alert.addTextField{ (textField) in
+            textField.text = ""
+        }
+        alert.addAction(UIAlertAction(title: "Post", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0]
+            let commentText: String = textField!.text!
+            let tok = self.getToken()
+            let parameters: Parameters = [
+                "text": commentText
+            ]
+            let headers = ["Authorization": "Bearer \(tok!)"]
+            Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/comment/\(self.id)", method: .post, parameters: parameters, headers: headers).responseJSON{ res in
+                let json = JSON(res.value)
+                let msg:String = json["message"].stringValue
+                if msg != "success" {
+                    let fail_alert = UIAlertController(title: "Failure", message: "Could not post comment", preferredStyle: .alert)
+                    fail_alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+                        // dismiss
+                    }))
+                    self.present(fail_alert, animated: true, completion: nil)
+                } else {
+                    let succ_alert = UIAlertController(title: "Success", message: "Comment posted!", preferredStyle: .alert)
+                    succ_alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+                        // dismiss
+                    }))
+                    self.present(succ_alert, animated: true, completion: nil)
+                }
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { [weak alert] (_) in
+            // dismiss
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.likesLabel.text = self.numLikes
-        self.commentsLabel.text = self.numComments
+        self.likesLabel.text = "\(self.numLikes)"
+        self.commentsLabel.text = "\(self.numComments)"
         self.captionLabel.text = self.caption
         self.captionLabel.numberOfLines = 0
         let dateFormatter = DateFormatter()
@@ -41,6 +107,11 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
         self.commentTable.dataSource = self
         self.commentTable.rowHeight = UITableViewAutomaticDimension
         self.commentTable.estimatedRowHeight = 43
+        for obj in likes {
+            if obj["user_id"].intValue == self.getUserID() {
+                self.liked = true
+            }
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -50,7 +121,7 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Int(self.numComments!)!
+        return self.numComments
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
