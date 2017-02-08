@@ -25,11 +25,12 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     struct PostItem {
         var id: Int = 0
-        var numComments: String? = nil
-        var numLikes: String? = nil
+        var numComments: Int = 0
+        var numLikes: Int = 0
         var caption: String? = nil
         var created: Date? = nil
         var comments: [JSON] = []
+        var likes: [JSON] = []
     }
     
     @IBOutlet weak var postsCollectionView: UICollectionView!
@@ -85,11 +86,12 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
             for (index, object) in json {
                 var post = PostItem()
                 post.id = object["id"].intValue
-                post.numLikes = object["numLikes"].stringValue
-                post.numComments = object["numComments"].stringValue
+                post.numLikes = object["numLikes"].intValue
+                post.numComments = object["numComments"].intValue
                 post.caption = object["caption"].stringValue
                 post.created = dateFormatter.date(from: object["created_at"].stringValue)
                 post.comments = object["comments"].array!
+                post.likes = object["likes"].array!
                 self.posts.add(post)
             }
             self.postsCollectionView.reloadData()
@@ -110,6 +112,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         detailView.created = cell.created
         detailView.postImage = cell.postImageView.image
         detailView.comments = cell.comments
+        detailView.likes = cell.likes
         self.navigationController?.pushViewController(detailView, animated: true)
     }
 
@@ -187,6 +190,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 cell.caption = post.caption
                 cell.created = post.created
                 cell.comments = post.comments
+                cell.likes = post.likes
                 cell.ready = true
             }
         }

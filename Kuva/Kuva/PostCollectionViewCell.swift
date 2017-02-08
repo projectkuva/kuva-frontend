@@ -13,10 +13,11 @@ class PostCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var postImageView: UIImageView!
     var id: Int = 0
-    var numComments: String? = nil
-    var numLikes: String? = nil
+    var numComments: Int = 0
+    var numLikes: Int = 0
     var caption: String? = nil
     var created: Date? = nil
     var comments: [JSON] = []
+    var likes: [JSON] = []
     var ready: Bool = false
 }

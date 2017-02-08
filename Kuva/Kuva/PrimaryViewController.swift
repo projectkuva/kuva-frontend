@@ -8,10 +8,12 @@
 
 import UIKit
 import KeychainSwift
+import JWTDecode
 
 class PrimaryViewController: UIViewController {
 
     let keychain = KeychainSwift()
+    var user_id = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +49,22 @@ class PrimaryViewController: UIViewController {
     
     func getToken() -> String? {
         return keychain.get("token")
+    }
+    
+    func getUserID() -> Int? {
+        if self.user_id == -1 {
+            do {
+                let jwt = try decode(jwt: self.getToken()!)
+                let claim = jwt.claim(name: "user_id")
+                self.user_id = claim.integer!
+                return self.user_id
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+            return -1
+        } else {
+            return self.user_id
+        }
     }
     
 
