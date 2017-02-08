@@ -113,7 +113,9 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
         self.captionLabel.text = self.caption
         self.captionLabel.numberOfLines = 0
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        dateFormatter.locale = Locale(identifier: "en_US")
         self.dateLabel.text = dateFormatter.string(from: self.created!)
         self.postImageView.image = self.postImage
         self.commentTable.delegate = self

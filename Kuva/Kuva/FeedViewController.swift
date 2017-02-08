@@ -86,6 +86,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
             
             var dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            
             //add the photos to posts array
             for (index, object) in json {
                 var post = PostItem()
@@ -94,6 +95,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 post.numComments = object["numComments"].intValue
                 post.caption = object["caption"].stringValue
                 post.created = dateFormatter.date(from: object["created_at"].stringValue)
+                print(post.created!)
                 post.comments = object["comments"].array!
                 post.likes = object["likes"].array!
                 self.posts.add(post)
