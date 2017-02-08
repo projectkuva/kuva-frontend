@@ -11,8 +11,9 @@ import Alamofire
 import CoreLocation
 import SwiftyJSON
 
-class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
+class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate, UITextViewDelegate {
 
+    @IBOutlet weak var textviewLabel: UILabel!
     @IBOutlet var captionTextView: UITextView!
     @IBOutlet weak var previewImageView: UIImageView!
     @IBOutlet weak var selectImageButton: UIButton!
@@ -133,6 +134,7 @@ class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate
         // Do any additional setup after loading the view.
         
         locationManager.delegate = self
+        captionTextView.delegate = self
         
         if CLLocationManager.authorizationStatus() == .notDetermined {
             self.locationManager.requestWhenInUseAuthorization()
@@ -159,10 +161,22 @@ class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate
             self.previewImageView.image = nil
         }
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        self.textviewLabel.isHidden = true
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        if (textView.text == "") {
+            self.textviewLabel.isHidden = false
+        }
+        print(textView.text)
     }
     
 
