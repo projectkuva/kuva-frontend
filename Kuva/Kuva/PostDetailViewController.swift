@@ -18,6 +18,7 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var commentTable: UITableView!
+    @IBOutlet weak var likesButton: UIButton!
     
     var id: Int = 0
     var numComments: Int = 0
@@ -38,18 +39,23 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
         ]
         let headers = ["Authorization": "Bearer \(tok!)"]
         
+        //Do this before request so there's not a huge delay
+        if self.liked {
+            self.numLikes += 1
+            self.likesButton.imageView?.image = UIImage(named: "heart-cl")
+        } else {
+            self.numLikes -= 1
+            self.likesButton.imageView?.image = UIImage(named: "heart-gr")
+        }
+        self.likesLabel.text = "\(self.numLikes) likes"
+        
         Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/like/\(self.id)", method: .post, parameters: parameters, headers: headers).responseJSON { res in
             let json = JSON(res.value)
             let msg:String = json["message"].stringValue
             if msg != "success" {
                 self.liked = !self.liked
             } else {
-                if self.liked {
-                    self.numLikes += 1
-                } else {
-                    self.numLikes -= 1
-                }
-                self.likesLabel.text = "\(self.numLikes)"
+                //Handle the view updating before request
             }
         }
         
@@ -95,7 +101,7 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.likesLabel.text = "\(self.numLikes)"
+        self.likesLabel.text = "\(self.numLikes) likes"
         self.commentsLabel.text = "\(self.numComments)"
         self.captionLabel.text = self.caption
         self.captionLabel.numberOfLines = 0
@@ -110,6 +116,7 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
         for obj in likes {
             if obj["user_id"].intValue == self.getUserID() {
                 self.liked = true
+                self.likesButton.imageView?.image = UIImage(named: "heart-cl")
             }
         }
         // Do any additional setup after loading the view.
