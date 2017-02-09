@@ -29,6 +29,17 @@ class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate
         
     }
     
+    @IBAction func cameraButtonPressed(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+            imagePicker.cameraCaptureMode = .photo
+            imagePicker.modalPresentationStyle = .fullScreen
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
     
     @IBAction func postButtonPressed(_ sender: Any) {
         

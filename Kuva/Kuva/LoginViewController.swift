@@ -53,7 +53,7 @@ class LoginViewController: PrimaryViewController {
                     print("couldn't set token")
                 }
                 
-                let view = self.storyboard?.instantiateViewController(withIdentifier: "FeedVC")
+                let view = self.storyboard?.instantiateViewController(withIdentifier: "tabbar")
                 self.present(view!, animated:true, completion:nil)
                 
             } else {

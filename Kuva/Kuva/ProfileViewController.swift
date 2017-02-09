@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: PrimaryViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +21,11 @@ class ProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func logoutPressed(_ sender: Any) {
+        super.logOut()
+        let view = self.storyboard?.instantiateViewController(withIdentifier: "loginVC")
+        self.present(view!, animated:true, completion:nil)
+    }
 
     /*
     // MARK: - Navigation
