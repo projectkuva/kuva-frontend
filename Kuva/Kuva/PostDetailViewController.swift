@@ -45,16 +45,6 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
         ]
         let headers = ["Authorization": "Bearer \(tok!)"]
         
-        //Do this before request so there's not a huge delay
-        if self.liked {
-            self.numLikes += 1
-            self.likesButton.imageView?.image = likeIMG
-        } else {
-            self.numLikes -= 1
-            self.likesButton.imageView?.image = unlikeIMG
-        }
-        self.likesLabel.text = "\(self.numLikes) likes"
-        
         Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/like/\(self.id)", method: .post, parameters: parameters, headers: headers).responseJSON { res in
             let json = JSON(res.value)
             let msg:String = json["message"].stringValue
@@ -65,7 +55,7 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
                 print(self.liked)
             }
             self.likesButton.isEnabled = true
-            self.updateCurentImage()
+            self.updateCurrentView()
         }
         
     }
@@ -115,6 +105,7 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
                     }))
                     self.present(succ_alert, animated: true, completion: nil)
                 }
+                self.updateCurrentView()
             }
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { [weak alert] (_) in
@@ -125,37 +116,26 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Delete button
         if (self.getUserID() != self.userID) {
             deleteButton.isHidden = true
             deleteButton.isEnabled = false
         }
-        self.likesLabel.text = "\(self.numLikes) likes"
-        self.commentsLabel.text = "\(self.numComments) comments"
-        self.captionLabel.text = self.caption
-        self.captionLabel.numberOfLines = 0
-        self.usernameLabel.text = "UserID: \(self.userID)"
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .none
-        dateFormatter.locale = Locale(identifier: "en_US")
-        self.dateLabel.text = dateFormatter.string(from: self.created!)
+        
+
         self.postImageView.image = self.postImage
         self.commentTable.delegate = self
         self.commentTable.dataSource = self
         self.commentTable.rowHeight = UITableViewAutomaticDimension
         self.commentTable.estimatedRowHeight = 43
-        for obj in likes {
-            if obj["user_id"].intValue == self.getUserID() {
-                if (obj["liked"].intValue == 1) {
-                    self.liked = true
-                    self.likesButton.imageView?.image = likeIMG
-                }
-            }
-        }
+        
+        updateCurrentView()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.updateCurentImage()
+//        self.updateCurentImage()
         
     }
     
@@ -176,48 +156,43 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
         return cell
     }
     
-    func updateCurrentView() {
-        print("updating view")
-        self.likesLabel.text = "\(self.numLikes) likes"
-        self.commentsLabel.text = "\(self.numComments) comments"
-        for obj in likes {
-            if obj["user_id"].intValue == self.getUserID() {
-                if (obj["liked"].intValue == 1) {
-                    self.liked = true
-                    self.likesButton.imageView?.image = likeIMG
-                } else {
-                    self.likesButton.imageView?.image = unlikeIMG
-                }
-            }
-        }
-        
-    }
     
-    func updateCurentImage() {
-        print("updating")
+    
+    func updateCurrentView() {
         let tok = super.getToken()
         let headers = ["Authorization": "Bearer \(tok!)"]
         
-        Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/\(self.id)", headers: headers).responseJSON { res in
-            let json = JSON(res.value)
+        Alamofire.request("http://kuva.jakebrabec.me/api/photos/\(self.id)", headers: headers).responseJSON { res in
             
+            let json = JSON(res.value)
+            print(json)
+            self.liked = json["user_liked"].intValue == 1 ? true : false
+            self.likesButton.imageView?.image = self.liked ? self.likeIMG : self.unlikeIMG
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            self.created = dateFormatter.date(from: json["0"]["created_at"].stringValue)
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .none
+            dateFormatter.locale = Locale(identifier: "en_US")
+            self.dateLabel.text = dateFormatter.string(for: self.created!)
+            self.usernameLabel.text = json["0"]["user"]["name"].string
+            self.comments = json["0"]["comments"].array!
+            self.likes = json["0"]["likes"].array!
             self.numLikes = 0
-            for obj in json[0]["likes"].array! {
-                if obj["liked"].intValue == 1 {
+            for like in self.likes {
+                if (like["liked"] == 1) {
                     self.numLikes += 1
                 }
             }
-            self.likes = json[0]["likes"].array!
-            print(self.numLikes)
-            
-            
-            self.comments = json[0]["comments"].array!
             self.numComments = self.comments.count
-            
-            self.updateCurrentView()
-            self.commentTable.reloadData()
+            self.likesLabel.text = (self.numLikes == 1) ? "\(self.numLikes) like" : "\(self.numLikes) likes"
+            self.commentsLabel.text = "\(self.numComments) comments"
+            self.caption = json["0"]["caption"].stringValue
+            self.captionLabel.text = self.caption
+            self.captionLabel.numberOfLines = 0
             
         }
+        
     }
     
     /*
