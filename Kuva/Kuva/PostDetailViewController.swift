@@ -33,7 +33,7 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
     var liked: Bool = false
     let likeIMG: UIImage = UIImage(named: "heart-cl")!
     let unlikeIMG: UIImage = UIImage(named: "heart-gr")!
-
+    
     @IBAction func likeButtonPressed(_ sender: Any) {
         self.liked = !self.liked
         self.likesButton.isEnabled = false
@@ -59,13 +59,12 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
             let msg:String = json["message"].stringValue
             print(msg)
             if msg != "success" {
-                
                 self.liked = !self.liked
-                
             } else {
                 print(self.liked)
             }
             self.likesButton.isEnabled = true
+            self.updateCurentImage()
         }
         
     }
@@ -109,7 +108,6 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.likesLabel.text = "\(self.numLikes) likes"
         self.commentsLabel.text = "\(self.numComments) comments"
         self.captionLabel.text = self.caption
@@ -127,13 +125,19 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
         self.commentTable.estimatedRowHeight = 43
         for obj in likes {
             if obj["user_id"].intValue == self.getUserID() {
-                self.liked = true
-                self.likesButton.imageView?.image = likeIMG
+                if (obj["liked"].intValue == 1) {
+                    self.liked = true
+                    self.likesButton.imageView?.image = likeIMG
+                }
             }
         }
-        // Do any additional setup after loading the view.
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.updateCurentImage()
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -151,19 +155,58 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
         return cell
     }
     
-    func updateCurentImage(id: Int) {
-        //Updates number of likes, comments, etc.
+    func updateCurrentView() {
+        print("updating view")
+        self.likesLabel.text = "\(self.numLikes) likes"
+        self.commentsLabel.text = "\(self.numComments) comments"
+        for obj in likes {
+            if obj["user_id"].intValue == self.getUserID() {
+                if (obj["liked"].intValue == 1) {
+                    self.liked = true
+                    self.likesButton.imageView?.image = likeIMG
+                } else {
+                    self.likesButton.imageView?.image = unlikeIMG
+                }
+            }
+        }
         
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func updateCurentImage() {
+        print("updating")
+        let tok = super.getToken()
+        let headers = ["Authorization": "Bearer \(tok!)"]
+        
+        Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/\(self.id)", headers: headers).responseJSON { res in
+            let json = JSON(res.value)
+            
+            self.numLikes = 0
+            for obj in json[0]["likes"].array! {
+                if obj["liked"].intValue == 1 {
+                    self.numLikes += 1
+                }
+            }
+            self.likes = json[0]["likes"].array!
+            print(self.numLikes)
+            
+            
+            self.comments = json[0]["comments"].array!
+            self.numComments = self.comments.count
+            
+            self.updateCurrentView()
+            self.commentTable.reloadData()
+            
+        }
     }
-    */
-
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

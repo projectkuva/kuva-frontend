@@ -48,7 +48,7 @@ class RegisterViewController: PrimaryViewController {
             if msg == "success" {
                 //successful login, save auth token
                 
-                let view = self.storyboard?.instantiateViewController(withIdentifier: "PostVC")
+                let view = self.storyboard?.instantiateViewController(withIdentifier: "tabbar")
                 self.present(view!, animated:true, completion:nil)
                 
             } else {

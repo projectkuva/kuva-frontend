@@ -71,6 +71,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func loadFeedData() {
+        print("IN LOAD FEED DATA")
         
         let tok = self.getToken()!
         let loc:CLLocationCoordinate2D = locationManager.location!.coordinate
@@ -105,6 +106,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 post.likes = object["likes"].array!
                 self.posts.add(post)
             }
+            
             self.postsCollectionView.reloadData()
         }
     }
@@ -149,15 +151,22 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         
+        
+        //self.postsCollectionView!.register(PostCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        
         loadFeedData()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //self.postsCollectionView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -192,7 +201,9 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! PostCollectionViewCell
     
         // Configure the cell
-        let post:PostItem = self.posts[indexPath.row] as! FeedViewController.PostItem
+        let post:PostItem = self.posts[indexPath.item] as! FeedViewController.PostItem
+        print(post.id)
+        print(indexPath.item)
         Alamofire.request("http://kuva.jakebrabec.me/storage/uploads/\(post.id).jpg").responseImage { res in
             if let image = res.result.value {
                 cell.postImageView.image = image
@@ -207,8 +218,6 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 cell.ready = true
             }
         }
-        
-    
         return cell
     }
     
