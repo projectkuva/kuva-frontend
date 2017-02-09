@@ -20,6 +20,7 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
     @IBOutlet weak var commentTable: UITableView!
     @IBOutlet weak var likesButton: UIButton!
     @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var deleteButton: UIButton!
     
     var id: Int = 0
     var numComments: Int = 0
@@ -69,6 +70,22 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
         
     }
     
+    @IBAction func deleteButtonPressed(_ sender: Any) {
+        
+        //ser/photos/{photo_ID}/delete
+        let tok = self.getToken()
+        let headers = ["Authorization": "Bearer \(tok!)"]
+
+        Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/\(self.id)/delete", method: .post, headers: headers).responseJSON { res in
+            let json = JSON(res.value)
+            print(json)
+            
+            //WE NEED TO RELOAD DATA OMG
+            self.tabBarController?.selectedIndex = 0
+        }
+
+    }
+    
     @IBAction func commentButtonPressed(_ sender: Any) {
         let alert = UIAlertController(title: "Post Comment", message: "Enter comment text", preferredStyle: .alert)
         alert.addTextField{ (textField) in
@@ -108,6 +125,10 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if (self.getUserID() != self.userID) {
+            deleteButton.isHidden = true
+            deleteButton.isEnabled = false
+        }
         self.likesLabel.text = "\(self.numLikes) likes"
         self.commentsLabel.text = "\(self.numComments) comments"
         self.captionLabel.text = self.caption

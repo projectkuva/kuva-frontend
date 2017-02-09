@@ -71,7 +71,6 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func loadFeedData() {
-        print("IN LOAD FEED DATA")
         
         let tok = self.getToken()!
         let loc:CLLocationCoordinate2D = locationManager.location!.coordinate
