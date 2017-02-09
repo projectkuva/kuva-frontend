@@ -19,9 +19,11 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var commentTable: UITableView!
     @IBOutlet weak var likesButton: UIButton!
+    @IBOutlet weak var usernameLabel: UILabel!
     
     var id: Int = 0
     var numComments: Int = 0
+    var userID: Int = 0
     var numLikes: Int = 0
     var caption: String? = nil
     var created: Date? = nil
@@ -109,9 +111,10 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
         super.viewDidLoad()
         
         self.likesLabel.text = "\(self.numLikes) likes"
-        self.commentsLabel.text = "\(self.numComments)"
+        self.commentsLabel.text = "\(self.numComments) comments"
         self.captionLabel.text = self.caption
         self.captionLabel.numberOfLines = 0
+        self.usernameLabel.text = "UserID: \(self.userID)"
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none

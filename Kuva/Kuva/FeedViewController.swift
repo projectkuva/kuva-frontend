@@ -25,6 +25,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     struct PostItem {
         var id: Int = 0
+        var userID: Int = 0
         var numComments: Int = 0
         var numLikes: Int = 0
         var caption: String? = nil
@@ -87,10 +88,12 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
             var dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             
+            print(json)
             //add the photos to posts array
             for (index, object) in json {
                 var post = PostItem()
                 post.id = object["id"].intValue
+                post.userID = object["user_id"].intValue
                 post.numLikes = object["numLikes"].intValue
                 post.numComments = object["numComments"].intValue
                 post.caption = object["caption"].stringValue
@@ -112,6 +115,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let detailView = storyboard.instantiateViewController(withIdentifier: "detailView") as! PostDetailViewController
         detailView.id = cell.id
+        detailView.userID = cell.userID
         detailView.numLikes = cell.numLikes
         detailView.numComments = cell.numComments
         detailView.caption = cell.caption
@@ -191,6 +195,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
             if let image = res.result.value {
                 cell.postImageView.image = image
                 cell.id = post.id
+                cell.userID = post.userID
                 cell.numLikes = post.numLikes
                 cell.numComments = post.numComments
                 cell.caption = post.caption

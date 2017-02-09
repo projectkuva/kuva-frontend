@@ -38,11 +38,9 @@ class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate
         
         //Latitude
         let lat:String = String(loc.latitude)
-        print(lat)
         //Longitude
         let lng:String = String(loc.longitude)
-        print(lng)
-        print(self.path)
+
         //Authorization token
         let headers = ["Authorization": "Bearer \(tok)"]
         //Request URL

@@ -13,6 +13,7 @@ class PostCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var postImageView: UIImageView!
     var id: Int = 0
+    var userID: Int = 0
     var numComments: Int = 0
     var numLikes: Int = 0
     var caption: String? = nil
