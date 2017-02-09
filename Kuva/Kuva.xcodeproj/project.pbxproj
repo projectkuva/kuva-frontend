@@ -12,6 +12,7 @@
 		2F48B3471E47F77000E5276E /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F48B3461E47F77000E5276E /* FeedViewController.swift */; };
 		2F83780F1E4522D800C724D9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F83780E1E4522D800C724D9 /* RegisterViewController.swift */; };
 		2FB9E9691E4BFDC80050F8AC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB9E9681E4BFDC80050F8AC /* ProfileViewController.swift */; };
+		2FB9E96F1E4C06830050F8AC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB9E96E1E4C06830050F8AC /* MainTabBarController.swift */; };
 		34231EC01E3FF2A800905367 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34231EBF1E3FF2A800905367 /* AppDelegate.swift */; };
 		34231EC51E3FF2A800905367 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34231EC31E3FF2A800905367 /* Main.storyboard */; };
 		34231EC71E3FF2A800905367 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34231EC61E3FF2A800905367 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		2F48B3461E47F77000E5276E /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		2F83780E1E4522D800C724D9 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		2FB9E9681E4BFDC80050F8AC /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		2FB9E96E1E4C06830050F8AC /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		34231EBC1E3FF2A800905367 /* Kuva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kuva.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34231EBF1E3FF2A800905367 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34231EC41E3FF2A800905367 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		34231EBE1E3FF2A800905367 /* Kuva */ = {
 			isa = PBXGroup;
 			children = (
+				2FB9E96E1E4C06830050F8AC /* MainTabBarController.swift */,
 				34231EBF1E3FF2A800905367 /* AppDelegate.swift */,
 				342B59D41E4797CB001ACFB1 /* LoginViewController.swift */,
 				2F83780E1E4522D800C724D9 /* RegisterViewController.swift */,
@@ -241,6 +244,7 @@
 			files = (
 				2F165E751E47A9A000300A67 /* PostViewController.swift in Sources */,
 				342B59D51E4797CB001ACFB1 /* LoginViewController.swift in Sources */,
+				2FB9E96F1E4C06830050F8AC /* MainTabBarController.swift in Sources */,
 				34DD80B31E46886300C49E59 /* ForgotPasswordViewController.swift in Sources */,
 				3432D9B11E46B3C6001C121A /* PrimaryViewController.swift in Sources */,
 				348DD3E51E4A164400FECEF1 /* PostDetailViewController.swift in Sources */,
