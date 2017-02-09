@@ -1,5 +1,5 @@
 //
-//  ProfileViewController.swift
+//  MainTabBarController.swift
 //  Kuva
 //
 //  Created by Shane DeWael on 2/8/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: PrimaryViewController {
+class MainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +21,6 @@ class ProfileViewController: PrimaryViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func logoutPressed(_ sender: Any) {
-        super.logOut()
-        let view = self.storyboard?.instantiateViewController(withIdentifier: "loginVC")
-        self.present(view!, animated:true, completion:nil)
-    }
 
     /*
     // MARK: - Navigation

@@ -24,7 +24,7 @@ class LoginViewController: PrimaryViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if super.loggedIn() {
-            let view = self.storyboard?.instantiateViewController(withIdentifier: "FeedVC")
+            let view = self.storyboard?.instantiateViewController(withIdentifier: "tabbar")
             self.present(view!, animated:true, completion:nil)
         }
     }
@@ -53,7 +53,7 @@ class LoginViewController: PrimaryViewController {
                     print("couldn't set token")
                 }
                 
-                let view = self.storyboard?.instantiateViewController(withIdentifier: "FeedVC")
+                let view = self.storyboard?.instantiateViewController(withIdentifier: "tabbar")
                 self.present(view!, animated:true, completion:nil)
                 
             } else {
