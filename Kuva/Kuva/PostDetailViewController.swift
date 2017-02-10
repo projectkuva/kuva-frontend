@@ -150,7 +150,7 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! CommentTableViewCell
-        cell.userLabel.text = comments[indexPath.row]["user"][0]["name"].stringValue
+        cell.userLabel.text = comments[indexPath.row]["user"]["name"].stringValue
         cell.commentLabel.text = comments[indexPath.row]["text"].stringValue
         cell.commentLabel.numberOfLines = 0
         return cell
@@ -190,6 +190,8 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
             self.caption = json["0"]["caption"].stringValue
             self.captionLabel.text = self.caption
             self.captionLabel.numberOfLines = 0
+            
+            self.commentTable.reloadData()
             
         }
         
