@@ -33,6 +33,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         var comments: [JSON] = []
         var likes: [JSON] = []
     }
+
     
     @IBOutlet weak var postsCollectionView: UICollectionView!
     
@@ -63,50 +64,6 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
             let dvc = segue.destination as! PostViewController
             dvc.cameraImage = cameraImage
             cameraImage = nil
-        }
-    }
-    
-    func updateImageInformation() {
-        //updateImage
-    }
-    
-    func loadFeedData() {
-        
-        let tok = self.getToken()!
-        let loc:CLLocationCoordinate2D = locationManager.location!.coordinate
-        
-        //Latitude
-        let lat:String = String(loc.latitude)
-        //Longitude
-        let lng:String = String(loc.longitude)
-
-        let parameters: Parameters = [
-            "lat": lat,
-            "lng": lng
-        ]
-        
-        Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/feed", parameters: parameters, headers: ["Authorization": "Bearer \(tok)"]).responseJSON{ res in
-            
-            let json = JSON(res.value)
-            
-            var dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-            
-            //add the photos to posts array
-            for (index, object) in json {
-                var post = PostItem()
-                post.id = object["id"].intValue
-                post.userID = object["user_id"].intValue
-                post.numLikes = object["numLikes"].intValue
-                post.numComments = object["numComments"].intValue
-                post.caption = object["caption"].stringValue
-                post.created = dateFormatter.date(from: object["created_at"].stringValue)
-                post.comments = object["comments"].array!
-                post.likes = object["likes"].array!
-                self.posts.add(post)
-            }
-            
-            self.postsCollectionView.reloadData()
         }
     }
     
@@ -153,7 +110,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         //self.postsCollectionView!.register(PostCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         
-        loadFeedData()
+        updateCurrentView()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -165,7 +122,8 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        //self.postsCollectionView.reloadData()
+
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -218,6 +176,53 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
             }
         }
         return cell
+    }
+    
+    func updateCurrentView() {
+        self.posts = NSMutableArray()
+        let tok = self.getToken()!
+        let loc:CLLocationCoordinate2D = locationManager.location!.coordinate
+        
+        //Latitude
+        let lat:String = String(loc.latitude)
+        //Longitude
+        let lng:String = String(loc.longitude)
+        
+        let parameters: Parameters = [
+            "lat": lat,
+            "lng": lng
+        ]
+
+        Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/feed", parameters: parameters, headers: ["Authorization": "Bearer \(tok)"]).responseJSON{ res in
+            
+            let json = JSON(res.value)
+            
+            var dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            
+            //add the photos to posts array
+            for (index, object) in json {
+                var post = PostItem()
+                post.id = object["id"].intValue
+                post.userID = object["user_id"].intValue
+                post.numLikes = object["numLikes"].intValue
+                post.numComments = object["numComments"].intValue
+                post.caption = object["caption"].stringValue
+                post.created = dateFormatter.date(from: object["created_at"].stringValue)
+                post.comments = object["comments"].array!
+                post.likes = object["likes"].array!
+                self.posts.add(post)
+            }
+            
+            self.postsCollectionView.reloadData()
+        }
+
+        
+    }
+    
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        print("ayyy wuzup")
+        self.updateCurrentView()
     }
     
     func setToken(token: String) -> Bool {

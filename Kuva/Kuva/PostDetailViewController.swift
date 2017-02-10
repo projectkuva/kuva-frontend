@@ -66,12 +66,15 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
         let tok = self.getToken()
         let headers = ["Authorization": "Bearer \(tok!)"]
 
+        print(self.id)
         Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/\(self.id)/delete", method: .post, headers: headers).responseJSON { res in
+            print(res)
             let json = JSON(res.value)
             print(json)
             
             //WE NEED TO RELOAD DATA OMG
-            self.tabBarController?.selectedIndex = 0
+            let view = self.storyboard?.instantiateViewController(withIdentifier: "tabbar")
+            self.present(view!, animated:true, completion:nil)
         }
 
     }
