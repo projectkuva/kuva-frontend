@@ -72,7 +72,7 @@ class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate
                         let msg:String = json["message"].stringValue
                         if msg == "success" {
                             let alert:UIAlertController = UIAlertController(title: "Image posted", message: "yey", preferredStyle: UIAlertControllerStyle.alert)
-                            alert.addAction(UIAlertAction(title: ":)", style: UIAlertActionStyle.default, handler: nil))
+                            alert.addAction(UIAlertAction(title: ":)", style: UIAlertActionStyle.default, handler: self.resetFeedView))
                             self.present(alert, animated: true, completion: nil)
                         } else {
                             let alert:UIAlertController = UIAlertController(title: "Upload failed", message: "sad", preferredStyle: UIAlertControllerStyle.alert)
@@ -90,6 +90,11 @@ class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate
         
 
        
+    }
+    
+    func resetFeedView(alert: UIAlertAction!) {
+        let view = self.storyboard?.instantiateViewController(withIdentifier: "tabbar")
+        self.present(view!, animated:true, completion:nil)
     }
     
     func getDocumentsDirectory() -> URL {
