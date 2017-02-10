@@ -213,16 +213,8 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 post.likes = object["likes"].array!
                 self.posts.add(post)
             }
-            
             self.postsCollectionView.reloadData()
         }
-
-        
-    }
-    
-    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        print("ayyy wuzup")
-        self.updateCurrentView()
     }
     
     func setToken(token: String) -> Bool {

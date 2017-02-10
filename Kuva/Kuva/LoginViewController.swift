@@ -10,23 +10,31 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import JWTDecode
+import CoreLocation
 
-class LoginViewController: PrimaryViewController {
+class LoginViewController: PrimaryViewController, CLLocationManagerDelegate {
 
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
+    var locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view, typically from a nib.
+        if CLLocationManager.authorizationStatus() == .notDetermined {
+            self.locationManager.requestWhenInUseAuthorization()
+        }
         
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         if super.loggedIn() {
             let view = self.storyboard?.instantiateViewController(withIdentifier: "tabbar")
             self.present(view!, animated:true, completion:nil)
         }
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
     }
 
     @IBAction func signinButtonPressed(_ sender: Any) {
