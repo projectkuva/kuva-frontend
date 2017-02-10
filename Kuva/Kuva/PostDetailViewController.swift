@@ -48,7 +48,6 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
         Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/like/\(self.id)", method: .post, parameters: parameters, headers: headers).responseJSON { res in
             let json = JSON(res.value)
             let msg:String = json["message"].stringValue
-            print(msg)
             if msg != "success" {
                 self.liked = !self.liked
             } else {
@@ -168,7 +167,6 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
         Alamofire.request("http://kuva.jakebrabec.me/api/photos/\(self.id)", headers: headers).responseJSON { res in
             
             let json = JSON(res.value)
-            print(json)
             self.liked = json["user_liked"].intValue == 1 ? true : false
             self.likesButton.imageView?.image = self.liked ? self.likeIMG : self.unlikeIMG
             let dateFormatter = DateFormatter()

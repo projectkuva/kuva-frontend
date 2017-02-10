@@ -159,8 +159,6 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
         // Configure the cell
         let post:PostItem = self.posts[indexPath.item] as! FeedViewController.PostItem
-        print(post.id)
-        print(indexPath.item)
         Alamofire.request("http://kuva.jakebrabec.me/storage/uploads/\(post.id).jpg").responseImage { res in
             if let image = res.result.value {
                 cell.postImageView.image = image
