@@ -10,7 +10,7 @@
 import XCTest
 
 class KuvaUITests: XCTestCase {
-        
+    let app = XCUIApplication()
     override func setUp() {
         super.setUp()
         
@@ -32,7 +32,7 @@ class KuvaUITests: XCTestCase {
     func testEmailFieldExists() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let app = XCUIApplication()
+        //let app = XCUIApplication()
         let emailfield = app.textFields["Email"]
         XCTAssert(emailfield.exists)
     }
@@ -40,15 +40,18 @@ class KuvaUITests: XCTestCase {
     func testPasswordFieldExists() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let app = XCUIApplication()
+        //let app = XCUIApplication()
         let passwordfield = app.secureTextFields["Password"]
         XCTAssert(passwordfield.exists)
     }
     
     func testIfButtonExists() {
-        let app = XCUIApplication()
+        //let app = XCUIApplication()
         let button = app.buttons["Sign In"]
         XCTAssert(button.exists)
     }
     
+    func testLoginWorks() {
+        
+    }
 }
