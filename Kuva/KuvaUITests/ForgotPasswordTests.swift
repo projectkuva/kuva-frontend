@@ -1,5 +1,5 @@
 //
-//  RegisterUITests.swift
+//  ForgotPasswordTests.swift
 //  Kuva
 //
 //  Created by Matthew on 2/16/17.
@@ -8,43 +8,35 @@
 
 import XCTest
 
-class RegisterUITests: XCTestCase {
+class ForgotPasswordTests: XCTestCase {
     let app = XCUIApplication()
-        
+    
     override func setUp() {
         super.setUp()
         
         continueAfterFailure = false
-
+        
         app.launch()
-        // load register view for each test
-        app.buttons["Don't have an account?"].tap()
-
+        // load forgot password view for each test
+        app.buttons["Forgot Your Password?"].tap()
+        
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-
-    func testUsernameFieldExists() {
-        XCTAssert(app.textFields["Username"].exists)
-    }
     
     func testEmailFieldExists() {
         XCTAssert(app.textFields["Email"].exists)
     }
     
-    func testPasswordFieldExists() {
-        XCTAssert(app.secureTextFields["Password"].exists)
-    }
-    
     func testCreateAccountButtonExists() {
-        XCTAssert(app.buttons["Create account"].exists)
+        XCTAssert(app.buttons["Reset Password"].exists)
     }
     
     func testReturnToLoginButtonExists() {
-        XCTAssert(app.buttons["Already have an account?"].exists)
+        XCTAssert(app.buttons["Go back to sign in?"].exists)
     }
     
 }

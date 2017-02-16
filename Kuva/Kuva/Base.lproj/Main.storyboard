@@ -238,7 +238,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eHy-js-qzB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="625" y="-334"/>
+            <point key="canvasLocation" x="1070" y="-358"/>
         </scene>
         <!--Upload Photo-->
         <scene sceneID="Q4h-Zx-KMh">
