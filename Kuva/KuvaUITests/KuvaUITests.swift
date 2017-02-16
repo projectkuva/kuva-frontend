@@ -41,7 +41,7 @@ class KuvaUITests: XCTestCase {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         let app = XCUIApplication()
-        let passwordfield = app.textFields["Password"]
+        let passwordfield = app.secureTextFields["Password"]
         XCTAssert(passwordfield.exists)
     }
     
