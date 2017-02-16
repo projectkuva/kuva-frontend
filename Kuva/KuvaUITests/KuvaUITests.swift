@@ -29,12 +29,26 @@ class KuvaUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testEmailFieldExists() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         let app = XCUIApplication()
         let emailfield = app.textFields["Email"]
         XCTAssert(emailfield.exists)
+    }
+    
+    func testPasswordFieldExists() {
+        // Use recording to get started writing UI tests.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let app = XCUIApplication()
+        let passwordfield = app.textFields["Password"]
+        XCTAssert(passwordfield.exists)
+    }
+    
+    func testIfButtonExists() {
+        let app = XCUIApplication()
+        let button = app.buttons["Sign In"]
+        XCTAssert(button.exists)
     }
     
 }
