@@ -20,9 +20,10 @@
 		3426D9AE1E4A70F80028E5C6 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426D9AD1E4A70F80028E5C6 /* CommentTableViewCell.swift */; };
 		342B59D51E4797CB001ACFB1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342B59D41E4797CB001ACFB1 /* LoginViewController.swift */; };
 		3432D9B11E46B3C6001C121A /* PrimaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3432D9B01E46B3C6001C121A /* PrimaryViewController.swift */; };
-		3489997E1E560E47008FCB05 /* KuvaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3489997D1E560E47008FCB05 /* KuvaUITests.swift */; };
+		3489997E1E560E47008FCB05 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3489997D1E560E47008FCB05 /* LoginTests.swift */; };
 		348DD3E51E4A164400FECEF1 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348DD3E41E4A164400FECEF1 /* PostDetailViewController.swift */; };
 		34DD80B31E46886300C49E59 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DD80B21E46886300C49E59 /* ForgotPasswordViewController.swift */; };
+		BC6222771E56367700A84F5D /* PhotoViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6222761E56367700A84F5D /* PhotoViewTests.swift */; };
 		FE5194A3A7547E3A85A1FAB9 /* Pods_Kuva.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00271136C52F3F43E8C06C30 /* Pods_Kuva.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,11 +56,12 @@
 		342B59D41E4797CB001ACFB1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3432D9B01E46B3C6001C121A /* PrimaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryViewController.swift; sourceTree = "<group>"; };
 		3489997B1E560E47008FCB05 /* KuvaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KuvaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3489997D1E560E47008FCB05 /* KuvaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KuvaUITests.swift; sourceTree = "<group>"; };
+		3489997D1E560E47008FCB05 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
 		3489997F1E560E47008FCB05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		348DD3E41E4A164400FECEF1 /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		34DD80B21E46886300C49E59 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		3AABB1DD9D2D81C525B9488F /* Pods-Kuva.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kuva.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kuva/Pods-Kuva.release.xcconfig"; sourceTree = "<group>"; };
+		BC6222761E56367700A84F5D /* PhotoViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +129,8 @@
 		3489997C1E560E47008FCB05 /* KuvaUITests */ = {
 			isa = PBXGroup;
 			children = (
-				3489997D1E560E47008FCB05 /* KuvaUITests.swift */,
+				3489997D1E560E47008FCB05 /* LoginTests.swift */,
+				BC6222761E56367700A84F5D /* PhotoViewTests.swift */,
 				3489997F1E560E47008FCB05 /* Info.plist */,
 			);
 			path = KuvaUITests;
@@ -325,7 +328,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3489997E1E560E47008FCB05 /* KuvaUITests.swift in Sources */,
+				3489997E1E560E47008FCB05 /* LoginTests.swift in Sources */,
+				BC6222771E56367700A84F5D /* PhotoViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -51,7 +51,20 @@ class KuvaUITests: XCTestCase {
         XCTAssert(button.exists)
     }
     
-    func testLoginWorks() {
+    func testIfForgotPasswordExists() {
+        let button = app.buttons["Forgot Your Password?"]
+        XCTAssert(button.exists)
         
+    }
+    
+    func testIfLogoLoads() {
+        let logo = app.images["kuva-logo"]
+        XCTAssert(logo.exists)
+    }
+    
+    func testIfRegisterButtonExists() {
+        let button = XCUIApplication().buttons["Don't have an account?"]
+        XCTAssert(button.exists)
+
     }
 }
