@@ -20,10 +20,21 @@
 		3426D9AE1E4A70F80028E5C6 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426D9AD1E4A70F80028E5C6 /* CommentTableViewCell.swift */; };
 		342B59D51E4797CB001ACFB1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342B59D41E4797CB001ACFB1 /* LoginViewController.swift */; };
 		3432D9B11E46B3C6001C121A /* PrimaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3432D9B01E46B3C6001C121A /* PrimaryViewController.swift */; };
+		3489997E1E560E47008FCB05 /* KuvaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3489997D1E560E47008FCB05 /* KuvaUITests.swift */; };
 		348DD3E51E4A164400FECEF1 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348DD3E41E4A164400FECEF1 /* PostDetailViewController.swift */; };
 		34DD80B31E46886300C49E59 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DD80B21E46886300C49E59 /* ForgotPasswordViewController.swift */; };
 		FE5194A3A7547E3A85A1FAB9 /* Pods_Kuva.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00271136C52F3F43E8C06C30 /* Pods_Kuva.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		348999801E560E47008FCB05 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34231EB41E3FF2A800905367 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34231EBB1E3FF2A800905367;
+			remoteInfo = Kuva;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		00271136C52F3F43E8C06C30 /* Pods_Kuva.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kuva.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +54,9 @@
 		3426D9AD1E4A70F80028E5C6 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		342B59D41E4797CB001ACFB1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3432D9B01E46B3C6001C121A /* PrimaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryViewController.swift; sourceTree = "<group>"; };
+		3489997B1E560E47008FCB05 /* KuvaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KuvaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3489997D1E560E47008FCB05 /* KuvaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KuvaUITests.swift; sourceTree = "<group>"; };
+		3489997F1E560E47008FCB05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		348DD3E41E4A164400FECEF1 /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		34DD80B21E46886300C49E59 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		3AABB1DD9D2D81C525B9488F /* Pods-Kuva.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kuva.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kuva/Pods-Kuva.release.xcconfig"; sourceTree = "<group>"; };
@@ -57,6 +71,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		348999781E560E47008FCB05 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -64,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				34231EBE1E3FF2A800905367 /* Kuva */,
+				3489997C1E560E47008FCB05 /* KuvaUITests */,
 				34231EBD1E3FF2A800905367 /* Products */,
 				3A1AEDC98E88FE9E8E2C4AFC /* Pods */,
 				D069023043ED5352AA7D202A /* Frameworks */,
@@ -74,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				34231EBC1E3FF2A800905367 /* Kuva.app */,
+				3489997B1E560E47008FCB05 /* KuvaUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,6 +122,15 @@
 				34231ECB1E3FF2A800905367 /* Info.plist */,
 			);
 			path = Kuva;
+			sourceTree = "<group>";
+		};
+		3489997C1E560E47008FCB05 /* KuvaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3489997D1E560E47008FCB05 /* KuvaUITests.swift */,
+				3489997F1E560E47008FCB05 /* Info.plist */,
+			);
+			path = KuvaUITests;
 			sourceTree = "<group>";
 		};
 		3A1AEDC98E88FE9E8E2C4AFC /* Pods */ = {
@@ -141,6 +173,24 @@
 			productReference = 34231EBC1E3FF2A800905367 /* Kuva.app */;
 			productType = "com.apple.product-type.application";
 		};
+		3489997A1E560E47008FCB05 /* KuvaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 348999821E560E47008FCB05 /* Build configuration list for PBXNativeTarget "KuvaUITests" */;
+			buildPhases = (
+				348999771E560E47008FCB05 /* Sources */,
+				348999781E560E47008FCB05 /* Frameworks */,
+				348999791E560E47008FCB05 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				348999811E560E47008FCB05 /* PBXTargetDependency */,
+			);
+			name = KuvaUITests;
+			productName = KuvaUITests;
+			productReference = 3489997B1E560E47008FCB05 /* KuvaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -153,8 +203,14 @@
 				TargetAttributes = {
 					34231EBB1E3FF2A800905367 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = ZF9FX9664L;
+						DevelopmentTeam = F6E5E2Y5US;
 						ProvisioningStyle = Automatic;
+					};
+					3489997A1E560E47008FCB05 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = F6E5E2Y5US;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 34231EBB1E3FF2A800905367;
 					};
 				};
 			};
@@ -172,6 +228,7 @@
 			projectRoot = "";
 			targets = (
 				34231EBB1E3FF2A800905367 /* Kuva */,
+				3489997A1E560E47008FCB05 /* KuvaUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -184,6 +241,13 @@
 				34231ECA1E3FF2A800905367 /* LaunchScreen.storyboard in Resources */,
 				34231EC71E3FF2A800905367 /* Assets.xcassets in Resources */,
 				34231EC51E3FF2A800905367 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		348999791E560E47008FCB05 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +321,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		348999771E560E47008FCB05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3489997E1E560E47008FCB05 /* KuvaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		348999811E560E47008FCB05 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 34231EBB1E3FF2A800905367 /* Kuva */;
+			targetProxy = 348999801E560E47008FCB05 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		34231EC31E3FF2A800905367 /* Main.storyboard */ = {
@@ -377,10 +457,10 @@
 			baseConfigurationReference = 2703CACDCE9FDF7DDDB324B9 /* Pods-Kuva.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ZF9FX9664L;
+				DEVELOPMENT_TEAM = F6E5E2Y5US;
 				INFOPLIST_FILE = Kuva/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.purdue.dewaels.Kuva;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.purdue.mess.Kuva;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -391,12 +471,38 @@
 			baseConfigurationReference = 3AABB1DD9D2D81C525B9488F /* Pods-Kuva.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ZF9FX9664L;
+				DEVELOPMENT_TEAM = F6E5E2Y5US;
 				INFOPLIST_FILE = Kuva/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.purdue.dewaels.Kuva;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.purdue.mess.Kuva;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		348999831E560E47008FCB05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = F6E5E2Y5US;
+				INFOPLIST_FILE = KuvaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.purdue.kuva.KuvaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Kuva;
+			};
+			name = Debug;
+		};
+		348999841E560E47008FCB05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = F6E5E2Y5US;
+				INFOPLIST_FILE = KuvaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.purdue.kuva.KuvaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Kuva;
 			};
 			name = Release;
 		};
@@ -420,6 +526,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		348999821E560E47008FCB05 /* Build configuration list for PBXNativeTarget "KuvaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				348999831E560E47008FCB05 /* Debug */,
+				348999841E560E47008FCB05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
