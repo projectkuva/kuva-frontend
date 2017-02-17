@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E154a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -494,6 +494,9 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qkF-sr-PDZ">
                                                     <rect key="frame" x="0.0" y="5" width="177" height="176"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="first-img">
+                                                        <bool key="isElement" value="YES"/>
+                                                    </accessibility>
                                                     <gestureRecognizers/>
                                                 </imageView>
                                             </subviews>
@@ -512,6 +515,9 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <accessibility key="accessibilityConfiguration" identifier="feedView">
+                            <bool key="isElement" value="YES"/>
+                        </accessibility>
                         <constraints>
                             <constraint firstItem="NwH-dy-ne2" firstAttribute="leading" secondItem="340-GH-Cq9" secondAttribute="leading" id="6bh-Xk-rm5"/>
                             <constraint firstItem="NwH-dy-ne2" firstAttribute="centerX" secondItem="340-GH-Cq9" secondAttribute="centerX" id="7un-OT-h4m"/>
@@ -580,6 +586,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1RX-UJ-VY8" propertyAccessControl="none">
                                 <rect key="frame" x="111" y="398.5" width="20" height="20"/>
+                                <accessibility key="accessibilityConfiguration" identifier="comment-btn"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="fzu-5e-aHi"/>
                                     <constraint firstAttribute="width" constant="20" id="oqJ-iy-zuC"/>

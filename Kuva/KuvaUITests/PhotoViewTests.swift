@@ -37,15 +37,24 @@ class PhotoViewTests: XCTestCase {
         button.tap()
         sleep(3)
     }
+
+    
+    func viewCellDetails(id: Int) {
+        let fixedView = app.otherElements["feedView"]
+        let viewCo = fixedView.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0))
+        let cellLocation:CGVector = getLocationCoordinates(id: 1)
+        let coordinate = viewCo.withOffset(cellLocation)
+        coordinate.tap()
+        sleep(3)
+    }
     
     func testCanComment() {
-        let table = app.tables.element
-        XCTAssertTrue(table.exists)
+        viewCellDetails(id: 0)
+        let commentBtn = app.buttons["comment-btn"]
+        let commentDialog = app.alerts["Post Comment"]
+        commentBtn.tap()
+        XCTAssertTrue(commentDialog.exists)
         
-        let cell = table.cells.element(boundBy: 2)
-        XCTAssertTrue(cell.exists)
-        let indexedText = cell.staticTexts.element
-        XCTAssertTrue(indexedText.exists)
     }
     
     func testCanLike() {
@@ -57,4 +66,7 @@ class PhotoViewTests: XCTestCase {
         
     }
     
+    func getLocationCoordinates(id: Int) -> CGVector {
+        return CGVector(dx: 10, dy: 100)
+    }
 }
