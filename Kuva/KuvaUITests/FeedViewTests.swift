@@ -13,15 +13,9 @@ class FeedViewTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
         XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        login()
     }
     
     override func tearDown() {
@@ -39,8 +33,40 @@ class FeedViewTests: XCTestCase {
         passwordfield.typeText("testpassword")
         button.tap()
         sleep(3)
+    }
+    
+
+    
+    func testUploadButton() {
+        let tabsQuery = app.tabBars
+        tabsQuery.buttons["Upload"].tap()
         
-  
+        let button = app.buttons["Post"]
+        XCTAssert(button.exists)
+        
+        
+    }
+    
+    func testProfileButton() {
+        let tabsQuery = app.tabBars
+        tabsQuery.buttons["Profile"].tap()
+        
+        let button = app.buttons["Log out"]
+        XCTAssert(button.exists)
+    }
+    
+    func testFeedButton() {
+        let tabsQuery = app.tabBars
+        tabsQuery.buttons["Upload"].tap()
+        tabsQuery.buttons["Feed"].tap()
+        
+        let logo = app.images["kuva-logo"]
+        XCTAssert(logo.exists)
+    }
+    
+    func testTabBarLoads() {
+        let tabsQuery = app.tabBars
+        XCTAssert(tabsQuery.buttons.count == 3)
     }
     
     
