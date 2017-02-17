@@ -211,12 +211,12 @@
 				TargetAttributes = {
 					34231EBB1E3FF2A800905367 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = F6E5E2Y5US;
+						DevelopmentTeam = ZF9FX9664L;
 						ProvisioningStyle = Automatic;
 					};
 					3489997A1E560E47008FCB05 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = F6E5E2Y5US;
+						DevelopmentTeam = ZF9FX9664L;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 34231EBB1E3FF2A800905367;
 					};
@@ -390,6 +390,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -467,10 +468,10 @@
 			baseConfigurationReference = 2703CACDCE9FDF7DDDB324B9 /* Pods-Kuva.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = F6E5E2Y5US;
+				DEVELOPMENT_TEAM = ZF9FX9664L;
 				INFOPLIST_FILE = Kuva/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.purdue.mess.Kuva;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.purdue.dewaels.Kuva;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -481,10 +482,10 @@
 			baseConfigurationReference = 3AABB1DD9D2D81C525B9488F /* Pods-Kuva.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = F6E5E2Y5US;
+				DEVELOPMENT_TEAM = ZF9FX9664L;
 				INFOPLIST_FILE = Kuva/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.purdue.mess.Kuva;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.purdue.dewaels.Kuva;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -493,10 +494,10 @@
 		348999831E560E47008FCB05 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = F6E5E2Y5US;
+				DEVELOPMENT_TEAM = ZF9FX9664L;
 				INFOPLIST_FILE = KuvaUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.purdue.kuva.KuvaUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.purdue.kuvad.KuvaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Kuva;
@@ -506,10 +507,10 @@
 		348999841E560E47008FCB05 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = F6E5E2Y5US;
+				DEVELOPMENT_TEAM = ZF9FX9664L;
 				INFOPLIST_FILE = KuvaUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.purdue.kuva.KuvaUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.purdue.kuvad.KuvaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Kuva;

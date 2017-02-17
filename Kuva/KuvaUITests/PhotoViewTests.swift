@@ -16,11 +16,26 @@ class PhotoViewTests: XCTestCase {
         continueAfterFailure = false
         
         XCUIApplication().launch()
+        
+        login()
+        
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+    }
+    
+    func login () {
+        let emailfield = app.textFields["Email"]
+        let passwordfield = app.secureTextFields["Password"]
+        let button = app.buttons["Sign In"]
+        emailfield.tap()
+        emailfield.typeText("test@email.com")
+        passwordfield.tap()
+        passwordfield.typeText("testpassword")
+        button.tap()
+        sleep(3)
     }
     
     func testCanComment() {
@@ -34,7 +49,7 @@ class PhotoViewTests: XCTestCase {
     }
     
     func testCanLike() {
-
+        
         
     }
     
