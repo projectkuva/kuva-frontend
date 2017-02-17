@@ -78,4 +78,21 @@ class KuvaUITests: XCTestCase {
         sleep(1)
         XCTAssert(badAlert.exists)
     }
+    
+    func testLogin() {
+        let emailfield = app.textFields["Email"]
+        let passwordfield = app.secureTextFields["Password"]
+        let button = app.buttons["Sign In"]
+        emailfield.tap()
+        emailfield.typeText("test@email.com")
+        passwordfield.tap()
+        passwordfield.typeText("testpassword")
+        button.tap()
+        sleep(3)
+        
+        let tabsQuery = app.tabBars
+        print(tabsQuery.buttons.count)
+        XCTAssert(tabsQuery.buttons.count == 3)
+        
+    }
 }

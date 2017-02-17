@@ -25,6 +25,7 @@
 		348DD3E51E4A164400FECEF1 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348DD3E41E4A164400FECEF1 /* PostDetailViewController.swift */; };
 		34DD80B31E46886300C49E59 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DD80B21E46886300C49E59 /* ForgotPasswordViewController.swift */; };
 		BC6222771E56367700A84F5D /* PhotoViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6222761E56367700A84F5D /* PhotoViewTests.swift */; };
+		BCEFD3C91E57A3EA00E44FDA /* FeedViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEFD3C81E57A3EA00E44FDA /* FeedViewTests.swift */; };
 		FE5194A3A7547E3A85A1FAB9 /* Pods_Kuva.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00271136C52F3F43E8C06C30 /* Pods_Kuva.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		34DD80B21E46886300C49E59 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		3AABB1DD9D2D81C525B9488F /* Pods-Kuva.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kuva.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kuva/Pods-Kuva.release.xcconfig"; sourceTree = "<group>"; };
 		BC6222761E56367700A84F5D /* PhotoViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewTests.swift; sourceTree = "<group>"; };
+		BCEFD3C81E57A3EA00E44FDA /* FeedViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				BC6222761E56367700A84F5D /* PhotoViewTests.swift */,
 				348999851E563FFD008FCB05 /* RegisterTests.swift */,
 				348999961E565013008FCB05 /* ForgotPasswordTests.swift */,
+				BCEFD3C81E57A3EA00E44FDA /* FeedViewTests.swift */,
 				3489997F1E560E47008FCB05 /* Info.plist */,
 			);
 			path = KuvaUITests;
@@ -333,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCEFD3C91E57A3EA00E44FDA /* FeedViewTests.swift in Sources */,
 				3489997E1E560E47008FCB05 /* LoginTests.swift in Sources */,
 				BC6222771E56367700A84F5D /* PhotoViewTests.swift in Sources */,
 				348999971E565013008FCB05 /* ForgotPasswordTests.swift in Sources */,
