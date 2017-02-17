@@ -26,7 +26,7 @@ class PhotoViewTests: XCTestCase {
         super.tearDown()
     }
     
-    func login () {
+    func login() {
         let emailfield = app.textFields["Email"]
         let passwordfield = app.secureTextFields["Password"]
         let button = app.buttons["Sign In"]
@@ -49,7 +49,11 @@ class PhotoViewTests: XCTestCase {
     }
     
     func testCanLike() {
-        
+//    
+//        let heart = app.images["likesButton"]
+//        XCTAssert(heart.exists)
+//
+//        
         
     }
     
