@@ -785,6 +785,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="Il5-dj-FzV"/>
                     <navigationItem key="navigationItem" title="USERNAME" id="wOP-9q-m92"/>
+                    <connections>
+                        <outlet property="username" destination="wOP-9q-m92" id="RMg-p1-sZY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nKW-Op-UAD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
