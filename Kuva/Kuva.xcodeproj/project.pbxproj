@@ -27,6 +27,7 @@
 		34DD80B31E46886300C49E59 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DD80B21E46886300C49E59 /* ForgotPasswordViewController.swift */; };
 		BC6222771E56367700A84F5D /* PhotoViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6222761E56367700A84F5D /* PhotoViewTests.swift */; };
 		BCEFD3C91E57A3EA00E44FDA /* FeedViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEFD3C81E57A3EA00E44FDA /* FeedViewTests.swift */; };
+		BCEFD3CB1E57E96200E44FDA /* ProfileViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEFD3CA1E57E96200E44FDA /* ProfileViewTests.swift */; };
 		FE5194A3A7547E3A85A1FAB9 /* Pods_Kuva.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00271136C52F3F43E8C06C30 /* Pods_Kuva.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		3AABB1DD9D2D81C525B9488F /* Pods-Kuva.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kuva.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kuva/Pods-Kuva.release.xcconfig"; sourceTree = "<group>"; };
 		BC6222761E56367700A84F5D /* PhotoViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewTests.swift; sourceTree = "<group>"; };
 		BCEFD3C81E57A3EA00E44FDA /* FeedViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewTests.swift; sourceTree = "<group>"; };
+		BCEFD3CA1E57E96200E44FDA /* ProfileViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				343002541E57DEBF001C9552 /* UploadTests.swift */,
 				348999961E565013008FCB05 /* ForgotPasswordTests.swift */,
 				BCEFD3C81E57A3EA00E44FDA /* FeedViewTests.swift */,
+				BCEFD3CA1E57E96200E44FDA /* ProfileViewTests.swift */,
 				3489997F1E560E47008FCB05 /* Info.plist */,
 			);
 			path = KuvaUITests;
@@ -217,7 +220,7 @@
 				TargetAttributes = {
 					34231EBB1E3FF2A800905367 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = ZF9FX9664L;
+						DevelopmentTeam = HMZ55NEC6T;
 						ProvisioningStyle = Automatic;
 					};
 					3489997A1E560E47008FCB05 = {
@@ -343,6 +346,7 @@
 				3489997E1E560E47008FCB05 /* LoginTests.swift in Sources */,
 				343002551E57DEBF001C9552 /* UploadTests.swift in Sources */,
 				BC6222771E56367700A84F5D /* PhotoViewTests.swift in Sources */,
+				BCEFD3CB1E57E96200E44FDA /* ProfileViewTests.swift in Sources */,
 				348999971E565013008FCB05 /* ForgotPasswordTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,10 +480,10 @@
 			baseConfigurationReference = 2703CACDCE9FDF7DDDB324B9 /* Pods-Kuva.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ZF9FX9664L;
+				DEVELOPMENT_TEAM = HMZ55NEC6T;
 				INFOPLIST_FILE = Kuva/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.purdue.dewaels.Kuva;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.purdue.ankit.Kuva;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -490,10 +494,10 @@
 			baseConfigurationReference = 3AABB1DD9D2D81C525B9488F /* Pods-Kuva.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ZF9FX9664L;
+				DEVELOPMENT_TEAM = HMZ55NEC6T;
 				INFOPLIST_FILE = Kuva/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.purdue.dewaels.Kuva;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.purdue.ankit.Kuva;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
