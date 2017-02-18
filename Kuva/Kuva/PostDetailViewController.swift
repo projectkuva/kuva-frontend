@@ -64,7 +64,7 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
         //ser/photos/{photo_ID}/delete
         let tok = self.getToken()
         let headers = ["Authorization": "Bearer \(tok!)"]
-
+        
         print(self.id)
         Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/\(self.id)/delete", method: .post, headers: headers).responseJSON { res in
             print(res)
@@ -75,7 +75,7 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
             let view = self.storyboard?.instantiateViewController(withIdentifier: "tabbar")
             self.present(view!, animated:true, completion:nil)
         }
-
+        
     }
     
     @IBAction func commentButtonPressed(_ sender: Any) {
@@ -125,7 +125,7 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
             deleteButton.isEnabled = false
         }
         
-
+        
         self.postImageView.image = self.postImage
         self.commentTable.delegate = self
         self.commentTable.dataSource = self
@@ -137,7 +137,7 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
     }
     
     override func viewDidAppear(_ animated: Bool) {
-//        self.updateCurentImage()
+        //        self.updateCurentImage()
         
     }
     
@@ -169,6 +169,8 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
             let json = JSON(res.value)
             self.liked = json["user_liked"].intValue == 1 ? true : false
             self.likesButton.imageView?.image = self.liked ? self.likeIMG : self.unlikeIMG
+            self.likesButton.accessibilityIdentifier = self.liked ? "liked" : "unliked"
+            
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             self.created = dateFormatter.date(from: json["0"]["created_at"].stringValue)
