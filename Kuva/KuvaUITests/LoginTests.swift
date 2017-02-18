@@ -9,7 +9,7 @@
 
 import XCTest
 
-class KuvaUITests: XCTestCase {
+class LoginTests: XCTestCase {
     let app = XCUIApplication()
     override func setUp() {
         super.setUp()
