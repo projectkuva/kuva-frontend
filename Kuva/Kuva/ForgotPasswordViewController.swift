@@ -29,11 +29,11 @@ class ForgotPasswordViewController: PrimaryViewController {
             
             var alert: UIAlertController
             if msg == "error" {
-                alert = UIAlertController(title: "bad!!!", message: "bad bad", preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "☹️", style: UIAlertActionStyle.default, handler: nil))
+                alert = UIAlertController(title: "Email Field Invalid", message: "Email field must be a valid email", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             } else {
-                alert = UIAlertController(title: "wow", message: "😍", preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "😏", style: UIAlertActionStyle.default, handler: nil))
+                alert = UIAlertController(title: "Email Sent", message: "You will receive instructions to reset password shortly", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             }
             self.present(alert, animated: true, completion: nil)
         }

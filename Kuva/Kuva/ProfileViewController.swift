@@ -10,9 +10,11 @@ import UIKit
 
 class ProfileViewController: PrimaryViewController {
 
+    @IBOutlet weak var username: UINavigationItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setUsername()
         // Do any additional setup after loading the view.
     }
 
@@ -25,6 +27,11 @@ class ProfileViewController: PrimaryViewController {
         super.logOut()
         let view = self.storyboard?.instantiateViewController(withIdentifier: "loginVC")
         self.present(view!, animated:true, completion:nil)
+    }
+    
+    func setUsername() {
+        let id = self.getUserID()!
+        username.title = "\(id)"
     }
 
     /*

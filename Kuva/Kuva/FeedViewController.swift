@@ -34,6 +34,9 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         var likes: [JSON] = []
     }
 
+    @IBOutlet weak var cameraButton: UIBarButtonItem!
+    @IBOutlet weak var composeButton: UIBarButtonItem!
+    
     
     @IBOutlet weak var postsCollectionView: UICollectionView!
     
@@ -107,8 +110,9 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         
-        
-        //self.postsCollectionView!.register(PostCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        cameraButton.accessibilityIdentifier = "camerabutton"
+        composeButton.accessibilityIdentifier = "composebutton"
+        //self.postsCollectbionView!.register(PostCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         
         updateCurrentView()
 

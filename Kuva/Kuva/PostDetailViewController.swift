@@ -64,7 +64,7 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
         //ser/photos/{photo_ID}/delete
         let tok = self.getToken()
         let headers = ["Authorization": "Bearer \(tok!)"]
-
+        
         print(self.id)
         Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/\(self.id)/delete", method: .post, headers: headers).responseJSON { res in
             print(res)
@@ -75,7 +75,7 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
             let view = self.storyboard?.instantiateViewController(withIdentifier: "tabbar")
             self.present(view!, animated:true, completion:nil)
         }
-
+        
     }
     
     @IBAction func commentButtonPressed(_ sender: Any) {
@@ -95,13 +95,13 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
                 let json = JSON(res.value)
                 let msg:String = json["message"].stringValue
                 if msg != "success" {
-                    let fail_alert = UIAlertController(title: "Failure", message: "Could not post comment", preferredStyle: .alert)
+                    let fail_alert = UIAlertController(title: "Invalid Comment", message: "Comment cannot be empty", preferredStyle: .alert)
                     fail_alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
                         // dismiss
                     }))
                     self.present(fail_alert, animated: true, completion: nil)
                 } else {
-                    let succ_alert = UIAlertController(title: "Success", message: "Comment posted!", preferredStyle: .alert)
+                    let succ_alert = UIAlertController(title: "Success", message: "Comment posted", preferredStyle: .alert)
                     succ_alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
                         // dismiss
                     }))
@@ -125,7 +125,7 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
             deleteButton.isEnabled = false
         }
         
-
+        
         self.postImageView.image = self.postImage
         self.commentTable.delegate = self
         self.commentTable.dataSource = self
@@ -137,7 +137,7 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
     }
     
     override func viewDidAppear(_ animated: Bool) {
-//        self.updateCurentImage()
+        //        self.updateCurentImage()
         
     }
     
@@ -169,6 +169,8 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
             let json = JSON(res.value)
             self.liked = json["user_liked"].intValue == 1 ? true : false
             self.likesButton.imageView?.image = self.liked ? self.likeIMG : self.unlikeIMG
+            self.likesButton.accessibilityIdentifier = self.liked ? "liked" : "unliked"
+            
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             self.created = dateFormatter.date(from: json["0"]["created_at"].stringValue)
