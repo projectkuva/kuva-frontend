@@ -35,6 +35,19 @@ class FeedViewTests: XCTestCase {
         sleep(3)
     }
     
+    func getLocationCoordinates(id: Int) -> CGVector {
+        return CGVector(dx: 10, dy: 100)
+    }
+    
+    func viewCellDetails(id: Int) {
+        let fixedView = app.otherElements["feedView"]
+        let viewCo = fixedView.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0))
+        let cellLocation:CGVector = getLocationCoordinates(id: 1)
+        let coordinate = viewCo.withOffset(cellLocation)
+        coordinate.tap()
+        sleep(3)
+    }
+    
     //test if upload button tabbar works
     func testUploadButtonExists() {
         let tabsQuery = app.tabBars
@@ -71,7 +84,7 @@ class FeedViewTests: XCTestCase {
     
     //select a photo
     func testIfViewImageDetails(){
-    
+        viewCellDetails(id: 0)
     }
 
     //to take photos and upload
@@ -85,10 +98,11 @@ class FeedViewTests: XCTestCase {
         let button = app.buttons["composebutton"]
         XCTAssert(button.exists)
     }
- 
-    func testCameraButtonWorks() {
-        
-    }
+    
+    //not sure how to test that the camera view has opened
+//    func testCameraButtonWorks() {
+//        
+//    }
     
     //test if the compose button transitions properly
     func testComposeButtonWorks() {
