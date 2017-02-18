@@ -43,7 +43,7 @@ class RegisterViewController: PrimaryViewController {
             let json = JSON(res.value)
             let msg:String = json["message"].stringValue
             let token:String = json["token"].stringValue
-            //WE NEED TO GET THE ERRORS AND SUCH
+            
             
             if msg == "success" {
                 //successful login, save auth token
