@@ -95,13 +95,13 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
                 let json = JSON(res.value)
                 let msg:String = json["message"].stringValue
                 if msg != "success" {
-                    let fail_alert = UIAlertController(title: "Failure", message: "Could not post comment", preferredStyle: .alert)
+                    let fail_alert = UIAlertController(title: "Invalid Comment", message: "Comment cannot be empty", preferredStyle: .alert)
                     fail_alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
                         // dismiss
                     }))
                     self.present(fail_alert, animated: true, completion: nil)
                 } else {
-                    let succ_alert = UIAlertController(title: "Success", message: "Comment posted!", preferredStyle: .alert)
+                    let succ_alert = UIAlertController(title: "Success", message: "Comment posted", preferredStyle: .alert)
                     succ_alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
                         // dismiss
                     }))

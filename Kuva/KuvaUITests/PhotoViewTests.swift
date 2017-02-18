@@ -152,11 +152,11 @@ class PhotoViewTests: XCTestCase {
     func testEmptyComment() {
         let commentBtn = app.buttons["comment-btn"]
         let commentDialog = app.alerts["Post Comment"]
-        let commentFailure = app.alerts["Invalid Comment"]
         commentBtn.tap()
         commentDialog.buttons["Post"].tap()
+        sleep(1)
         
-        XCTAssertTrue(commentFailure.exists)
+        XCTAssertTrue(app.alerts["Invalid Comment"].exists)
     }
     
     func isUsersPhoto() -> BooleanLiteralType {
