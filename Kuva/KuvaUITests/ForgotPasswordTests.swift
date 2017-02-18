@@ -31,6 +31,17 @@ class ForgotPasswordTests: XCTestCase {
         XCTAssert(app.textFields["Email"].exists)
     }
     
+    func testEmptyEmail() {
+        let emailfield = app.textFields["forgetEmail"]
+        let button = app.buttons["resetPassword"]
+        let badAlert = app.alerts["Email Field Invalid"]
+        emailfield.tap()
+        emailfield.typeText("")
+        button.tap()
+        sleep(1)
+        XCTAssert(badAlert.exists)
+    }
+    
     func testCreateAccountButtonExists() {
         XCTAssert(app.buttons["Reset Password"].exists)
     }

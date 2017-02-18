@@ -40,11 +40,26 @@ class LoginViewController: PrimaryViewController, CLLocationManagerDelegate {
     @IBAction func signinButtonPressed(_ sender: Any) {
         let username = usernameTextField.text
         let password = passwordTextField.text
+        var error = false
         
         let parameters: Parameters = [
             "loginfield": username,
             "password": password
         ]
+        if (username == "" || username == nil) {
+            let alert:UIAlertController = UIAlertController(title: "Email Field Empty", message: "Email field cannot be empty and must be proper email", preferredStyle: UIAlertControllerStyle.alert)
+            error = true
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        } else if (password == "" || password == nil) {
+            let alert:UIAlertController = UIAlertController(title: "Password Field Empty", message: "Password field cannot be empty", preferredStyle: UIAlertControllerStyle.alert)
+            error = true
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        if (!error) {
+            
         
         //use AlamoFire to login with backend
         Alamofire.request("http://kuva.jakebrabec.me/api/user/auth", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ res in
@@ -71,6 +86,7 @@ class LoginViewController: PrimaryViewController, CLLocationManagerDelegate {
                 self.passwordTextField.text = ""
             }
             
+        }
         }
 
     }

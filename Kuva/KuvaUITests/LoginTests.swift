@@ -57,7 +57,7 @@ class LoginTests: XCTestCase {
     func testEmptyEmail() {
         let emailfield = app.textFields["Email"]
         let button = app.buttons["Sign In"]
-        let badAlert = app.alerts["bad!!!"]
+        let badAlert = app.alerts["Email Field Empty"]
         emailfield.tap()
         emailfield.typeText("")
         button.tap()
@@ -69,7 +69,7 @@ class LoginTests: XCTestCase {
         let emailfield = app.textFields["Email"]
         let passwordfield = app.secureTextFields["Password"]
         let button = app.buttons["Sign In"]
-        let badAlert = app.alerts["bad!!!"]
+        let badAlert = app.alerts["Password Field Empty"]
         emailfield.tap()
         emailfield.typeText("test@email.com")
         passwordfield.tap()
