@@ -51,7 +51,7 @@ class ProfileViewTests: XCTestCase {
     }
     
     func testUsername() {
-        let name = app.
+        XCTAssertFalse(app.navigationBars["USERNAME"].exists)
     }
     
 }
