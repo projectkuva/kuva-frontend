@@ -149,6 +149,16 @@ class PhotoViewTests: XCTestCase {
         XCTAssert(tabsQuery.buttons.count == 3)
     }
     
+    func testEmptyComment() {
+        let commentBtn = app.buttons["comment-btn"]
+        let commentDialog = app.alerts["Post Comment"]
+        let commentFailure = app.alerts["Invalid Comment"]
+        commentBtn.tap()
+        commentDialog.buttons["Post"].tap()
+        
+        XCTAssertTrue(commentFailure.exists)
+    }
+    
     func isUsersPhoto() -> BooleanLiteralType {
         return app.buttons["deleteBtn"].exists
     }
