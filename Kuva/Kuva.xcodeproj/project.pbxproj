@@ -19,6 +19,7 @@
 		34231ECA1E3FF2A800905367 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34231EC81E3FF2A800905367 /* LaunchScreen.storyboard */; };
 		3426D9AE1E4A70F80028E5C6 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426D9AD1E4A70F80028E5C6 /* CommentTableViewCell.swift */; };
 		342B59D51E4797CB001ACFB1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342B59D41E4797CB001ACFB1 /* LoginViewController.swift */; };
+		343002551E57DEBF001C9552 /* UploadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343002541E57DEBF001C9552 /* UploadTests.swift */; };
 		3432D9B11E46B3C6001C121A /* PrimaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3432D9B01E46B3C6001C121A /* PrimaryViewController.swift */; };
 		3489997E1E560E47008FCB05 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3489997D1E560E47008FCB05 /* LoginTests.swift */; };
 		348999971E565013008FCB05 /* ForgotPasswordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348999961E565013008FCB05 /* ForgotPasswordTests.swift */; };
@@ -56,6 +57,7 @@
 		34231ECB1E3FF2A800905367 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3426D9AD1E4A70F80028E5C6 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		342B59D41E4797CB001ACFB1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		343002541E57DEBF001C9552 /* UploadTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadTests.swift; sourceTree = "<group>"; };
 		3432D9B01E46B3C6001C121A /* PrimaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryViewController.swift; sourceTree = "<group>"; };
 		3489997B1E560E47008FCB05 /* KuvaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KuvaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3489997D1E560E47008FCB05 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				3489997D1E560E47008FCB05 /* LoginTests.swift */,
 				BC6222761E56367700A84F5D /* PhotoViewTests.swift */,
 				348999851E563FFD008FCB05 /* RegisterTests.swift */,
+				343002541E57DEBF001C9552 /* UploadTests.swift */,
 				348999961E565013008FCB05 /* ForgotPasswordTests.swift */,
 				BCEFD3C81E57A3EA00E44FDA /* FeedViewTests.swift */,
 				3489997F1E560E47008FCB05 /* Info.plist */,
@@ -338,6 +341,7 @@
 			files = (
 				BCEFD3C91E57A3EA00E44FDA /* FeedViewTests.swift in Sources */,
 				3489997E1E560E47008FCB05 /* LoginTests.swift in Sources */,
+				343002551E57DEBF001C9552 /* UploadTests.swift in Sources */,
 				BC6222771E56367700A84F5D /* PhotoViewTests.swift in Sources */,
 				348999971E565013008FCB05 /* ForgotPasswordTests.swift in Sources */,
 			);

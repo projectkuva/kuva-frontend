@@ -42,6 +42,13 @@ class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate
     }
     
     @IBAction func postButtonPressed(_ sender: Any) {
+        if self.selectImageButton.isEnabled {
+            print("Test")
+            let alert:UIAlertController = UIAlertController(title: "Select an image", message: "pls", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: ":/", style: UIAlertActionStyle.default, handler: self.resetFeedView))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
         
         let caption:String = captionTextView.text
         let loc:CLLocationCoordinate2D = locationManager.location!.coordinate
