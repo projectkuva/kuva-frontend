@@ -68,34 +68,37 @@ class FeedViewTests: XCTestCase {
         let tabsQuery = app.tabBars
         XCTAssert(tabsQuery.buttons.count == 3)
     }
-/*
+    
     //select a photo
     func testIfViewImageDetails(){
     
     }
-*/
 
-    /*
     //to take photos and upload
     func testCameraButtonExists() {
-        
+        let button = app.buttons["camerabutton"]
+        XCTAssert(button.exists)
     }
 
     //alternate way to access upload
     func testComposeButtonExists() {
-        
-        
+        let button = app.buttons["composebutton"]
+        XCTAssert(button.exists)
     }
-/*
+ 
     func testCameraButtonWorks() {
         
     }
- */
     
+    //test if the compose button transitions properly
     func testComposeButtonWorks() {
+        let button = app.buttons["composebutton"]
+        button.tap()
         
+        let postbutton = app.buttons["Post"]
+        XCTAssert(postbutton.exists)
     }
- */
+
 
     
 }
