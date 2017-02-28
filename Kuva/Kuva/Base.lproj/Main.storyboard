@@ -354,6 +354,7 @@
                         <segue destination="u1j-hc-KzO" kind="relationship" relationship="viewControllers" id="eF1-cX-Bx6"/>
                         <segue destination="tyt-Vw-gFj" kind="relationship" relationship="viewControllers" id="iDm-D1-CBO"/>
                         <segue destination="sGx-Id-Jgs" kind="relationship" relationship="viewControllers" id="DKA-Jg-JYF"/>
+                        <segue destination="s8C-RS-2Pw" kind="relationship" relationship="viewControllers" id="fLw-gN-dwn"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hQf-jF-01l" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -801,6 +802,26 @@
             </objects>
             <point key="canvasLocation" x="5141.6000000000004" y="138.98050974512745"/>
         </scene>
+        <!--Recent Activity-->
+        <scene sceneID="F7f-NX-NPd">
+            <objects>
+                <viewController id="ktd-zv-KEs" customClass="NewsFeedViewController" customModule="Kuva" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VZS-gt-7By"/>
+                        <viewControllerLayoutGuide type="bottom" id="ddc-ut-07j"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Y5N-Ac-nfa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Activity" id="xbV-5k-MLi"/>
+                    <navigationItem key="navigationItem" title="Recent Activity" id="Fe5-1Q-Qh4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7PW-k5-6Ay" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6460" y="139"/>
+        </scene>
         <!--Feed-->
         <scene sceneID="bAh-Hu-cAs">
             <objects>
@@ -858,6 +879,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="idl-9W-J2R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5143" y="-751"/>
+        </scene>
+        <!--Activity-->
+        <scene sceneID="W2n-lo-gVV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="s8C-RS-2Pw" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Activity" id="DQA-91-uyN"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iWC-TW-mO4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ktd-zv-KEs" kind="relationship" relationship="rootViewController" id="UPR-bI-BUe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xnA-Jv-zQ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6460" y="-752"/>
         </scene>
     </scenes>
     <resources>
