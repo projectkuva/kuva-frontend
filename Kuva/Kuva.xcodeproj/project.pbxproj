@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F007BDD1E67693A0049FCBE /* TokenResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F007BDC1E67693A0049FCBE /* TokenResetViewController.swift */; };
 		2F165E751E47A9A000300A67 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F165E741E47A9A000300A67 /* PostViewController.swift */; };
 		2F1E67341E6601D4004AF2BB /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1E67331E6601D4004AF2BB /* NewsFeedViewController.swift */; };
 		2F1E67361E660775004AF2BB /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1E67351E660775004AF2BB /* ActivityTableViewCell.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		00271136C52F3F43E8C06C30 /* Pods_Kuva.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kuva.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2703CACDCE9FDF7DDDB324B9 /* Pods-Kuva.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kuva.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kuva/Pods-Kuva.debug.xcconfig"; sourceTree = "<group>"; };
+		2F007BDC1E67693A0049FCBE /* TokenResetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenResetViewController.swift; sourceTree = "<group>"; };
 		2F165E741E47A9A000300A67 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		2F1E67331E6601D4004AF2BB /* NewsFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedViewController.swift; sourceTree = "<group>"; };
 		2F1E67351E660775004AF2BB /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				3432D9B01E46B3C6001C121A /* PrimaryViewController.swift */,
 				2F48B3441E47F61800E5276E /* PostCollectionViewCell.swift */,
 				2FB9E9681E4BFDC80050F8AC /* ProfileViewController.swift */,
+				2F007BDC1E67693A0049FCBE /* TokenResetViewController.swift */,
 				34231EC31E3FF2A800905367 /* Main.storyboard */,
 				34231EC61E3FF2A800905367 /* Assets.xcassets */,
 				34231EC81E3FF2A800905367 /* LaunchScreen.storyboard */,
@@ -341,6 +344,7 @@
 				2F48B3451E47F61800E5276E /* PostCollectionViewCell.swift in Sources */,
 				3426D9AE1E4A70F80028E5C6 /* CommentTableViewCell.swift in Sources */,
 				2F48B3471E47F77000E5276E /* FeedViewController.swift in Sources */,
+				2F007BDD1E67693A0049FCBE /* TokenResetViewController.swift in Sources */,
 				34231EC01E3FF2A800905367 /* AppDelegate.swift in Sources */,
 				2F1E67341E6601D4004AF2BB /* NewsFeedViewController.swift in Sources */,
 			);

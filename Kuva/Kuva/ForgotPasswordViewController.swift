@@ -32,11 +32,18 @@ class ForgotPasswordViewController: PrimaryViewController {
                 alert = UIAlertController(title: "Email Field Invalid", message: "Email field must be a valid email", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             } else {
-                alert = UIAlertController(title: "Email Sent", message: "You will receive instructions to reset password shortly", preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                alert = UIAlertController(title: "Email Sent", message: "You will be sent a 4-digit password reset token, which can be used to reset your password", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { action in
+                    self.goToReset()
+                }))
             }
             self.present(alert, animated: true, completion: nil)
         }
+    }
+    
+    func goToReset() {
+        let view = self.storyboard?.instantiateViewController(withIdentifier: "resettoken")
+        self.present(view!, animated:true, completion:nil)
     }
     
     override func viewDidLoad() {
