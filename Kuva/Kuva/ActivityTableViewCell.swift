@@ -10,7 +10,6 @@ import UIKit
 
 class ActivityTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var activityUser: UILabel!
     @IBOutlet weak var activityAction: UILabel!
     
     

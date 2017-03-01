@@ -23,7 +23,7 @@ class NewsFeedViewController: PrimaryViewController, UITableViewDelegate, UITabl
         self.activityTable.delegate = self
         self.activityTable.dataSource = self
         self.activityTable.rowHeight = UITableViewAutomaticDimension
-        self.activityTable.estimatedRowHeight = 43
+        self.activityTable.estimatedRowHeight = 50
         getData()
         self.activityTable.reloadData()
     }
@@ -42,7 +42,6 @@ class NewsFeedViewController: PrimaryViewController, UITableViewDelegate, UITabl
             let json = JSON(res.value)
             print(json)
             self.activities = json["data"].array!
-            print("HERE")
             print(self.activities)
             
 
@@ -60,15 +59,20 @@ class NewsFeedViewController: PrimaryViewController, UITableViewDelegate, UITabl
         let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityCell", for: indexPath) as! ActivityTableViewCell
 
         var type = activities[indexPath.row]["type"].stringValue
-        //var user = activities[indexPath.row]["user"]["name"].stringValue
-        cell.activityUser.text? = activities[indexPath.row]["user"]["name"].stringValue
+        var user = activities[indexPath.row]["user"]["name"].stringValue
+        var action:String? = nil
         if (type == "comment") {
-            cell.activityAction.text? = "commented on your photo"
+            action = " commented on your photo"
         } else if (type == "like") {
-            cell.activityAction.text? = "liked your photo"
+            action = " liked your photo"
         } else {
-            cell.activityAction.text? = ""
+            action = ""
         }
+        var actionString = NSMutableAttributedString(string:action!)
+        var attrs = [NSFontAttributeName : UIFont.boldSystemFont(ofSize: 17)]
+        var userString = NSMutableAttributedString(string:user, attributes:attrs)
+        userString.append(actionString)
+        cell.activityAction.attributedText = userString
         
         return cell
     }
