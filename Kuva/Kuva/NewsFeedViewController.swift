@@ -24,6 +24,7 @@ class NewsFeedViewController: PrimaryViewController, UITableViewDelegate, UITabl
         self.activityTable.dataSource = self
         self.activityTable.rowHeight = UITableViewAutomaticDimension
         self.activityTable.estimatedRowHeight = 43
+        getData()
         self.activityTable.reloadData()
     }
 
@@ -40,7 +41,7 @@ class NewsFeedViewController: PrimaryViewController, UITableViewDelegate, UITabl
             
             let json = JSON(res.value)
             print(json)
-            self.activities = json["0"]["data"].array!
+            self.activities = json["data"].array!
             print("HERE")
             print(self.activities)
             
