@@ -20,8 +20,9 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
     @IBOutlet weak var commentTable: UITableView!
     @IBOutlet weak var likesButton: UIButton!
     @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var deletePhotoButton: UIBarButtonItem!
+    @IBOutlet weak var reportButton: UIButton!
     
     var id: Int = 0
     var numComments: Int = 0
@@ -59,6 +60,45 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
         }
         
     }
+    @IBAction func deletePhotoPressed(_ sender: Any) {
+        let tok = self.getToken()
+        let headers = ["Authorization": "Bearer \(tok!)"]
+        
+        Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/\(self.id)/delete", method: .post, headers: headers).responseJSON { res in
+            let json = JSON(res.value)
+
+            
+            //WE NEED TO RELOAD DATA OMG
+            let view = self.storyboard?.instantiateViewController(withIdentifier: "tabbar")
+            self.present(view!, animated:true, completion:nil)
+        }
+        
+
+    }
+    
+    @IBAction func reportButtonPressed(_ sender: Any) {
+        //api/users/photos/{photoID}/report
+        let alert:UIAlertController = UIAlertController(title: "Report Photo", message: "Are you sure you want to report this photo?", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { action in
+            self.reportPhoto()
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    func reportPhoto() {
+        let tok = self.getToken()
+        let headers = ["Authorization": "Bearer \(tok!)"]
+        let parameters: Parameters = [
+            "message": "Photo is inappropriate for kuva"
+        ]
+        
+        Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/\(self.id)/report", method: .post, parameters: parameters, headers: headers).responseJSON { res in
+            let json = JSON(res.value)
+            print(json)
+        }
+    }
     
     @IBAction func shareButtonPressed(_ sender: Any) {
         
@@ -69,24 +109,7 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
         self.present(alert, animated: true, completion: nil)
         
     }
-    
-    
-    @IBAction func deleteButtonPressed(_ sender: Any) {
-        
-        let tok = self.getToken()
-        let headers = ["Authorization": "Bearer \(tok!)"]
-        
-        Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/\(self.id)/delete", method: .post, headers: headers).responseJSON { res in
-            print(res)
-            let json = JSON(res.value)
-            print(json)
-            
-            //WE NEED TO RELOAD DATA OMG
-            let view = self.storyboard?.instantiateViewController(withIdentifier: "tabbar")
-            self.present(view!, animated:true, completion:nil)
-        }
-        
-    }
+
     
     @IBAction func commentButtonPressed(_ sender: Any) {
         let alert = UIAlertController(title: "Post Comment", message: "Enter comment text", preferredStyle: .alert)
@@ -131,8 +154,7 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
         
         //Delete button
         if (self.getUserID() != self.userID) {
-            deleteButton.isHidden = true
-            deleteButton.isEnabled = false
+            disableDeleteIcon()
         }
         
         
@@ -210,6 +232,11 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
             
         }
         
+    }
+    
+    func disableDeleteIcon() {
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
+        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.clear
     }
     
     /*
