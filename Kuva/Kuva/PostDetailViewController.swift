@@ -22,6 +22,7 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var deletePhotoButton: UIBarButtonItem!
     
     var id: Int = 0
     var numComments: Int = 0
@@ -59,20 +60,7 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
         }
         
     }
-    
-    @IBAction func shareButtonPressed(_ sender: Any) {
-        
-        var url = "http://kuva.jakebrabec.me/storage/uploads/\(id).jpg"
-        UIPasteboard.general.string = url
-        let alert:UIAlertController = UIAlertController(title: "Share Photo", message: "Link to image copied to clipboard", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-        
-    }
-    
-    
-    @IBAction func deleteButtonPressed(_ sender: Any) {
-        
+    @IBAction func deletePhotoPressed(_ sender: Any) {
         let tok = self.getToken()
         let headers = ["Authorization": "Bearer \(tok!)"]
         
@@ -86,7 +74,19 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
             self.present(view!, animated:true, completion:nil)
         }
         
+
     }
+    
+    @IBAction func shareButtonPressed(_ sender: Any) {
+        
+        var url = "http://kuva.jakebrabec.me/storage/uploads/\(id).jpg"
+        UIPasteboard.general.string = url
+        let alert:UIAlertController = UIAlertController(title: "Share Photo", message: "Link to image copied to clipboard", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+
     
     @IBAction func commentButtonPressed(_ sender: Any) {
         let alert = UIAlertController(title: "Post Comment", message: "Enter comment text", preferredStyle: .alert)
@@ -131,8 +131,7 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
         
         //Delete button
         if (self.getUserID() != self.userID) {
-            deleteButton.isHidden = true
-            deleteButton.isEnabled = false
+            disableDeleteIcon()
         }
         
         
@@ -210,6 +209,11 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
             
         }
         
+    }
+    
+    func disableDeleteIcon() {
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
+        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.clear
     }
     
     /*

@@ -806,20 +806,6 @@
                                     <action selector="shareButtonPressed:" destination="ayn-oL-fo1" eventType="touchUpInside" id="9i0-Ig-W1X"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Kt-ai-hS9">
-                                <rect key="frame" x="311" y="79" width="20" height="20"/>
-                                <accessibility key="accessibilityConfiguration" identifier="deleteBtn"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="7CI-eJ-GfV"/>
-                                    <constraint firstAttribute="height" constant="20" id="yyD-qV-lg6"/>
-                                </constraints>
-                                <state key="normal" title="Delete" image="delete">
-                                    <color key="titleColor" red="1" green="0.40000000000000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="deleteButtonPressed:" destination="ayn-oL-fo1" eventType="touchUpInside" id="Tqn-Ds-zqb"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -827,7 +813,6 @@
                             <constraint firstItem="R8W-vB-0UE" firstAttribute="trailing" secondItem="qcp-TX-eIt" secondAttribute="trailingMargin" id="2fp-MX-15A"/>
                             <constraint firstItem="RWz-J3-Zzk" firstAttribute="leading" secondItem="1RX-UJ-VY8" secondAttribute="trailing" constant="10" id="3Pl-2y-oZs"/>
                             <constraint firstItem="Wy1-nW-PPb" firstAttribute="centerX" secondItem="Mzp-cG-XpT" secondAttribute="centerX" id="3Ue-LU-bmd"/>
-                            <constraint firstItem="7Kt-ai-hS9" firstAttribute="top" secondItem="1fX-Vw-FuQ" secondAttribute="bottom" constant="15" id="5n7-jU-iWa"/>
                             <constraint firstItem="Mzp-cG-XpT" firstAttribute="trailing" secondItem="094-C3-qEe" secondAttribute="trailing" id="73K-I5-thF"/>
                             <constraint firstItem="UL6-sF-7hj" firstAttribute="top" secondItem="1fX-Vw-FuQ" secondAttribute="bottom" constant="15" id="8Yx-me-oBO"/>
                             <constraint firstItem="J9n-ws-SPt" firstAttribute="leading" secondItem="3WR-e8-WBf" secondAttribute="trailing" constant="10" id="EDt-DL-Xfx"/>
@@ -836,11 +821,8 @@
                             <constraint firstItem="L7q-2t-sQk" firstAttribute="trailing" secondItem="Mzp-cG-XpT" secondAttribute="trailing" id="H1r-Zl-9iO"/>
                             <constraint firstItem="Mzp-cG-XpT" firstAttribute="top" secondItem="L7q-2t-sQk" secondAttribute="bottom" constant="15" id="KmK-nh-FKH"/>
                             <constraint firstItem="Mzp-cG-XpT" firstAttribute="leading" secondItem="094-C3-qEe" secondAttribute="leading" id="LTf-OU-YFH"/>
-                            <constraint firstItem="R8W-vB-0UE" firstAttribute="leading" secondItem="7Kt-ai-hS9" secondAttribute="trailing" constant="15" id="R5x-01-nar"/>
                             <constraint firstItem="L7q-2t-sQk" firstAttribute="leading" secondItem="RWz-J3-Zzk" secondAttribute="trailing" constant="8" symbolic="YES" id="UIX-CV-Q0Z"/>
                             <constraint firstItem="UL6-sF-7hj" firstAttribute="leading" secondItem="3WR-e8-WBf" secondAttribute="leading" id="WbU-MS-Vfd"/>
-                            <constraint firstItem="Wy1-nW-PPb" firstAttribute="top" secondItem="7Kt-ai-hS9" secondAttribute="bottom" constant="10" id="Zgb-og-IOd"/>
-                            <constraint firstItem="Wy1-nW-PPb" firstAttribute="top" secondItem="7Kt-ai-hS9" secondAttribute="bottom" constant="10" id="dyZ-Xp-OYc"/>
                             <constraint firstItem="094-C3-qEe" firstAttribute="top" secondItem="Mzp-cG-XpT" secondAttribute="bottom" constant="15" id="fE3-KQ-N03"/>
                             <constraint firstItem="Wy1-nW-PPb" firstAttribute="leading" secondItem="qcp-TX-eIt" secondAttribute="leading" id="h29-ij-zJF"/>
                             <constraint firstItem="Mzp-cG-XpT" firstAttribute="top" secondItem="3WR-e8-WBf" secondAttribute="bottom" constant="15" id="hQy-ve-zzg"/>
@@ -852,18 +834,25 @@
                             <constraint firstItem="R8W-vB-0UE" firstAttribute="top" secondItem="1fX-Vw-FuQ" secondAttribute="bottom" constant="15" id="nye-E8-Hto"/>
                             <constraint firstItem="L7q-2t-sQk" firstAttribute="trailing" secondItem="qcp-TX-eIt" secondAttribute="trailingMargin" id="uRQ-QX-Pxp"/>
                             <constraint firstItem="UL6-sF-7hj" firstAttribute="leading" secondItem="qcp-TX-eIt" secondAttribute="leadingMargin" id="yKe-vG-wTE"/>
+                            <constraint firstItem="Wy1-nW-PPb" firstAttribute="top" secondItem="R8W-vB-0UE" secondAttribute="bottom" constant="10" id="zle-uY-8vU"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Image Detail" id="biK-Ln-dwI">
                         <barButtonItem key="backBarButtonItem" title="Back" id="jlK-d4-hXA"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="05H-tt-6wY" userLabel="deleteImg">
+                            <color key="tintColor" red="1" green="0.40000000000000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="deletePhotoPressed:" destination="ayn-oL-fo1" id="Uvd-NQ-J4E"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="captionLabel" destination="Mzp-cG-XpT" id="GYt-ox-w2d"/>
                         <outlet property="commentTable" destination="094-C3-qEe" id="a9M-BE-JEr"/>
                         <outlet property="commentsLabel" destination="RWz-J3-Zzk" id="8r9-18-HEf"/>
                         <outlet property="dateLabel" destination="L7q-2t-sQk" id="nkM-Wh-6Oi"/>
-                        <outlet property="deleteButton" destination="7Kt-ai-hS9" id="aXF-2W-FaD"/>
+                        <outlet property="deletePhotoButton" destination="05H-tt-6wY" id="fbH-Df-9Yc"/>
                         <outlet property="likesButton" destination="3WR-e8-WBf" id="QB2-OB-KH5"/>
                         <outlet property="likesLabel" destination="J9n-ws-SPt" id="pdN-sN-yyl"/>
                         <outlet property="postImageView" destination="Wy1-nW-PPb" id="aoA-1f-DJq"/>
@@ -1058,7 +1047,6 @@
     </scenes>
     <resources>
         <image name="comment" width="64" height="64"/>
-        <image name="delete" width="64" height="64"/>
         <image name="heart-gr" width="64" height="64"/>
         <image name="kuva-inverse" width="245" height="91"/>
         <image name="kuva-logo" width="387" height="150"/>
