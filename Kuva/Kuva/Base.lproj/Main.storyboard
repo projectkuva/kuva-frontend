@@ -806,6 +806,15 @@
                                     <action selector="shareButtonPressed:" destination="ayn-oL-fo1" eventType="touchUpInside" id="9i0-Ig-W1X"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDY-fQ-Ba2">
+                                <rect key="frame" x="309" y="79" width="20" height="20"/>
+                                <accessibility key="accessibilityConfiguration" identifier="reportButton"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="Fi3-0X-BRx"/>
+                                    <constraint firstAttribute="height" constant="20" id="QEX-na-0ll"/>
+                                </constraints>
+                                <state key="normal" image="flag"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -815,6 +824,7 @@
                             <constraint firstItem="Wy1-nW-PPb" firstAttribute="centerX" secondItem="Mzp-cG-XpT" secondAttribute="centerX" id="3Ue-LU-bmd"/>
                             <constraint firstItem="Mzp-cG-XpT" firstAttribute="trailing" secondItem="094-C3-qEe" secondAttribute="trailing" id="73K-I5-thF"/>
                             <constraint firstItem="UL6-sF-7hj" firstAttribute="top" secondItem="1fX-Vw-FuQ" secondAttribute="bottom" constant="15" id="8Yx-me-oBO"/>
+                            <constraint firstItem="R8W-vB-0UE" firstAttribute="leading" secondItem="qDY-fQ-Ba2" secondAttribute="trailing" constant="10" id="Bnx-9u-ocN"/>
                             <constraint firstItem="J9n-ws-SPt" firstAttribute="leading" secondItem="3WR-e8-WBf" secondAttribute="trailing" constant="10" id="EDt-DL-Xfx"/>
                             <constraint firstItem="Mzp-cG-XpT" firstAttribute="top" secondItem="RWz-J3-Zzk" secondAttribute="bottom" constant="15" id="Ea2-jX-wiv"/>
                             <constraint firstItem="1RX-UJ-VY8" firstAttribute="leading" secondItem="J9n-ws-SPt" secondAttribute="trailing" constant="15" id="GNY-zV-BPM"/>
@@ -823,6 +833,8 @@
                             <constraint firstItem="Mzp-cG-XpT" firstAttribute="leading" secondItem="094-C3-qEe" secondAttribute="leading" id="LTf-OU-YFH"/>
                             <constraint firstItem="L7q-2t-sQk" firstAttribute="leading" secondItem="RWz-J3-Zzk" secondAttribute="trailing" constant="8" symbolic="YES" id="UIX-CV-Q0Z"/>
                             <constraint firstItem="UL6-sF-7hj" firstAttribute="leading" secondItem="3WR-e8-WBf" secondAttribute="leading" id="WbU-MS-Vfd"/>
+                            <constraint firstItem="qDY-fQ-Ba2" firstAttribute="top" secondItem="1fX-Vw-FuQ" secondAttribute="bottom" constant="15" id="ZkB-6L-ZOA"/>
+                            <constraint firstItem="Wy1-nW-PPb" firstAttribute="top" secondItem="qDY-fQ-Ba2" secondAttribute="bottom" constant="10" id="eDI-YO-SJw"/>
                             <constraint firstItem="094-C3-qEe" firstAttribute="top" secondItem="Mzp-cG-XpT" secondAttribute="bottom" constant="15" id="fE3-KQ-N03"/>
                             <constraint firstItem="Wy1-nW-PPb" firstAttribute="leading" secondItem="qcp-TX-eIt" secondAttribute="leading" id="h29-ij-zJF"/>
                             <constraint firstItem="Mzp-cG-XpT" firstAttribute="top" secondItem="3WR-e8-WBf" secondAttribute="bottom" constant="15" id="hQy-ve-zzg"/>
@@ -1047,6 +1059,7 @@
     </scenes>
     <resources>
         <image name="comment" width="64" height="64"/>
+        <image name="flag" width="64" height="64"/>
         <image name="heart-gr" width="64" height="64"/>
         <image name="kuva-inverse" width="245" height="91"/>
         <image name="kuva-logo" width="387" height="150"/>
