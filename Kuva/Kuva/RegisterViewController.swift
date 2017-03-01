@@ -20,11 +20,19 @@ class RegisterViewController: PrimaryViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        UIApplication.shared.statusBarStyle = .lightContent
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
+        
     }
     
     @IBAction func createButtonPressed(_ sender: Any) {
