@@ -40,11 +40,7 @@ class NewsFeedViewController: PrimaryViewController, UITableViewDelegate, UITabl
         Alamofire.request("http://kuva.jakebrabec.me/api/user/newsfeed", headers: headers).responseJSON { res in
             
             let json = JSON(res.value)
-            print(json)
             self.activities = json["data"].array!
-            print(self.activities)
-            
-
             
             self.activityTable.reloadData()
             
