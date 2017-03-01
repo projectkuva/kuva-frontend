@@ -450,7 +450,7 @@
         <!--resettoken-->
         <scene sceneID="kpw-Qd-vho">
             <objects>
-                <viewController title="resettoken" id="7KC-ER-i2m" customClass="TokenResetViewController" customModule="Kuva" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="resettoken" title="resettoken" id="7KC-ER-i2m" customClass="TokenResetViewController" customModule="Kuva" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OPr-nm-hCG"/>
                         <viewControllerLayoutGuide type="bottom" id="Ycb-yG-NoS"/>
@@ -534,6 +534,7 @@
                             <constraint firstItem="guy-Ei-gfA" firstAttribute="centerX" secondItem="9T1-XW-R7I" secondAttribute="centerX" id="vbS-hc-xaA"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="newPassword" destination="guy-Ei-gfA" id="dOA-Wu-DDK"/>
                         <outlet property="resetToken" destination="EYH-M2-GlX" id="sZf-nF-8yd"/>

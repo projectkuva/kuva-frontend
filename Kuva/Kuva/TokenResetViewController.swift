@@ -27,8 +27,11 @@ class TokenResetViewController: PrimaryViewController {
         
         Alamofire.request("http://kuva.jakebrabec.me/api/user/reset/store", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ res in
             
+            print(res)
             let json = JSON(res.value)
+            print(json)
             let msg:String = json["message"].stringValue
+            print(msg)
             
             if msg == "success" {
                 //successful login, save auth token
@@ -44,7 +47,6 @@ class TokenResetViewController: PrimaryViewController {
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
                 
-                self.resetToken.text = ""
                 self.newPassword.text = ""
             }
             

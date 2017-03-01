@@ -32,7 +32,7 @@ class ForgotPasswordViewController: PrimaryViewController {
                 alert = UIAlertController(title: "Email Field Invalid", message: "Email field must be a valid email", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             } else {
-                alert = UIAlertController(title: "Email Sent", message: "You will be sent a 4-digit password reset token, which can be used to reset your password", preferredStyle: UIAlertControllerStyle.alert)
+                alert = UIAlertController(title: "Email Sent", message: "You will be sent an 4-alphanumeric password reset token, which can be used to reset your password", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { action in
                     self.goToReset()
                 }))
