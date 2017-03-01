@@ -90,8 +90,11 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
     func reportPhoto() {
         let tok = self.getToken()
         let headers = ["Authorization": "Bearer \(tok!)"]
+        let parameters: Parameters = [
+            "message": "Photo is inappropriate for kuva"
+        ]
         
-        Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/\(self.id)/report", method: .post, headers: headers).responseJSON { res in
+        Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/\(self.id)/report", method: .post, parameters: parameters, headers: headers).responseJSON { res in
             let json = JSON(res.value)
             print(json)
         }
