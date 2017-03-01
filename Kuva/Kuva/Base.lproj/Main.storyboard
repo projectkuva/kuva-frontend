@@ -321,7 +321,7 @@
                             <constraint firstItem="6uv-FL-L7H" firstAttribute="leading" secondItem="aKX-Gh-IUJ" secondAttribute="leadingMargin" constant="46" id="yWk-t6-G99"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="jcB-zw-4E5"/>
+                    <tabBarItem key="tabBarItem" title="Upload" id="jcB-zw-4E5"/>
                     <navigationItem key="navigationItem" title="Upload Photo" id="w8H-33-eHd">
                         <barButtonItem key="leftBarButtonItem" systemItem="camera" id="R90-FD-X1U">
                             <color key="tintColor" red="0.1764705882352941" green="0.1764705882352941" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -499,7 +499,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPz-oM-Mux">
                                 <rect key="frame" x="57.5" y="316" width="259" height="44"/>

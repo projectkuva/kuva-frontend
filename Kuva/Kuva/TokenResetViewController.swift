@@ -36,11 +36,12 @@ class TokenResetViewController: PrimaryViewController {
             if msg == "success" {
                 //successful login, save auth token
                 let alert:UIAlertController = UIAlertController(title: "Password Reset", message: "Password successfully reset", preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "Go to login", style: UIAlertActionStyle.default, handler: nil))
+                alert.addAction(UIAlertAction(title: "Go to login", style: UIAlertActionStyle.default, handler: { action in
+                    self.goToLogin()
+                }))
                 self.present(alert, animated: true, completion: nil)
                 
-                let view = self.storyboard?.instantiateViewController(withIdentifier: "loginVC")
-                self.present(view!, animated:true, completion:nil)
+                
                 
             } else {
                 let alert:UIAlertController = UIAlertController(title: "Invalid Token", message: "Token must be valid and password must be at least 6 characters", preferredStyle: UIAlertControllerStyle.alert)
@@ -54,6 +55,11 @@ class TokenResetViewController: PrimaryViewController {
         }
 
         
+    }
+    
+    func goToLogin() {
+        let view = self.storyboard?.instantiateViewController(withIdentifier: "loginVC")
+        self.present(view!, animated:true, completion:nil)
     }
     
     
