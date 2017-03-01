@@ -123,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-324" y="-334"/>
+            <point key="canvasLocation" x="-953" y="-334"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="9kJ-JS-lD7">
@@ -238,7 +238,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eHy-js-qzB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1070" y="-358"/>
+            <point key="canvasLocation" x="441" y="-358"/>
         </scene>
         <!--Upload Photo-->
         <scene sceneID="Q4h-Zx-KMh">
@@ -321,7 +321,7 @@
                             <constraint firstItem="6uv-FL-L7H" firstAttribute="leading" secondItem="aKX-Gh-IUJ" secondAttribute="leadingMargin" constant="46" id="yWk-t6-G99"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Upload" id="jcB-zw-4E5"/>
+                    <tabBarItem key="tabBarItem" title="Upload" image="tb-up" selectedImage="tb-up-cl" id="jcB-zw-4E5"/>
                     <navigationItem key="navigationItem" title="Upload Photo" id="w8H-33-eHd">
                         <barButtonItem key="leftBarButtonItem" systemItem="camera" id="R90-FD-X1U">
                             <color key="tintColor" red="0.1764705882352941" green="0.1764705882352941" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -349,6 +349,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="1" green="0.43109667299999999" blue="0.4137716293" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="u1j-hc-KzO" kind="relationship" relationship="viewControllers" id="eF1-cX-Bx6"/>
@@ -445,7 +450,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lQ9-U7-EuC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-324" y="483"/>
+            <point key="canvasLocation" x="-953" y="483"/>
         </scene>
         <!--resettoken-->
         <scene sceneID="kpw-Qd-vho">
@@ -542,13 +547,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7SE-k6-Lq7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="601" y="483"/>
+            <point key="canvasLocation" x="-28" y="483"/>
         </scene>
         <!--Upload-->
         <scene sceneID="mCM-xK-MpD">
             <objects>
                 <navigationController storyboardIdentifier="PostVC" automaticallyAdjustsScrollViewInsets="NO" id="tyt-Vw-gFj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Upload" id="fS1-9P-y4d"/>
+                    <tabBarItem key="tabBarItem" title="Upload" image="tb-up" selectedImage="tb-up-cl" id="fS1-9P-y4d"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="J8h-yb-B2d">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -626,7 +631,7 @@
                             <constraint firstItem="NwH-dy-ne2" firstAttribute="top" secondItem="gbq-wf-EGu" secondAttribute="bottom" id="VPJ-PY-fLR"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="lsk-Q9-Cfh"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="tb-home" selectedImage="tb-home-cl" id="lsk-Q9-Cfh"/>
                     <navigationItem key="navigationItem" title="kuva" id="66d-QL-fxI">
                         <barButtonItem key="leftBarButtonItem" systemItem="camera" id="lbG-YG-BUl">
                             <color key="tintColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -902,7 +907,7 @@
                             <constraint firstItem="uVh-nP-KxZ" firstAttribute="top" secondItem="mbz-V1-6wW" secondAttribute="bottom" constant="30" id="zTY-1Z-Lqa"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="Il5-dj-FzV"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="tb-upload-cl" selectedImage="tb-profile-cl" id="Il5-dj-FzV"/>
                     <navigationItem key="navigationItem" title="USERNAME" id="wOP-9q-m92"/>
                     <connections>
                         <outlet property="username" destination="wOP-9q-m92" id="RMg-p1-sZY"/>
@@ -963,7 +968,7 @@
                             <constraint firstItem="zRU-HL-TTM" firstAttribute="top" secondItem="VZS-gt-7By" secondAttribute="bottom" id="txJ-63-qM5"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Activity" id="xbV-5k-MLi"/>
+                    <tabBarItem key="tabBarItem" title="Activity" image="tb-activity" selectedImage="tb-activity-cl" id="xbV-5k-MLi"/>
                     <navigationItem key="navigationItem" title="Recent Activity" id="Fe5-1Q-Qh4"/>
                     <connections>
                         <outlet property="activityTable" destination="zRU-HL-TTM" id="C9a-OH-eWb"/>
@@ -977,7 +982,7 @@
         <scene sceneID="bAh-Hu-cAs">
             <objects>
                 <navigationController storyboardIdentifier="FeedVC" automaticallyAdjustsScrollViewInsets="NO" id="u1j-hc-KzO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feed" id="SOn-0W-g8j"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="tb-home" selectedImage="tb-home-cl" id="SOn-0W-g8j"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="kuva-logo" id="cKb-R7-6pQ">
@@ -1016,7 +1021,7 @@
         <scene sceneID="XWd-2p-51Y">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sGx-Id-Jgs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="dDa-2O-Ymx"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="tb-profile" selectedImage="tb-profile-cl" id="dDa-2O-Ymx"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="04A-Mm-jYf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1035,7 +1040,7 @@
         <scene sceneID="W2n-lo-gVV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="s8C-RS-2Pw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Activity" id="DQA-91-uyN"/>
+                    <tabBarItem key="tabBarItem" title="Activity" image="tb-activity" selectedImage="tb-activity-cl" id="DQA-91-uyN"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iWC-TW-mO4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1058,6 +1063,15 @@
         <image name="kuva-inverse" width="245" height="91"/>
         <image name="kuva-logo" width="387" height="150"/>
         <image name="share" width="64" height="64"/>
+        <image name="tb-activity" width="25" height="25"/>
+        <image name="tb-activity-cl" width="25" height="25"/>
+        <image name="tb-home" width="25" height="25"/>
+        <image name="tb-home-cl" width="25" height="25"/>
+        <image name="tb-profile" width="25" height="25"/>
+        <image name="tb-profile-cl" width="25" height="25"/>
+        <image name="tb-up" width="25" height="25"/>
+        <image name="tb-up-cl" width="25" height="25"/>
+        <image name="tb-upload-cl" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ifr-1L-rIB"/>
