@@ -167,6 +167,8 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
         Alamofire.request("http://kuva.jakebrabec.me/api/photos/\(self.id)", headers: headers).responseJSON { res in
             
             let json = JSON(res.value)
+            print(json)
+            self.liked = false
             self.liked = json["user_liked"].intValue == 1 ? true : false
             self.likesButton.imageView?.image = self.liked ? self.likeIMG : self.unlikeIMG
             self.likesButton.accessibilityIdentifier = self.liked ? "liked" : "unliked"
