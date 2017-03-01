@@ -26,15 +26,16 @@ class LoginViewController: PrimaryViewController, CLLocationManagerDelegate {
             self.locationManager.requestWhenInUseAuthorization()
         }
         
-        if super.loggedIn() {
-            let view = self.storyboard?.instantiateViewController(withIdentifier: "tabbar")
-            self.present(view!, animated:true, completion:nil)
-        }
+        
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+        if (super.loggedIn()) {
+            print("here")
+            let view = self.storyboard?.instantiateViewController(withIdentifier: "tabbar")
+            self.present(view!, animated:true, completion:nil)
+        }
     }
 
     @IBAction func signinButtonPressed(_ sender: Any) {

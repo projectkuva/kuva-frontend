@@ -341,10 +341,10 @@
             </objects>
             <point key="canvasLocation" x="1745" y="139"/>
         </scene>
-        <!--Main Tab Bar Controller-->
+        <!--tabbar-->
         <scene sceneID="bp6-VM-Aku">
             <objects>
-                <tabBarController storyboardIdentifier="tabbar" id="f6K-9t-63C" customClass="MainTabBarController" customModule="Kuva" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabbar" title="tabbar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="f6K-9t-63C" customClass="MainTabBarController" customModule="Kuva" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Wg7-jJ-yXq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
