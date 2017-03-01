@@ -6,8 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -570,7 +568,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wy1-nW-PPb" propertyAccessControl="none">
-                                <rect key="frame" x="0.0" y="113.5" width="375" height="270.5"/>
+                                <rect key="frame" x="0.0" y="109" width="375" height="275"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3WR-e8-WBf" propertyAccessControl="none">
                                 <rect key="frame" x="16" y="399" width="20" height="20"/>
@@ -616,8 +614,8 @@
                                 <color key="textColor" red="0.4549019608" green="0.47058823529999999" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Jan 31, 2017" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7q-2t-sQk" propertyAccessControl="none">
-                                <rect key="frame" x="239" y="399" width="120" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jan 31, 2017" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7q-2t-sQk" propertyAccessControl="none">
+                                <rect key="frame" x="239" y="402" width="120" height="17"/>
                                 <accessibility key="accessibilityConfiguration" identifier="dateLabel"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.4549019608" green="0.47058823529999999" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -640,7 +638,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GW9-fQ-pFk" id="8d2-hj-J1P">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IcB-Kw-5dV">
@@ -689,27 +687,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UL6-sF-7hj">
-                                <rect key="frame" x="16" y="79" width="78" height="19.5"/>
+                                <rect key="frame" x="16" y="79" width="78" height="20"/>
                                 <accessibility key="accessibilityConfiguration" identifier="usernameTextLabel"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <color key="textColor" red="0.4549019608" green="0.47058823529999999" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Kt-ai-hS9">
-                                <rect key="frame" x="313" y="73.5" width="46" height="30"/>
-                                <accessibility key="accessibilityConfiguration" identifier="deleteBtn"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="fh3-p8-mvB"/>
-                                </constraints>
-                                <state key="normal" title="Delete">
-                                    <color key="titleColor" red="1" green="0.40000000000000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="deleteButtonPressed:" destination="ayn-oL-fo1" eventType="touchUpInside" id="Tqn-Ds-zqb"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8W-vB-0UE">
-                                <rect key="frame" x="285" y="79" width="20" height="20"/>
+                                <rect key="frame" x="339" y="79" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="2oc-Xu-bgd"/>
                                     <constraint firstAttribute="width" constant="20" id="LLr-3S-224"/>
@@ -719,13 +704,28 @@
                                     <action selector="shareButtonPressed:" destination="ayn-oL-fo1" eventType="touchUpInside" id="9i0-Ig-W1X"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Kt-ai-hS9">
+                                <rect key="frame" x="311" y="79" width="20" height="20"/>
+                                <accessibility key="accessibilityConfiguration" identifier="deleteBtn"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="7CI-eJ-GfV"/>
+                                    <constraint firstAttribute="height" constant="20" id="yyD-qV-lg6"/>
+                                </constraints>
+                                <state key="normal" title="Delete" image="delete">
+                                    <color key="titleColor" red="1" green="0.40000000000000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteButtonPressed:" destination="ayn-oL-fo1" eventType="touchUpInside" id="Tqn-Ds-zqb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3WR-e8-WBf" firstAttribute="leading" secondItem="Mzp-cG-XpT" secondAttribute="leading" id="1H5-Gj-kYu"/>
+                            <constraint firstItem="R8W-vB-0UE" firstAttribute="trailing" secondItem="qcp-TX-eIt" secondAttribute="trailingMargin" id="2fp-MX-15A"/>
                             <constraint firstItem="RWz-J3-Zzk" firstAttribute="leading" secondItem="1RX-UJ-VY8" secondAttribute="trailing" constant="10" id="3Pl-2y-oZs"/>
                             <constraint firstItem="Wy1-nW-PPb" firstAttribute="centerX" secondItem="Mzp-cG-XpT" secondAttribute="centerX" id="3Ue-LU-bmd"/>
-                            <constraint firstItem="UL6-sF-7hj" firstAttribute="baseline" secondItem="7Kt-ai-hS9" secondAttribute="baseline" id="6h3-s5-dkk"/>
+                            <constraint firstItem="7Kt-ai-hS9" firstAttribute="top" secondItem="1fX-Vw-FuQ" secondAttribute="bottom" constant="15" id="5n7-jU-iWa"/>
                             <constraint firstItem="Mzp-cG-XpT" firstAttribute="trailing" secondItem="094-C3-qEe" secondAttribute="trailing" id="73K-I5-thF"/>
                             <constraint firstItem="UL6-sF-7hj" firstAttribute="top" secondItem="1fX-Vw-FuQ" secondAttribute="bottom" constant="15" id="8Yx-me-oBO"/>
                             <constraint firstItem="J9n-ws-SPt" firstAttribute="leading" secondItem="3WR-e8-WBf" secondAttribute="trailing" constant="10" id="EDt-DL-Xfx"/>
@@ -734,13 +734,12 @@
                             <constraint firstItem="L7q-2t-sQk" firstAttribute="trailing" secondItem="Mzp-cG-XpT" secondAttribute="trailing" id="H1r-Zl-9iO"/>
                             <constraint firstItem="Mzp-cG-XpT" firstAttribute="top" secondItem="L7q-2t-sQk" secondAttribute="bottom" constant="15" id="KmK-nh-FKH"/>
                             <constraint firstItem="Mzp-cG-XpT" firstAttribute="leading" secondItem="094-C3-qEe" secondAttribute="leading" id="LTf-OU-YFH"/>
-                            <constraint firstItem="7Kt-ai-hS9" firstAttribute="baseline" secondItem="UL6-sF-7hj" secondAttribute="firstBaseline" id="OBP-7t-C58"/>
+                            <constraint firstItem="R8W-vB-0UE" firstAttribute="leading" secondItem="7Kt-ai-hS9" secondAttribute="trailing" constant="15" id="R5x-01-nar"/>
                             <constraint firstItem="L7q-2t-sQk" firstAttribute="leading" secondItem="RWz-J3-Zzk" secondAttribute="trailing" constant="8" symbolic="YES" id="UIX-CV-Q0Z"/>
                             <constraint firstItem="UL6-sF-7hj" firstAttribute="leading" secondItem="3WR-e8-WBf" secondAttribute="leading" id="WbU-MS-Vfd"/>
-                            <constraint firstItem="UL6-sF-7hj" firstAttribute="baseline" secondItem="7Kt-ai-hS9" secondAttribute="firstBaseline" id="Zeu-qG-x1z"/>
                             <constraint firstItem="Wy1-nW-PPb" firstAttribute="top" secondItem="7Kt-ai-hS9" secondAttribute="bottom" constant="10" id="Zgb-og-IOd"/>
+                            <constraint firstItem="Wy1-nW-PPb" firstAttribute="top" secondItem="7Kt-ai-hS9" secondAttribute="bottom" constant="10" id="dyZ-Xp-OYc"/>
                             <constraint firstItem="094-C3-qEe" firstAttribute="top" secondItem="Mzp-cG-XpT" secondAttribute="bottom" constant="15" id="fE3-KQ-N03"/>
-                            <constraint firstItem="7Kt-ai-hS9" firstAttribute="trailing" secondItem="L7q-2t-sQk" secondAttribute="trailing" id="fGC-bu-VtQ"/>
                             <constraint firstItem="Wy1-nW-PPb" firstAttribute="leading" secondItem="qcp-TX-eIt" secondAttribute="leading" id="h29-ij-zJF"/>
                             <constraint firstItem="Mzp-cG-XpT" firstAttribute="top" secondItem="3WR-e8-WBf" secondAttribute="bottom" constant="15" id="hQy-ve-zzg"/>
                             <constraint firstItem="3WR-e8-WBf" firstAttribute="top" secondItem="Wy1-nW-PPb" secondAttribute="bottom" constant="15" id="hfx-Xu-1Wj"/>
@@ -749,7 +748,6 @@
                             <constraint firstItem="Mzp-cG-XpT" firstAttribute="top" secondItem="J9n-ws-SPt" secondAttribute="bottom" constant="15" id="lKh-WJ-KgE"/>
                             <constraint firstAttribute="bottom" secondItem="094-C3-qEe" secondAttribute="bottom" constant="20" symbolic="YES" id="lvA-XR-wQz"/>
                             <constraint firstItem="R8W-vB-0UE" firstAttribute="top" secondItem="1fX-Vw-FuQ" secondAttribute="bottom" constant="15" id="nye-E8-Hto"/>
-                            <constraint firstItem="7Kt-ai-hS9" firstAttribute="leading" secondItem="R8W-vB-0UE" secondAttribute="trailing" constant="8" symbolic="YES" id="tm7-4I-qpb"/>
                             <constraint firstItem="L7q-2t-sQk" firstAttribute="trailing" secondItem="qcp-TX-eIt" secondAttribute="trailingMargin" id="uRQ-QX-Pxp"/>
                             <constraint firstItem="UL6-sF-7hj" firstAttribute="leading" secondItem="qcp-TX-eIt" secondAttribute="leadingMargin" id="yKe-vG-wTE"/>
                         </constraints>
@@ -958,6 +956,7 @@
     </scenes>
     <resources>
         <image name="comment" width="64" height="64"/>
+        <image name="delete" width="64" height="64"/>
         <image name="heart-gr" width="64" height="64"/>
         <image name="kuva-inverse" width="245" height="91"/>
         <image name="kuva-logo" width="387" height="150"/>
