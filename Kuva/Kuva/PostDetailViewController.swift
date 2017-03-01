@@ -21,6 +21,7 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
     @IBOutlet weak var likesButton: UIButton!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
     
     var id: Int = 0
     var numComments: Int = 0
@@ -59,13 +60,22 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
         
     }
     
+    @IBAction func shareButtonPressed(_ sender: Any) {
+        
+        var url = "http://kuva.jakebrabec.me/storage/uploads/\(id).jpg"
+        UIPasteboard.general.string = url
+        let alert:UIAlertController = UIAlertController(title: "Share Photo", message: "Link to image copied to clipboard", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    
     @IBAction func deleteButtonPressed(_ sender: Any) {
         
-        //ser/photos/{photo_ID}/delete
         let tok = self.getToken()
         let headers = ["Authorization": "Bearer \(tok!)"]
         
-        print(self.id)
         Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/\(self.id)/delete", method: .post, headers: headers).responseJSON { res in
             print(res)
             let json = JSON(res.value)
