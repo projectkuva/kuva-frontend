@@ -8,13 +8,17 @@
 
 import UIKit
 
-class ProfileViewController: PrimaryViewController {
+class ProfileViewController: PrimaryViewController, UICollectionViewDelegate, UICollectionViewDataSource  {
 
     @IBOutlet weak var username: UINavigationItem!
+    @IBOutlet weak var profileCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUsername()
+        
+        self.profileCollectionView.delegate = self
+        self.profileCollectionView.dataSource = self
         // Do any additional setup after loading the view.
     }
 
@@ -23,16 +27,35 @@ class ProfileViewController: PrimaryViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func logoutPressed(_ sender: Any) {
+    @IBAction func logoutButtonPressed(_ sender: Any) {
         super.logOut()
         let view = self.storyboard?.instantiateViewController(withIdentifier: "loginVC")
         self.present(view!, animated:true, completion:nil)
+
     }
     
     func setUsername() {
         let id = self.getUserID()!
         username.title = "\(id)"
     }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of items
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ProfileCollectionViewCell
+
+        return cell
+    }
+
 
     /*
     // MARK: - Navigation
