@@ -4,6 +4,7 @@ PODS:
     - Alamofire (~> 4.1)
   - JWTDecode (2.0.0)
   - KeychainSwift (7.0.0)
+  - Sharaku (1.0.2)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
@@ -11,6 +12,7 @@ DEPENDENCIES:
   - AlamofireImage (~> 3.1)
   - JWTDecode (~> 2.0.0)
   - KeychainSwift (~> 7.0)
+  - Sharaku (~> 1.0.2)
   - SwiftyJSON (~> 3.1.4)
 
 SPEC CHECKSUMS:
@@ -18,8 +20,9 @@ SPEC CHECKSUMS:
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   JWTDecode: 178e47e5d28d3abcff778bacced8342858cd6cb5
   KeychainSwift: b6947435dd78cc442c64a84ae648dd0e871cf448
+  Sharaku: c18de569fc99f6e936f46ca812b571826cc658a7
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: b3c149fc0dde02af743807b2a6106da9d4d3dba4
+PODFILE CHECKSUM: b2ca47485ff7b0a922fa3054121f7ba1b9541ca5
 
 COCOAPODS: 1.2.0

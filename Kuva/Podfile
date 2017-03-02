@@ -8,4 +8,5 @@ target 'Kuva' do
   pod 'JWTDecode', '~> 2.0.0'
   pod 'KeychainSwift', '~> 7.0'
   pod 'AlamofireImage', '~> 3.1'
+  pod 'Sharaku', '~> 1.0.2'
 end

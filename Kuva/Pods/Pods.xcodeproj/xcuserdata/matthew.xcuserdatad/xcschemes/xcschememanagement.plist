@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Sharaku.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,12 +62,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D56FA483A539D4D24B3E738B22D5C8DB</key>
+		<key>A978DF4F6B99B3ACE557D75EB2752D8A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FC255E124C574F236CB351BB967C9428</key>
+		<key>B6F0503DBB0BC18A44B82CBEFFF85E17</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CB725563D3713CC989AB7E4F9D945E92</key>
 		<dict>
 			<key>primary</key>
 			<true/>
