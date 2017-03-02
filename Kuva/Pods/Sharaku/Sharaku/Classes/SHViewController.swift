@@ -69,7 +69,7 @@ public class SHViewController: UIViewController {
         }
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    override public func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
