@@ -31,7 +31,7 @@ class LoginViewController: PrimaryViewController, CLLocationManagerDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if (super.loggedIn()) {
+        if (super.loggedIn() && CLLocationManager.authorizationStatus() != .notDetermined) {
             let view = self.storyboard?.instantiateViewController(withIdentifier: "tabbar")
             self.present(view!, animated:true, completion:nil)
         }

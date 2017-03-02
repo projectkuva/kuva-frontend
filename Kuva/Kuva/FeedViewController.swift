@@ -13,10 +13,11 @@ import JWTDecode
 import KeychainSwift
 import CoreLocation
 import AlamofireImage
+import Sharaku
 
 private let reuseIdentifier = "Cell"
 
-class FeedViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
+class FeedViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate, SHViewControllerDelegate {
     
     let keychain = KeychainSwift()
     var posts = NSMutableArray()
@@ -57,9 +58,12 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        cameraImage = info[UIImagePickerControllerOriginalImage] as! UIImage?
-        self.dismiss(animated: true, completion: nil);
-        performSegue(withIdentifier: "showPostViewSegue", sender: nil)
+        if let img = info[UIImagePickerControllerOriginalImage] as! UIImage? {
+            self.dismiss(animated: true, completion: { _ in
+                let fixedImg = self.fixOrientation(img: img)
+                self.filterImage(image: fixedImg)
+            });
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -68,6 +72,39 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
             dvc.cameraImage = cameraImage
             cameraImage = nil
         }
+    }
+    
+    func fixOrientation(img:UIImage) -> UIImage {
+        
+        if (img.imageOrientation == UIImageOrientation.up) {
+            return img;
+        }
+        
+        UIGraphicsBeginImageContextWithOptions(img.size, false, img.scale);
+        let rect = CGRect(x: 0, y: 0, width: img.size.width, height: img.size.height)
+        img.draw(in: rect)
+        
+        let normalizedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext();
+        return normalizedImage;
+        
+    }
+    
+    func filterImage(image: UIImage) {
+        // filtering
+        let imageToBeFiltered = image
+        let vc = SHViewController(image: imageToBeFiltered)
+        vc.delegate = self
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    func shViewControllerImageDidFilter(image: UIImage) {
+        cameraImage = image
+        performSegue(withIdentifier: "showPostViewSegue", sender: nil)
+    }
+    
+    func shViewControllerDidCancel() {
+        // ¯\_(ツ)_/¯
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
