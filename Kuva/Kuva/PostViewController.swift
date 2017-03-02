@@ -10,8 +10,9 @@ import UIKit
 import Alamofire
 import CoreLocation
 import SwiftyJSON
+import Sharaku
 
-class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate, UITextViewDelegate {
+class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate, UITextViewDelegate, SHViewControllerDelegate {
 
     @IBOutlet weak var textviewLabel: UILabel!
     @IBOutlet var captionTextView: UITextView!
@@ -26,7 +27,6 @@ class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate
         let picker = UIImagePickerController()
         picker.delegate = self
         self.present(picker, animated: true, completion: nil)
-        
     }
     
     @IBAction func cameraButtonPressed(_ sender: Any) {
@@ -125,17 +125,33 @@ class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         if let img = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            self.previewImageView.image = img
-            self.selectImageButton.isEnabled = false
-            self.selectImageButton.isHidden = true
-            uploadImage(image: img)
-            picker.dismiss(animated: true, completion: nil)
-            
+            picker.dismiss(animated: true, completion: { _ in
+                self.filterImage(image: img)
+            })
         }
+    }
+    
+    func filterImage(image: UIImage) {
+        // filtering
+        let imageToBeFiltered = image
+        let vc = SHViewController(image: imageToBeFiltered)
+        vc.delegate = self
+        self.present(vc, animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func shViewControllerImageDidFilter(image: UIImage) {
+        self.previewImageView.image = image
+        self.selectImageButton.isEnabled = false
+        self.selectImageButton.isHidden = true
+        uploadImage(image: image)
+    }
+    
+    func shViewControllerDidCancel() {
+        // ¯\_(ツ)_/¯
     }
     
     func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
