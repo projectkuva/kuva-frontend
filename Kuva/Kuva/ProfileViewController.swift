@@ -10,16 +10,20 @@ import UIKit
 import Alamofire
 import AlamofireImage
 import SwiftyJSON
+import KeychainSwift
+import JWTDecode
 
-class ProfileViewController: PrimaryViewController, UICollectionViewDelegate, UICollectionViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate  {
+class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     @IBOutlet weak var username: UINavigationItem!
     @IBOutlet weak var profileCollectionView: UICollectionView!
     @IBOutlet weak var changePictureButton: UIButton!
     @IBOutlet weak var profilePicture: UIImageView!
     
+    let keychain = KeychainSwift()
     var photos = NSMutableArray()
     var path:URL!
+    var user_id:Int = -1
     
     struct PhotoItem {
         var id: Int = 0
@@ -43,7 +47,7 @@ class ProfileViewController: PrimaryViewController, UICollectionViewDelegate, UI
     }
     
     @IBAction func logoutButtonPressed(_ sender: Any) {
-        super.logOut()
+        logOut()
         let view = self.storyboard?.instantiateViewController(withIdentifier: "loginVC")
         self.present(view!, animated:true, completion:nil)
 
@@ -56,7 +60,7 @@ class ProfileViewController: PrimaryViewController, UICollectionViewDelegate, UI
     }
     
     func uploadProfilePicture() {
-        let tok = super.getToken()!
+        let tok = getToken()!
         
         //Authorization token
         let headers = ["Authorization": "Bearer \(tok)"]
@@ -165,15 +169,18 @@ class ProfileViewController: PrimaryViewController, UICollectionViewDelegate, UI
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("here")
+        print("here2")
         let cell = collectionView.cellForItem(at: indexPath) as! ProfileCollectionViewCell
+        print("YOUOUOUOUOUO")
         if !cell.ready {
+            print("not ready sad:(")
             return
         }
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let detailView = storyboard.instantiateViewController(withIdentifier: "detailView") as! PostDetailViewController
         detailView.id = cell.id
         detailView.userID = cell.userID
+        detailView.postImage = cell.photoImage.image
         self.navigationController?.pushViewController(detailView, animated: true)
     }
     
@@ -207,6 +214,28 @@ class ProfileViewController: PrimaryViewController, UICollectionViewDelegate, UI
         let documentsDirectory = paths[0]
         return documentsDirectory
     }
+    
+    func logOut() {
+        keychain.delete("token")
+    }
+    
+    func getToken() -> String? {
+        return keychain.get("token")
+    }
+    
+    func getUserID() -> Int? {
+        do {
+            let jwt = try decode(jwt: self.getToken()!)
+            let claim = jwt.claim(name: "user_id")
+            self.user_id = claim.integer!
+            return self.user_id
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        return 0
+    }
+    
+
 
 
     /*
