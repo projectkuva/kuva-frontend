@@ -10,6 +10,7 @@
 		2F007BDD1E67693A0049FCBE /* TokenResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F007BDC1E67693A0049FCBE /* TokenResetViewController.swift */; };
 		2F165E751E47A9A000300A67 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F165E741E47A9A000300A67 /* PostViewController.swift */; };
 		2F18F8AD1E68E44F00595E42 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F18F8AC1E68E44F00595E42 /* ProfileCollectionViewCell.swift */; };
+		2F18F8AF1E69191200595E42 /* ExternalProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F18F8AE1E69191100595E42 /* ExternalProfileViewController.swift */; };
 		2F1E67341E6601D4004AF2BB /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1E67331E6601D4004AF2BB /* NewsFeedViewController.swift */; };
 		2F1E67361E660775004AF2BB /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1E67351E660775004AF2BB /* ActivityTableViewCell.swift */; };
 		2F48B3451E47F61800E5276E /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F48B3441E47F61800E5276E /* PostCollectionViewCell.swift */; };
@@ -51,6 +52,7 @@
 		2F007BDC1E67693A0049FCBE /* TokenResetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenResetViewController.swift; sourceTree = "<group>"; };
 		2F165E741E47A9A000300A67 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		2F18F8AC1E68E44F00595E42 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		2F18F8AE1E69191100595E42 /* ExternalProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExternalProfileViewController.swift; sourceTree = "<group>"; };
 		2F1E67331E6601D4004AF2BB /* NewsFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedViewController.swift; sourceTree = "<group>"; };
 		2F1E67351E660775004AF2BB /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		2F48B3441E47F61800E5276E /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				2F18F8AC1E68E44F00595E42 /* ProfileCollectionViewCell.swift */,
 				2FB9E9681E4BFDC80050F8AC /* ProfileViewController.swift */,
 				2F007BDC1E67693A0049FCBE /* TokenResetViewController.swift */,
+				2F18F8AE1E69191100595E42 /* ExternalProfileViewController.swift */,
 				34231EC31E3FF2A800905367 /* Main.storyboard */,
 				34231EC61E3FF2A800905367 /* Assets.xcassets */,
 				34231EC81E3FF2A800905367 /* LaunchScreen.storyboard */,
@@ -351,6 +354,7 @@
 				2F007BDD1E67693A0049FCBE /* TokenResetViewController.swift in Sources */,
 				34231EC01E3FF2A800905367 /* AppDelegate.swift in Sources */,
 				2F1E67341E6601D4004AF2BB /* NewsFeedViewController.swift in Sources */,
+				2F18F8AF1E69191200595E42 /* ExternalProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
