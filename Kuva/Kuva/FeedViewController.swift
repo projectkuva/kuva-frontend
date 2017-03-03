@@ -23,6 +23,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var posts = NSMutableArray()
     var locationManager = CLLocationManager()
     var cameraImage: UIImage? = nil
+    var isPopular:Int = 0
     
     struct PostItem {
         var id: Int = 0
@@ -36,10 +37,21 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
 
     @IBOutlet weak var cameraButton: UIBarButtonItem!
-    @IBOutlet weak var composeButton: UIBarButtonItem!
-    
+    @IBOutlet weak var sortButton: UIBarButtonItem!
     
     @IBOutlet weak var postsCollectionView: UICollectionView!
+    
+    @IBAction func sortButtonPressed(_ sender: Any) {
+        if (self.isPopular == 1) {
+            self.isPopular = 0
+            self.navigationItem.rightBarButtonItem?.tintColor = UIColor(red: (252/255.0), green: (89/255.0), blue: (121/255.0), alpha: 1.0)
+        } else if (self.isPopular == 0) {
+            self.isPopular = 1
+            self.navigationItem.rightBarButtonItem?.tintColor = UIColor(red: (45/255.0), green: (45/255.0), blue: (45/255.0), alpha: 1.0)
+
+        }
+        updateCurrentView()
+    }
     
     @IBAction func cameraButtonPressed(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
@@ -51,10 +63,6 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
             imagePicker.allowsEditing = false
             self.present(imagePicker, animated: true, completion: nil)
         }
-    }
-    
-    @IBAction func pressedCompose(_ sender: Any) {
-        self.tabBarController?.selectedIndex = 1;
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -226,11 +234,11 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let lat:String = String(loc.latitude)
         //Longitude
         let lng:String = String(loc.longitude)
-        
+        print(self.isPopular)
         let parameters: Parameters = [
             "lat": lat,
             "lng": lng,
-            "popularity": 0
+            "popularity": self.isPopular
         ]
 
         Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/feed", parameters: parameters, headers: ["Authorization": "Bearer \(tok)"]).responseJSON{ res in
@@ -244,6 +252,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
             for (index, object) in json {
                 var post = PostItem()
                 post.id = object["id"].intValue
+                print(post.id)
                 post.userID = object["user_id"].intValue
                 post.numLikes = object["numLikes"].intValue
                 post.numComments = object["numComments"].intValue
@@ -253,6 +262,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 post.likes = object["likes"].array!
                 self.posts.add(post)
             }
+            
             self.postsCollectionView.reloadData()
         }
     }

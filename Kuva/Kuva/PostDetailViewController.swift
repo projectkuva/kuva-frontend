@@ -42,7 +42,9 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
     @IBAction func likeButtonPressed(_ sender: Any) {
         self.liked = !self.liked
         self.likesButton.isEnabled = false
+        print(self.liked)
         let liked_i = self.liked ? 1 : 0
+        print(liked_i)
         let tok = self.getToken()
         let parameters: Parameters = [
             "liked": liked_i
@@ -51,11 +53,12 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
         
         Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/like/\(self.id)", method: .post, parameters: parameters, headers: headers).responseJSON { res in
             let json = JSON(res.value)
+            print(json)
             let msg:String = json["message"].stringValue
             if msg != "success" {
                 self.liked = !self.liked
             } else {
-                print(self.liked)
+                //print(self.liked)
             }
             self.likesButton.isEnabled = true
             self.updateCurrentView()
@@ -272,8 +275,8 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
             
             let json = JSON(res.value)
             print(json)
-            self.liked = false
-            self.liked = json["user_liked"].intValue == 1 ? true : false
+            self.liked = (json["user_liked"].intValue) == 1 ? true : false
+            print(self.liked)
             self.likesButton.imageView?.image = self.liked ? self.likeIMG : self.unlikeIMG
             self.likesButton.accessibilityIdentifier = self.liked ? "liked" : "unliked"
             

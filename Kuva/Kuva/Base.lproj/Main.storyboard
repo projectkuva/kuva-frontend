@@ -639,11 +639,18 @@
                                 <action selector="cameraButtonPressed:" destination="Ork-SK-aQJ" id="HgN-YN-m9e"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="tb-star" id="d63-Y6-ZuN">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="sortButtonPressed:" destination="Ork-SK-aQJ" id="fpy-qe-BVb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="cameraButton" destination="lbG-YG-BUl" id="jpZ-km-Mzp"/>
                         <outlet property="postsCollectionView" destination="NwH-dy-ne2" id="fdu-rg-NqN"/>
+                        <outlet property="sortButton" destination="d63-Y6-ZuN" id="03R-8v-OeE"/>
                         <segue destination="hUa-4N-MAx" kind="show" identifier="showPostViewSegue" id="FDf-Cn-L4T"/>
                     </connections>
                 </viewController>
@@ -1235,6 +1242,7 @@
         <image name="tb-home-cl" width="25" height="25"/>
         <image name="tb-profile" width="25" height="25"/>
         <image name="tb-profile-cl" width="25" height="25"/>
+        <image name="tb-star" width="25" height="25"/>
         <image name="tb-upload-cl" width="25" height="25"/>
         <image name="tb-upload2" width="25" height="25"/>
     </resources>
