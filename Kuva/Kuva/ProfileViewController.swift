@@ -55,6 +55,42 @@ class ProfileViewController: PrimaryViewController, UICollectionViewDelegate, UI
         self.present(picker, animated: true, completion: nil)
     }
     
+    func uploadProfilePicture() {
+        let tok = super.getToken()!
+        
+        //Authorization token
+        let headers = ["Authorization": "Bearer \(tok)"]
+        //Request URL
+        let URL = try! URLRequest(url: "http://kuva.jakebrabec.me/api/user/profile/upload", method: .post, headers: headers)
+
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            multipartFormData.append(self.path, withName: "photo", fileName: self.path.path, mimeType: "image/jpg")
+        }, with: URL, encodingCompletion: { (result) in
+            switch result {
+            case .success(let upload, _, _):
+                upload.responseJSON { res in
+                    if let data = res.result.value {
+                        print("JSON: \(data)")
+                        let json = JSON(data)
+                        let msg:String = json["message"].stringValue
+                        if msg == "success" {
+
+                        } else {
+                            let alert:UIAlertController = UIAlertController(title: "Upload failed", message: "sad", preferredStyle: UIAlertControllerStyle.alert)
+                            alert.addAction(UIAlertAction(title: ":(", style: UIAlertActionStyle.default, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                        
+                    }
+                }
+                
+            case .failure(let encodingError):
+                print(encodingError)
+            }
+        })
+        
+        
+    }
     
     func getUserPhotos() {
         self.photos = NSMutableArray()
@@ -69,6 +105,12 @@ class ProfileViewController: PrimaryViewController, UICollectionViewDelegate, UI
             let name = json["name"]
             self.username.title = "\(name)"
             
+            //update photo if there is one
+            if (json["profile_photo"] != nil) {
+                //get image
+                self.updateProfileImage(url: json["profile_photo"].stringValue)
+            }
+            
             //add the photos to photo array
             for (index, object) in json["photos"] {
                 var post = PhotoItem()
@@ -78,6 +120,20 @@ class ProfileViewController: PrimaryViewController, UICollectionViewDelegate, UI
             }
             self.profileCollectionView.reloadData()
         }
+    }
+    
+    func updateProfileImage(url : String) {
+        print(url)
+        let fixedURL:String = "http://kuva.jakebrabec.me/storage/uploads/profile/\(url)"
+        print(fixedURL)
+        Alamofire.request(fixedURL).responseImage { res in
+            print(res)
+            if let image = res.result.value {
+                print("here")
+                self.profilePicture.image = image
+            }
+        }
+
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -127,7 +183,7 @@ class ProfileViewController: PrimaryViewController, UICollectionViewDelegate, UI
             picker.dismiss(animated: true, completion: nil)
             self.profilePicture.image = img
             uploadImage(image: img)
-
+            uploadProfilePicture()
         }
     }
     
