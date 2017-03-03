@@ -12,6 +12,8 @@ class CommentTableViewCell: UITableViewCell {
 
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
+    
+    var id: Int = 0
 
     override func awakeFromNib() {
         super.awakeFromNib()

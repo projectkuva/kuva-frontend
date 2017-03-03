@@ -25,6 +25,7 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
     @IBOutlet weak var usernameButton: UIButton!
     
     
+    
     var id: Int = 0
     var numComments: Int = 0
     var userID: Int = 0
@@ -161,6 +162,57 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
         self.present(alert, animated: true, completion: nil)
     }
     
+    @IBAction func replyButtonPressed(_ sender: Any) {
+        let alert = UIAlertController(title: "Reply", message: "Enter your reply", preferredStyle: .alert)
+        alert.addTextField{ (textField) in
+            textField.text = ""
+        }
+        
+        var indexPath: Int!
+        
+        if let button = sender as? UIButton {
+            if let superview = button.superview {
+                if let cell = superview.superview as? CommentTableViewCell {
+                    indexPath = cell.id
+                }
+            }
+        }
+        
+        let username = comments[indexPath]["user"]["name"].stringValue
+        
+        alert.addAction(UIAlertAction(title: "Post", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0]
+            let commentText: String = textField!.text!
+            let tok = self.getToken()
+            let parameters: Parameters = [
+                "text": "@"+username+" " + commentText
+            ]
+            let headers = ["Authorization": "Bearer \(tok!)"]
+            Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/comment/\(self.id)", method: .post, parameters: parameters, headers: headers).responseJSON{ res in
+                let json = JSON(res.value)
+                let msg:String = json["message"].stringValue
+                if msg != "success" {
+                    let fail_alert = UIAlertController(title: "Invalid Comment", message: "Comment cannot be empty", preferredStyle: .alert)
+                    fail_alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+                        // dismiss
+                    }))
+                    self.present(fail_alert, animated: true, completion: nil)
+                } else {
+                    let succ_alert = UIAlertController(title: "Success", message: "Comment posted", preferredStyle: .alert)
+                    succ_alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+                        // dismiss
+                    }))
+                    self.present(succ_alert, animated: true, completion: nil)
+                }
+                self.updateCurrentView()
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { [weak alert] (_) in
+            // dismiss
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -199,6 +251,7 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
         cell.userLabel.text = comments[indexPath.row]["user"]["name"].stringValue
         cell.commentLabel.text = comments[indexPath.row]["text"].stringValue
         cell.commentLabel.numberOfLines = 0
+        cell.id = indexPath.row
         return cell
     }
     
