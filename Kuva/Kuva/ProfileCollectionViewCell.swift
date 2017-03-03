@@ -10,4 +10,9 @@ import UIKit
 
 class ProfileCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var photoImage: UIImageView!
+    var id: Int = 0
+    var userID: Int = 0
+    var ready: Bool = false
+    
 }
