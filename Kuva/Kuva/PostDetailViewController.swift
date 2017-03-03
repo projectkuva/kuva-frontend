@@ -187,6 +187,13 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
             let parameters: Parameters = [
                 "text": "@"+username+" " + commentText
             ]
+            
+            if (commentText == "" ) {
+                let fail_alert = UIAlertController(title: "Invalid Reply", message: "Reply cannot be empty", preferredStyle: .alert)
+                fail_alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+                }))
+            }
+            
             let headers = ["Authorization": "Bearer \(tok!)"]
             Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/comment/\(self.id)", method: .post, parameters: parameters, headers: headers).responseJSON{ res in
                 let json = JSON(res.value)
