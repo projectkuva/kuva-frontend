@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E154a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -555,7 +555,7 @@
                 <navigationController storyboardIdentifier="PostVC" automaticallyAdjustsScrollViewInsets="NO" id="tyt-Vw-gFj" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Upload" image="tb-upload2" selectedImage="tb-upload2" id="fS1-9P-y4d"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="J8h-yb-B2d">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="J8h-yb-B2d">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -734,7 +734,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GW9-fQ-pFk" id="8d2-hj-J1P">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IcB-Kw-5dV">
@@ -752,6 +752,16 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OPj-sg-nYI">
+                                                    <rect key="frame" x="271" y="6" width="46" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Reply">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="replyButtonPressed:" destination="ayn-oL-fo1" eventType="touchUpInside" id="zBG-US-h2z"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="IcB-Kw-5dV" firstAttribute="leading" secondItem="8d2-hj-J1P" secondAttribute="leadingMargin" constant="15" id="KbR-6V-NlF"/>
@@ -1075,7 +1085,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y1u-2X-hKi" id="0xd-B4-lGw">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user action and description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eF6-9h-663">
@@ -1123,7 +1133,7 @@
                     <tabBarItem key="tabBarItem" title="Feed" image="tb-home" selectedImage="tb-home-cl" id="SOn-0W-g8j"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="kuva-logo" id="cKb-R7-6pQ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" backIndicatorImage="kuva-logo" id="cKb-R7-6pQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="64" right="8"/>
@@ -1142,7 +1152,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kb2-hA-zXJ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pWM-YS-fJq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="pWM-YS-fJq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1161,7 +1171,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sGx-Id-Jgs" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="tb-profile" selectedImage="tb-profile-cl" id="dDa-2O-Ymx"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="04A-Mm-jYf">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="04A-Mm-jYf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1180,7 +1190,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="s8C-RS-2Pw" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Activity" image="tb-activity" selectedImage="tb-activity-cl" id="DQA-91-uyN"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iWC-TW-mO4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="iWC-TW-mO4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1198,7 +1208,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GGs-HB-VOv" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QDh-Cm-gXY">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="QDh-Cm-gXY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
