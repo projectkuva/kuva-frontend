@@ -44,11 +44,10 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBAction func sortButtonPressed(_ sender: Any) {
         if (self.isPopular == 1) {
             self.isPopular = 0
-            self.navigationItem.rightBarButtonItem?.tintColor = UIColor(red: (252/255.0), green: (89/255.0), blue: (121/255.0), alpha: 1.0)
+            self.navigationItem.rightBarButtonItem?.tintColor = UIColor(red: (45/255.0), green: (45/255.0), blue: (45/255.0), alpha: 1.0)
         } else if (self.isPopular == 0) {
             self.isPopular = 1
-            self.navigationItem.rightBarButtonItem?.tintColor = UIColor(red: (45/255.0), green: (45/255.0), blue: (45/255.0), alpha: 1.0)
-
+            self.navigationItem.rightBarButtonItem?.tintColor = UIColor(red: (252/255.0), green: (89/255.0), blue: (121/255.0), alpha: 1.0)
         }
         updateCurrentView()
     }
