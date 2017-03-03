@@ -63,13 +63,13 @@ class ExternalProfileViewController: UIViewController, UICollectionViewDelegate,
             
             //update photo if there is one
             
-            
-            if ((json["profile_photo"] as? NSNull) != nil) {
+            print(json["profile_photo"])
+            if json["profile_photo"].null != nil {
+                self.noProfile.isHidden = false
+            } else {
                 self.noProfile.isHidden = true
                 //get image
                 self.updateProfileImage(url: json["profile_photo"].stringValue)
-            } else {
-                self.noProfile.isHidden = false
             }
             
             //add the photos to photo array
@@ -85,6 +85,7 @@ class ExternalProfileViewController: UIViewController, UICollectionViewDelegate,
     
     func updateProfileImage(url : String) {
         let fixedURL:String = "http://kuva.jakebrabec.me/storage/uploads/profile/\(url)"
+        print(fixedURL)
         Alamofire.request(fixedURL).responseImage { res in
             if let image = res.result.value {
                 self.profilePicture.image = image
