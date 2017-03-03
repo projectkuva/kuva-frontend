@@ -19,10 +19,11 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var commentTable: UITableView!
     @IBOutlet weak var likesButton: UIButton!
-    @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var deletePhotoButton: UIBarButtonItem!
     @IBOutlet weak var reportButton: UIButton!
+    @IBOutlet weak var usernameButton: UIButton!
+    
     
     var id: Int = 0
     var numComments: Int = 0
@@ -97,6 +98,17 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
         Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/\(self.id)/report", method: .post, parameters: parameters, headers: headers).responseJSON { res in
             let json = JSON(res.value)
             print(json)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "externalProfileSegue" {
+            let dvc = segue.destination as! ExternalProfileViewController
+            dvc.profileID = userID
+            //dvc.blah blah bla
+            //var profileID:Int = 0
+            //var profileUsername:String? = nil
+            //performSegue(withIdentifier: "externalProfileSegue", sender: nil)
         }
     }
     
@@ -212,7 +224,7 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
             dateFormatter.timeStyle = .none
             dateFormatter.locale = Locale(identifier: "en_US")
             self.dateLabel.text = dateFormatter.string(for: self.created!)
-            self.usernameLabel.text = json["0"]["user"]["name"].string
+            self.usernameButton.setTitle(json["0"]["user"]["name"].string, for: .normal)
             self.comments = json["0"]["comments"].array!
             self.likes = json["0"]["likes"].array!
             self.numLikes = 0
@@ -232,6 +244,12 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
             
         }
         
+    }
+    
+    
+    @IBAction func usernameButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "externalProfileSegue", sender: nil)
+
     }
     
     func disableDeleteIcon() {

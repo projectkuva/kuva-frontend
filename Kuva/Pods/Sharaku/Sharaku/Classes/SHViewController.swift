@@ -68,11 +68,20 @@ public class SHViewController: UIViewController {
             }
         }
     }
+    
+    override public func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
+        
+    }
 
     override public func viewDidLoad() {
         super.viewDidLoad()
         let nib = UINib(nibName: "SHCollectionViewCell", bundle: Bundle(for: self.classForCoder))
         collectionView?.register(nib, forCellWithReuseIdentifier: "cell")
+        
+        UIApplication.shared.statusBarStyle = .lightContent
     }
 
     override public func didReceiveMemoryWarning() {

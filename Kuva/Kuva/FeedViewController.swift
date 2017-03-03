@@ -148,7 +148,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         locationManager.startUpdatingLocation()
         
         cameraButton.accessibilityIdentifier = "camerabutton"
-        composeButton.accessibilityIdentifier = "composebutton"
+
         //self.postsCollectbionView!.register(PostCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         
         updateCurrentView()
@@ -229,7 +229,8 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         let parameters: Parameters = [
             "lat": lat,
-            "lng": lng
+            "lng": lng,
+            "popularity": 0
         ]
 
         Alamofire.request("http://kuva.jakebrabec.me/api/user/photos/feed", parameters: parameters, headers: ["Authorization": "Bearer \(tok)"]).responseJSON{ res in
