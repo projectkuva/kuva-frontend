@@ -802,6 +802,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8W-vB-0UE">
                                 <rect key="frame" x="339" y="79" width="20" height="20"/>
+                                <accessibility key="accessibilityConfiguration" identifier="shareButton"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="2oc-Xu-bgd"/>
                                     <constraint firstAttribute="width" constant="20" id="LLr-3S-224"/>

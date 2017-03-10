@@ -161,7 +161,7 @@ class PhotoViewTests: XCTestCase {
         }
     }
     
-
+    //Test that empty comment throws error
     func testEmptyComment() {
         let commentBtn = app.buttons["comment-btn"]
         let commentDialog = app.alerts["Post Comment"]
@@ -170,6 +170,29 @@ class PhotoViewTests: XCTestCase {
         sleep(1)
         
         XCTAssertTrue(app.alerts["Invalid Comment"].exists)
+    }
+    
+    //Tests share button exists
+    func testShareButtonExists() {
+        let shareBtn = app.buttons["shareButton"]
+        
+        XCTAssertTrue(shareBtn.exists)
+    }
+    
+    //Tests share button works
+    func testShareButtonValid() {
+        let shareBtn = app.buttons["shareButton"]
+        shareBtn.tap()
+        
+        let shareDialog = app.alerts["Share Photo"]
+        XCTAssertTrue(shareDialog.exists)
+    }
+    
+    //Tests report button exists
+    func testReportButtonExists() {
+        let reportBtn = app.buttons["reportButton"]
+        
+        XCTAssertTrue(reportBtn.exists)
     }
     
     func isUsersPhoto() -> BooleanLiteralType {
