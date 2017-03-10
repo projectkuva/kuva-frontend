@@ -17,6 +17,7 @@ class ForgotPasswordTests: XCTestCase {
         continueAfterFailure = false
         
         app.launch()
+        logOut()
         // load forgot password view for each test
         app.buttons["Forgot Your Password?"].tap()
         
@@ -42,12 +43,25 @@ class ForgotPasswordTests: XCTestCase {
         XCTAssert(badAlert.exists)
     }
     
-    func testCreateAccountButtonExists() {
-        XCTAssert(app.buttons["Reset Password"].exists)
+    func testResetTokenButton() {
+        XCTAssert(app.buttons["Send Reset Token"].exists)
     }
     
     func testReturnToLoginButtonExists() {
         XCTAssert(app.buttons["Go back to sign in?"].exists)
     }
+    
+    func logOut() {
+        let tabsQuery = app.tabBars
+        if (tabsQuery.buttons["Profile"].exists) {
+            tabsQuery.buttons["Profile"].tap()
+            
+            let logoutBtn = app.buttons["Logout"]
+            logoutBtn.tap()
+
+        }
+        sleep(2)
+    }
+    
     
 }

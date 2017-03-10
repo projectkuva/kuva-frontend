@@ -15,12 +15,20 @@ class FeedViewTests: XCTestCase {
         super.setUp()
         continueAfterFailure = false
         XCUIApplication().launch()
-        login()
+        if (loggedOut()) {
+            login()
+        }
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+    }
+    
+    func loggedOut() -> Bool {
+        //let button = app.buttons["Sign In"]
+        let emailfield = app.textFields["Email"]
+        return emailfield.isHittable
     }
     
     func login() {
@@ -32,7 +40,7 @@ class FeedViewTests: XCTestCase {
         passwordfield.tap()
         passwordfield.typeText("testpassword")
         button.tap()
-        sleep(3)
+        sleep(5)
     }
     
     func getLocationCoordinates(id: Int) -> CGVector {
@@ -62,7 +70,7 @@ class FeedViewTests: XCTestCase {
         let tabsQuery = app.tabBars
         tabsQuery.buttons["Profile"].tap()
         
-        let button = app.buttons["Log out"]
+        let button = app.buttons["Logout"]
         XCTAssert(button.exists)
     }
     
@@ -79,7 +87,7 @@ class FeedViewTests: XCTestCase {
     //see if tab bar menu loads
     func testTabBarLoads() {
         let tabsQuery = app.tabBars
-        XCTAssert(tabsQuery.buttons.count == 3)
+        XCTAssert(tabsQuery.buttons.count == 4)
     }
     
     //select a photo
@@ -93,25 +101,12 @@ class FeedViewTests: XCTestCase {
         XCTAssert(button.exists)
     }
 
-    //alternate way to access upload
-    func testComposeButtonExists() {
-        let button = app.buttons["composebutton"]
-        XCTAssert(button.exists)
-    }
     
     //not sure how to test that the camera view has opened
 //    func testCameraButtonWorks() {
 //        
 //    }
     
-    //test if the compose button transitions properly
-    func testComposeButtonWorks() {
-        let button = app.buttons["composebutton"]
-        button.tap()
-        
-        let postbutton = app.buttons["Post"]
-        XCTAssert(postbutton.exists)
-    }
 
 
     

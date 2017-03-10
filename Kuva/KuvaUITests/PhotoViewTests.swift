@@ -17,7 +17,10 @@ class PhotoViewTests: XCTestCase {
         
         XCUIApplication().launch()
         
-        login()
+        if (loggedOut()) {
+            login()
+        }
+        
         viewCellDetails(id: 0)
         
     }
@@ -25,6 +28,12 @@ class PhotoViewTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+    }
+    
+    func loggedOut() -> Bool {
+        //let button = app.buttons["Sign In"]
+        let emailfield = app.textFields["Email"]
+        return emailfield.isHittable
     }
     
     func login() {
@@ -39,11 +48,25 @@ class PhotoViewTests: XCTestCase {
         sleep(5)
     }
     
+    func logOut() {
+        let tabsQuery = app.tabBars
+        if (tabsQuery.buttons["Profile"].exists) {
+            tabsQuery.buttons["Profile"].tap()
+            
+            let logoutBtn = app.buttons["Logout"]
+            logoutBtn.tap()
+            
+        }
+        sleep(2)
+    }
+    
     
     func viewCellDetails(id: Int) {
+        sleep(1)
         let fixedView = app.otherElements["feedView"]
         let viewCo = fixedView.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0))
         let cellLocation:CGVector = getLocationCoordinates(id: 1)
+        print("HERE")
         let coordinate = viewCo.withOffset(cellLocation)
         coordinate.tap()
         sleep(2)
@@ -75,14 +98,14 @@ class PhotoViewTests: XCTestCase {
     
     //Tests that username label exists
     func testUsernameExists() {
-        let usernameLabel = app.staticTexts["usernameTextLabel"]
+        let usernameLabel = app.buttons["usernameButton"]
         
         XCTAssertTrue(usernameLabel.exists)
     }
     
     //Tests that proper username exists
     func testUsernameValid() {
-        let usernameLabel = app.staticTexts["usernameTextLabel"]
+        let usernameLabel = app.buttons["usernameButton"]
         
         XCTAssertNotEqual(usernameLabel.label, "Username")
     }
@@ -138,17 +161,7 @@ class PhotoViewTests: XCTestCase {
         }
     }
     
-    //Test delete photo
-    func testDeletePhoto() {
-        let deleteBtn = app.buttons["deleteBtn"]
-        
-        deleteBtn.tap()
-        sleep(3)
-        let tabsQuery = app.tabBars
-        
-        XCTAssert(tabsQuery.buttons.count == 3)
-    }
-    
+
     func testEmptyComment() {
         let commentBtn = app.buttons["comment-btn"]
         let commentDialog = app.alerts["Post Comment"]
@@ -172,6 +185,6 @@ class PhotoViewTests: XCTestCase {
     
     //Helper function to get coordinates of cell
     func getLocationCoordinates(id: Int) -> CGVector {
-        return CGVector(dx: 10, dy: 100)
+        return CGVector(dx: 10, dy: 120)
     }
 }

@@ -16,7 +16,9 @@ class UploadTests: XCTestCase {
         super.setUp()
         continueAfterFailure = false
         XCUIApplication().launch()
-        login()
+        if (loggedOut()) {
+            login()
+        }
         let tabsQuery = app.tabBars
         tabsQuery.buttons["Upload"].tap()
     }
@@ -24,6 +26,12 @@ class UploadTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+    }
+    
+    func loggedOut() -> Bool {
+        //let button = app.buttons["Sign In"]
+        let emailfield = app.textFields["Email"]
+        return emailfield.isHittable
     }
     
     func login() {
@@ -35,8 +43,9 @@ class UploadTests: XCTestCase {
         passwordfield.tap()
         passwordfield.typeText("testpassword")
         button.tap()
-        sleep(3)
+        sleep(5)
     }
+
     
     // test that the caption field exists
     func testCaptionExists() {
