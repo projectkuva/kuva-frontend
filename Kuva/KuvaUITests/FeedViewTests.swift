@@ -98,7 +98,13 @@ class FeedViewTests: XCTestCase {
     //to take photos and upload
     func testCameraButtonExists() {
         let button = app.buttons["camerabutton"]
-        XCTAssert(button.exists)
+        XCTAssertTrue(button.exists)
+    }
+    
+    //to sort photos
+    func testSortButtonExists() {
+        let button = app.buttons["sortbutton"]
+        XCTAssertTrue(button.exists)
     }
 
     

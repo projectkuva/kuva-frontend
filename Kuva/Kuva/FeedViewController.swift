@@ -155,6 +155,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         locationManager.startUpdatingLocation()
         
         cameraButton.accessibilityIdentifier = "camerabutton"
+        sortButton.accessibilityIdentifier = "sortbutton"
 
         //self.postsCollectbionView!.register(PostCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         

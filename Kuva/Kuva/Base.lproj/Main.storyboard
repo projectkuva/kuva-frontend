@@ -640,7 +640,7 @@
                                 <action selector="cameraButtonPressed:" destination="Ork-SK-aQJ" id="HgN-YN-m9e"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="tb-star" id="d63-Y6-ZuN">
+                        <barButtonItem key="rightBarButtonItem" image="tb-star" id="d63-Y6-ZuN" userLabel="sortbutton">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="sortButtonPressed:" destination="Ork-SK-aQJ" id="fpy-qe-BVb"/>
