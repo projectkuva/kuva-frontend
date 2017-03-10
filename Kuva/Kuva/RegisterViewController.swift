@@ -55,7 +55,12 @@ class RegisterViewController: PrimaryViewController {
             
             if msg == "success" {
                 //successful login, save auth token
+                let tok:String = json["token"].stringValue
                 
+                if !super.setToken(token: tok) {
+                    print("couldn't set token")
+                }
+
                 let view = self.storyboard?.instantiateViewController(withIdentifier: "tabbar")
                 self.present(view!, animated:true, completion:nil)
                 
