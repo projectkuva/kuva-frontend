@@ -1102,6 +1102,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user action and description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eF6-9h-663">
                                                     <rect key="frame" x="19" y="10" width="348" height="21"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="proto"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1113,6 +1114,9 @@
                                                 <constraint firstItem="eF6-9h-663" firstAttribute="leading" secondItem="0xd-B4-lGw" secondAttribute="leadingMargin" constant="11" id="jFl-Z2-evu"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="protoCell">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <connections>
                                             <outlet property="activityAction" destination="eF6-9h-663" id="HXu-PP-CLR"/>
                                         </connections>
