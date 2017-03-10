@@ -37,6 +37,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         self.profileCollectionView.delegate = self
         self.profileCollectionView.dataSource = self
+        profileCollectionView.accessibilityIdentifier = "profilecview"
         // Do any additional setup after loading the view.
         getUserPhotos()
     }

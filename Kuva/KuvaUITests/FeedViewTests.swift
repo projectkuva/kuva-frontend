@@ -106,7 +106,6 @@ class FeedViewTests: XCTestCase {
         let button = app.buttons["sortbutton"]
         XCTAssertTrue(button.exists)
     }
-
     
     //not sure how to test that the camera view has opened
 //    func testCameraButtonWorks() {

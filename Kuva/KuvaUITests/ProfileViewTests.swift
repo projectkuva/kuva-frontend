@@ -64,11 +64,16 @@ class ProfileViewTests: XCTestCase {
     
     func testProfileImageExists() {
         let img = app.images["profilePicture"]
-        XCTAssert(img.exists)
+        XCTAssertTrue(img.exists)
     }
     
     func testChangeProfileExists() {
         let profile = app.buttons["changePicture"]
-        XCTAssert(profile.exists)
+        XCTAssertTrue(profile.exists)
+    }
+    
+    func testProfilePhotoViewExists() {
+        let photos = app.collectionViews["profilecview"]
+        XCTAssertTrue(photos.exists)
     }
 }
