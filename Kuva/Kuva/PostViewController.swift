@@ -77,8 +77,8 @@ class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate
                         let json = JSON(data)
                         let msg:String = json["message"].stringValue
                         if msg == "success" {
-                            let alert:UIAlertController = UIAlertController(title: "Image posted", message: "yey", preferredStyle: UIAlertControllerStyle.alert)
-                            alert.addAction(UIAlertAction(title: ":)", style: UIAlertActionStyle.default, handler: self.resetFeedView))
+                            let alert:UIAlertController = UIAlertController(title: "Image posted", message: "Image was successfully posted", preferredStyle: UIAlertControllerStyle.alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: self.resetFeedView))
                             self.present(alert, animated: true, completion: nil)
                         } else {
                             let alert:UIAlertController = UIAlertController(title: "Upload failed", message: "sad", preferredStyle: UIAlertControllerStyle.alert)
