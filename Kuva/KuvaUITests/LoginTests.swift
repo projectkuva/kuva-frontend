@@ -15,6 +15,7 @@ class LoginTests: XCTestCase {
         super.setUp()
         continueAfterFailure = false
         XCUIApplication().launch()
+        logOut()
            }
     
     override func tearDown() {
@@ -92,7 +93,21 @@ class LoginTests: XCTestCase {
         
         let tabsQuery = app.tabBars
         print(tabsQuery.buttons.count)
-        XCTAssert(tabsQuery.buttons.count == 3)
+        XCTAssert(tabsQuery.buttons.count == 4)
+        
         
     }
+    
+    func logOut() {
+        let tabsQuery = app.tabBars
+        if (tabsQuery.buttons["Profile"].exists) {
+            tabsQuery.buttons["Profile"].tap()
+            
+            let logoutBtn = app.buttons["Logout"]
+            logoutBtn.tap()
+            
+        }
+        sleep(2)
+    }
+
 }

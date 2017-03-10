@@ -16,13 +16,21 @@ class ProfileViewTests: XCTestCase {
         continueAfterFailure = false
         XCUIApplication().launch()
         
-        login()
+        if (loggedOut()) {
+            login()
+        }
         let tabsQuery = app.tabBars
         tabsQuery.buttons["Profile"].tap()
     }
     
     override func tearDown() {
         super.tearDown()
+    }
+    
+    func loggedOut() -> Bool {
+        //let button = app.buttons["Sign In"]
+        let emailfield = app.textFields["Email"]
+        return emailfield.isHittable
     }
     
     func login() {
@@ -34,16 +42,16 @@ class ProfileViewTests: XCTestCase {
         passwordfield.tap()
         passwordfield.typeText("testpassword")
         button.tap()
-        sleep(3)
+        sleep(5)
     }
     
     func testLogoutButtonExists() {
-        let button = app.buttons["Log out"]
+        let button = app.buttons["Logout"]
         XCTAssert(button.exists)
     }
     
     func testLogoutWorks() {
-        let button = app.buttons["Log out"]
+        let button = app.buttons["Logout"]
         button.tap()
         
         let signInButton = app.buttons["Sign In"]
@@ -54,4 +62,18 @@ class ProfileViewTests: XCTestCase {
         XCTAssertFalse(app.navigationBars["USERNAME"].exists)
     }
     
+    func testProfileImageExists() {
+        let img = app.images["profilePicture"]
+        XCTAssertTrue(img.exists)
+    }
+    
+    func testChangeProfileExists() {
+        let profile = app.buttons["changePicture"]
+        XCTAssertTrue(profile.exists)
+    }
+    
+    func testProfilePhotoViewExists() {
+        let photos = app.collectionViews["profilecview"]
+        XCTAssertTrue(photos.exists)
+    }
 }

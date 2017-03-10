@@ -18,6 +18,8 @@ class NewsFeedViewController: PrimaryViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        activityTable.accessibilityIdentifier = "activitytab"
 
         // Do any additional setup after loading the view.
         self.activityTable.delegate = self
