@@ -274,12 +274,13 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
         Alamofire.request("http://kuva.jakebrabec.me/api/photos/\(self.id)", headers: headers).responseJSON { res in
             
             let json = JSON(res.value)
-            print(json)
+            
+            //Update likes
             self.liked = (json["user_liked"].intValue) == 1 ? true : false
-            print(self.liked)
             self.likesButton.imageView?.image = self.liked ? self.likeIMG : self.unlikeIMG
             self.likesButton.accessibilityIdentifier = self.liked ? "liked" : "unliked"
             
+            //Update date
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             self.created = dateFormatter.date(from: json["0"]["created_at"].stringValue)
@@ -288,9 +289,11 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
             dateFormatter.locale = Locale(identifier: "en_US")
             let dateString:String? = dateFormatter.string(for: self.created!)
 
-            
+            //Update username
             self.usernameButton.setTitle(json["0"]["user"]["name"].string, for: .normal)
+            //Update comments
             self.comments = json["0"]["comments"].array!
+            //Update likes count
             self.likes = json["0"]["likes"].array!
             self.numLikes = 0
             for like in self.likes {
@@ -301,10 +304,12 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
             self.numComments = self.comments.count
             self.likesLabel.text = (self.numLikes == 1) ? "\(self.numLikes) like" : "\(self.numLikes) likes"
             self.commentsLabel.text = "\(self.numComments) comments"
+            //Update caption
             self.caption = json["0"]["caption"].stringValue
             self.captionLabel.text = self.caption
             self.captionLabel.numberOfLines = 0
             
+            //Reload data for comment table
             self.commentTable.reloadData()
             
         }
