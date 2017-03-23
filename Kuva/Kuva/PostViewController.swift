@@ -43,8 +43,9 @@ class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate
     
     @IBAction func postButtonPressed(_ sender: Any) {
         if self.selectImageButton.isEnabled {
-            let alert:UIAlertController = UIAlertController(title: "Select an image", message: "pls", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: ":/", style: UIAlertActionStyle.default, handler: self.resetFeedView))
+            //Image not selected
+            let alert:UIAlertController = UIAlertController(title: "Select an image", message: "Select an image to upload to kuva", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: self.resetFeedView))
             self.present(alert, animated: true, completion: nil)
             return
         }
