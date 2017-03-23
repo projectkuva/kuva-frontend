@@ -83,7 +83,7 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
     
     @IBAction func reportButtonPressed(_ sender: Any) {
         //api/users/photos/{photoID}/report
-        let alert:UIAlertController = UIAlertController(title: "Report Photo", message: "Are you sure you want to report this photo?", preferredStyle: UIAlertControllerStyle.alert)
+        let alert:UIAlertController = UIAlertController(title: "Alert", message: "Alert text", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { action in
             self.reportPhoto()
         }))
