@@ -286,7 +286,6 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
             dateFormatter.dateStyle = .medium
             dateFormatter.timeStyle = .none
             dateFormatter.locale = Locale(identifier: "en_US")
-            self.dateLabel.text = dateFormatter.string(for: self.created!)
             self.usernameButton.setTitle(json["0"]["user"]["name"].string, for: .normal)
             self.comments = json["0"]["comments"].array!
             self.likes = json["0"]["likes"].array!
