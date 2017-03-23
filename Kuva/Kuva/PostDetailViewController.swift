@@ -118,12 +118,19 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
     
     @IBAction func shareButtonPressed(_ sender: Any) {
         
-        var url = "http://kuva.jakebrabec.me/storage/uploads/\(id).jpg"
+        var url = "http://kuva.jakebrabec.me/storage/uploads/\(getTrueID()).jpg"
         UIPasteboard.general.string = url
         let alert:UIAlertController = UIAlertController(title: "Share Photo", message: "Link to image copied to clipboard", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
         
+    }
+    
+    func getTrueID() -> Int {
+        if id == 1 {
+            return id
+        }
+        return id - 1
     }
 
     
