@@ -1057,7 +1057,7 @@
                             <constraint firstItem="upA-PB-zYx" firstAttribute="top" secondItem="dM4-jL-BKh" secondAttribute="bottom" constant="18" id="yq9-7z-UNI"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="tb-upload-cl" selectedImage="tb-profile-cl" id="Il5-dj-FzV"/>
+                    <tabBarItem key="tabBarItem" title="" image="tb-upload-cl" selectedImage="tb-profile-cl" id="Il5-dj-FzV"/>
                     <navigationItem key="navigationItem" title="Profile" id="wOP-9q-m92">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="pIx-yc-16j" userLabel="Logout">
                             <color key="tintColor" red="1" green="0.40000000000000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1181,11 +1181,11 @@
             </objects>
             <point key="canvasLocation" x="3793" y="-751"/>
         </scene>
-        <!--Profile-->
+        <!--Navigation Controller-->
         <scene sceneID="XWd-2p-51Y">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sGx-Id-Jgs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="tb-profile" selectedImage="tb-profile-cl" id="dDa-2O-Ymx"/>
+                    <tabBarItem key="tabBarItem" title="" image="tb-profile" selectedImage="tb-profile-cl" id="dDa-2O-Ymx"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="04A-Mm-jYf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
