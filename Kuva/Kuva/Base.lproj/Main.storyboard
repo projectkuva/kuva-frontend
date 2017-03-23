@@ -656,7 +656,7 @@
             </objects>
             <point key="canvasLocation" x="2785" y="139"/>
         </scene>
-        <!--Image Detail-->
+        <!--Post Detail View Controller-->
         <scene sceneID="wvj-gT-XUD">
             <objects>
                 <viewController storyboardIdentifier="detailView" id="ayn-oL-fo1" customClass="PostDetailViewController" customModule="Kuva" customModuleProvider="target" propertyAccessControl="none" sceneMemberID="viewController">
@@ -864,7 +864,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Image Detail" id="biK-Ln-dwI">
+                    <navigationItem key="navigationItem" id="biK-Ln-dwI">
                         <barButtonItem key="backBarButtonItem" title="Back" id="jlK-d4-hXA"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="05H-tt-6wY" userLabel="deleteImg">
                             <color key="tintColor" red="1" green="0.40000000000000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
