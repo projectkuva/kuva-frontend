@@ -636,9 +636,6 @@
                     <navigationItem key="navigationItem" title="kuva" id="66d-QL-fxI">
                         <barButtonItem key="leftBarButtonItem" systemItem="camera" id="lbG-YG-BUl">
                             <color key="tintColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="cameraButtonPressed:" destination="Ork-SK-aQJ" id="HgN-YN-m9e"/>
-                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="tb-star" id="d63-Y6-ZuN" userLabel="sortbutton">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
