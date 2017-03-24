@@ -39,7 +39,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         self.profileCollectionView.dataSource = self
         profileCollectionView.accessibilityIdentifier = "profilecview"
         // Do any additional setup after loading the view.
-        getUserPhotos()
+        //getUserPhotos()
     }
 
     override func didReceiveMemoryWarning() {
