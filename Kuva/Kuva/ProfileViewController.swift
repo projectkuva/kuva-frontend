@@ -48,10 +48,9 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     @IBAction func logoutButtonPressed(_ sender: Any) {
-        logOut()
-        let view = self.storyboard?.instantiateViewController(withIdentifier: "loginVC")
-        self.present(view!, animated:true, completion:nil)
-
+//        logOut()
+//        let view = self.storyboard?.instantiateViewController(withIdentifier: "loginVC")
+//        self.present(view!, animated:true, completion:nil)
     }
     
     @IBAction func changeProfilePicturePressed(_ sender: Any) {
