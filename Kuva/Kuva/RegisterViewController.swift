@@ -64,7 +64,7 @@ class RegisterViewController: PrimaryViewController {
                 let view = self.storyboard?.instantiateViewController(withIdentifier: "tabbar")
                 self.present(view!, animated:true, completion:nil)
                 
-            } else {
+            } else if msg == "eror" {
                 let alert:UIAlertController = UIAlertController(title: "bad!!!", message: "Invalid Credentials", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "☹️", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
