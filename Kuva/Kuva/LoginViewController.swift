@@ -47,15 +47,15 @@ class LoginViewController: PrimaryViewController, CLLocationManagerDelegate {
             "password": password
         ]
         if (username == "" || username == nil) {
-            let alert:UIAlertController = UIAlertController(title: "Email Field Empty", message: "Email field cannot be empty and must be proper email", preferredStyle: UIAlertControllerStyle.alert)
+            //let alert:UIAlertController = UIAlertController(title: "Email Field Empty", message: "Email field cannot be empty and must be proper email", preferredStyle: UIAlertControllerStyle.alert)
             error = true
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+//            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+//            self.present(alert, animated: true, completion: nil)
         } else if (password == "" || password == nil) {
-            let alert:UIAlertController = UIAlertController(title: "Password Field Empty", message: "Password field cannot be empty", preferredStyle: UIAlertControllerStyle.alert)
+            //let alert:UIAlertController = UIAlertController(title: "Password Field Empty", message: "Password field cannot be empty", preferredStyle: UIAlertControllerStyle.alert)
             error = true
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            //alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            //self.present(alert, animated: true, completion: nil)
         }
         
         if (!error) {
