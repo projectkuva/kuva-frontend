@@ -258,7 +258,6 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! CommentTableViewCell
-        cell.userLabel.text = comments[indexPath.row]["user"]["name"].stringValue
         cell.commentLabel.text = comments[indexPath.row]["text"].stringValue
         cell.commentLabel.numberOfLines = 0
         cell.id = indexPath.row
