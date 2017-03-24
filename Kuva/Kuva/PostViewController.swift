@@ -144,7 +144,7 @@ class PostViewController: PrimaryViewController, UIImagePickerControllerDelegate
     }
     
     func shViewControllerImageDidFilter(image: UIImage) {
-        self.previewImageView.image = image
+        self.previewImageView.image = self.cameraImage
         self.selectImageButton.isEnabled = false
         self.selectImageButton.isHidden = true
         uploadImage(image: image)

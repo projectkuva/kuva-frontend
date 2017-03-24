@@ -28,7 +28,7 @@ class ForgotPasswordViewController: PrimaryViewController {
             let msg:String = json["message"].stringValue
             
             var alert: UIAlertController
-            if msg == "error" {
+            if msg == "eror" {
                 alert = UIAlertController(title: "Email Field Invalid", message: "Email field must be a valid email", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             } else {
