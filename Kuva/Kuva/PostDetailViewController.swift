@@ -208,11 +208,11 @@ class PostDetailViewController: PrimaryViewController, UITableViewDelegate, UITa
                     }))
                     self.present(fail_alert, animated: true, completion: nil)
                 } else {
-                    let succ_alert = UIAlertController(title: "Success", message: "Comment posted", preferredStyle: .alert)
-                    succ_alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
-                        // dismiss
-                    }))
-                    self.present(succ_alert, animated: true, completion: nil)
+//                    let succ_alert = UIAlertController(title: "Success", message: "Comment posted", preferredStyle: .alert)
+//                    succ_alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+//                        // dismiss
+//                    }))
+//                    self.present(succ_alert, animated: true, completion: nil)
                 }
                 self.updateCurrentView()
             }
